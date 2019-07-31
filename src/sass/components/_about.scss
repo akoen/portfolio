@@ -1,0 +1,32 @@
+.about {
+    border-top: 2px solid $black;
+    width: 100%;
+    background-color: #f3f3f3;
+    margin-top: 10em;
+}
+
+.about .container {
+    width: 100% - $site-gutter;
+    margin-right: 0;
+    margin-left: $site-gutter;
+}
+
+.about-description {
+    flex: 0 1 60%;
+    padding-top: 1em;
+    padding-right: 1em;
+}
+
+.about-description h1 {
+    font-family: $serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.about-description p {
+    font-family: $sans;
+}
+
+.about img {
+    flex-basis: 40%;
+}

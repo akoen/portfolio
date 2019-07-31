@@ -1,0 +1,36 @@
+#contact {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+
+.contact__header {
+    flex-basis: 100%;
+}
+
+.contact__header h1 {
+    font-family: $sans;
+    font-size: 0.7em;
+    color: $black;
+    text-transform: uppercase;
+}
+
+.contact__header h2 {
+    font-family: $serif;
+    font-size: 1.5em;
+    color: $black;
+    font-weight: 600;
+}
+
+.contact__header h2 a {
+    color: $primary-light;
+}
+
+.contact__links-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.contact__link-item {
+    font-family: $sans;
+    margin-right: 3rem;
+}

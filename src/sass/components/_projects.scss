@@ -1,0 +1,123 @@
+.projects {
+    margin-top: 4em;
+    width: 100% - 2 * $site-gutter;
+    max-width: $site-width;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    @include min($tablet) {
+        position: relative;
+    }
+}
+
+.projects > h1 {
+    font-family: $sans;
+    font-size: 0.7em;
+    color: $black;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+
+    @include min($tablet) {
+        // margin-left: 15%;
+    }
+}
+
+// TODO Fix box shadow
+
+.projects-carousel-item {
+    position: relative;
+    max-height: 28em;
+    // box-shadow: 0 8px 14px rgba(black, 0.2);
+}
+
+.projects img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.project-description {
+
+
+    @include min($tablet) {
+	position: absolute;
+    }
+}
+
+#project-description-nvcyc {
+	max-width: 40rem;
+	min-width: 30rem;
+
+        top: 10%;
+        left: 5%;
+        width: 50%;
+        height: 20rem;
+
+        background-color: white;
+        box-shadow: 0 8px 14px rgba(grey, 0.2);
+
+	& h1 {
+	    font-family: $serif;
+	    font-size: 1em;
+	    font-weight: 600;
+	    color: $black;
+
+	    @include min($tablet) {
+		padding: 2rem 2rem 0 2rem;
+	    }
+	}
+}
+
+#project-description-cil {
+
+
+    top: 2em;
+    left: 0;
+
+    width: 100%;
+    height: 20rem;
+
+    & h1 {
+	@include min($tablet) {
+	    color: white;
+	    text-align: center;
+	    font-family: $serif;
+	    font-size: 2.5em;
+	    font-weight: 600;
+	}
+    }
+
+    & p {
+	margin-top: -1.2em;
+	padding: 0;
+	
+	font-family: $sans;
+	color: #eeeeee;
+	font-size: 0.9em;
+	font-weight: 400;
+	text-align: center;
+		       
+    }
+}
+
+
+.project-description p {
+
+    font-size: 1em;
+
+    @include min($tablet) {
+        padding: 2rem 2rem 0 2rem;
+    }
+}
+
+.project-description h2 {
+    color: $primary-light;
+
+    @include min($tablet) {
+        position: absolute;
+        padding: 0 2rem 1rem 0;
+        right: 0;
+        bottom: 0;
+    }
+}
