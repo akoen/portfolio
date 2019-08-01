@@ -11,6 +11,7 @@
     padding: 0;
     text-align: right;
 
+
     @include min($tablet) {
         margin: -20px 0 0;
     }
@@ -19,9 +20,18 @@
 .nav_list_item {
     display: inline-block;
     position: relative;
-    margin: 0 40px;
+    padding: 0 10px;
     letter-spacing: 0.5px;
-    font-size: 1.8rem;
+    font-size: 1.25rem;
+
+    &:first-child {
+	border-right: 1px solid black;
+    }
+
+    @include min($tablet) {
+	padding: 0 40px;
+	font-size: 2rem;
+    }
 
     &:before,
     &:after {

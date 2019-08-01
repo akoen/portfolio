@@ -1,6 +1,10 @@
 #contact {
-    margin-top: 6rem;
+    margin-top: 4rem;
     margin-bottom: 4rem;
+
+    @include min($desktop) {
+	margin-top: 6em;
+    }
 }
 
 .contact__header {

@@ -77,14 +77,22 @@
 
 .project-description h1 {
     font-family: $serif;
-    font-size: 1em;
+    font-size: 1.5rem;
+
+    @include min($tablet) {
+	font-size: 1em;
+    }
     font-weight: 600;
     color: $black;
 }
 
 .project-description p {
 
-    font-size: 1em;
+    font-size: 1.5rem;
+
+    @include min($tablet) {
+	font-size: 1em;
+    }
 
     @include min($tablet) {
         padding: 2rem 2rem 0 2rem;

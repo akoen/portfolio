@@ -1,5 +1,9 @@
 .photos {
-    margin-top: 8em;
+    margin-top: 4em;
+
+    @include min($desktop) {
+	margin-top: 8em;
+    }
 }
 
 .photos-text {
