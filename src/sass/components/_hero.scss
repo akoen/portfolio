@@ -1,21 +1,33 @@
 .hero {
-    max-width: 450px;
     width: 100% - 2 * $site-gutter;
-    margin: 42vh 0 0 0;
     font-family: $serif;
+    margin: 42vh 0 0 0;
+
+    @include min($tablet) {
+	max-width: 450px;
+    }
 }
 
+
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     //font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     font-weight: 600;
     color: $black;
+
+    @include min($tablet) {
+	font-size: 3rem;
+    }
 }
 
 .hero p {
     margin: 8% 0 0 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: $sans;
+
+    @include min($tablet) {
+	font-size: 2rem;
+    }
 }
 
 .hero__underline {
