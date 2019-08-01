@@ -54,3 +54,11 @@ section:nth-of-type(6) .column:nth-of-type(2) {
   flex-shrink: 4;
   flex-basis: 66px;
 }
+
+h1 {
+    font-size: 2rem;
+
+    @include min($tablet) {
+	font-size: 2.5rem;
+    }
+}

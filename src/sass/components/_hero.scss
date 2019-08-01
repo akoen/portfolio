@@ -1,10 +1,11 @@
 .hero {
     width: 100% - 2 * $site-gutter;
     font-family: $serif;
-    margin: 42vh 0 0 0;
+    margin: 12vh 0 0 0;
 
     @include min($tablet) {
 	max-width: 450px;
+	margin: 42vh 0 0 0;
     }
 }
 

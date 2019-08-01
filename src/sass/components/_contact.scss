@@ -8,20 +8,12 @@
 }
 
 .contact__header h1 {
-    font-family: $sans;
-    font-size: 0.7em;
-    color: $black;
-    text-transform: uppercase;
-}
-
-.contact__header h2 {
     font-family: $serif;
-    font-size: 1.5em;
     color: $black;
     font-weight: 600;
 }
 
-.contact__header h2 a {
+.contact__header h1 a {
     color: $primary-light;
 }
 
