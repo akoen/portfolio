@@ -27,9 +27,19 @@
 
 .projects-carousel-item {
     position: relative;
-    max-height: 28em;
-    // overflow: hidden;
-    // box-shadow: 0 8px 14px rgba(black, 0.2);
+    margin-bottom: 2em;
+    box-shadow: 0 8px 14px rgba(black, 0.2);
+    overflow: hidden;
+
+    // height: 30px;
+
+    border-radius: 5px;
+    background-color: #fff;
+    // box-shadow: 8px 14px 38px rgba(39,44,49,.06),1px 3px 8px rgba(39,44,49,.03);
+
+    @include min($tablet) {
+	margin-bottom: 4em;
+    }
 }
 
 .projects img {
@@ -39,18 +49,15 @@
 }
 
 .project-description {
+    padding: 1em;
 
     @include min($tablet) {
 	position: absolute;
+	padding: 0;
     }
 }
 
 #project-description-nvcyc {
-	max-width: 40rem;
-	min-width: 30rem;
-
-	padding: 0.2em 0 0 0;
-
 	@include min($tablet) {
 	    top: 10%;
 	    left: 5%;
@@ -59,6 +66,10 @@
 
 	    background-color: white;
 	    box-shadow: 0 8px 14px rgba(grey, 0.2);
+
+	    max-width: 40rem;
+	    min-width: 30rem;
+
 	}
 }
 
@@ -78,23 +89,22 @@
 .project-description h1 {
     font-family: $serif;
     font-size: 1.5rem;
+    font-weight: 600;
+    color: $black;
+    line-height: 1.4;
 
     @include min($tablet) {
 	font-size: 1em;
     }
-    font-weight: 600;
-    color: $black;
 }
 
 .project-description p {
 
     font-size: 1.5rem;
+    margin-top: 1em;
 
     @include min($tablet) {
 	font-size: 1em;
-    }
-
-    @include min($tablet) {
         padding: 2rem 2rem 0 2rem;
     }
 }
@@ -102,8 +112,10 @@
 
 
 .project-description h2 {
-    color: $primary-light;
-
+    text-align: right;
+    color: #738a94;
+    margin-top: 1em;
+    
     @include min($tablet) {
         position: absolute;
         padding: 0 2rem 1rem 0;
