@@ -6,9 +6,9 @@
     margin-right: auto;
 
 
-    @include min($tablet) {
-        position: relative;
-    }
+    // @include min($tablet) {
+    //     position: relative;
+    // }
 }
 
 .projects > h1 {
@@ -18,32 +18,38 @@
     text-transform: uppercase;
     margin-bottom: 0.5em;
 
-    @include min($tablet) {
-        // margin-left: 15%;
-    }
+    // @include min($tablet) {
+    //     margin-left: 15%;
+    // }
 }
 
-// TODO Fix box shadow
+.projects-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -2em;
+}
+
 
 .projects-carousel-item {
+    display: inline-block;
     position: relative;
-    margin-bottom: 2em;
+    flex: 1 1 20em;
+    min-width: 20em;
+    margin: 0 2em 2em;
     box-shadow: 0 8px 14px rgba(black, 0.2);
     overflow: hidden;
-
-    // height: 30px;
 
     border-radius: 5px;
     background-color: #fff;
     // box-shadow: 8px 14px 38px rgba(39,44,49,.06),1px 3px 8px rgba(39,44,49,.03);
 
-    @include min($tablet) {
-	margin-bottom: 4em;
-    }
+    // @include min($tablet) {
+    // 	margin-bottom: 4em;
+    // }
 }
 
 .projects img {
-    height: 100%;
     width: 100%;
     object-fit: contain;
 }
@@ -51,26 +57,26 @@
 .project-description {
     padding: 1em;
 
-    @include min($tablet) {
-	position: absolute;
-	padding: 0;
-    }
+    // @include min($tablet) {
+    // 	position: absolute;
+    // 	padding: 0;
+    // }
 }
 
 #project-description-nvcyc {
-	@include min($tablet) {
-	    top: 10%;
-	    left: 5%;
-	    width: 50%;
-	    height: 20rem;
+	// @include min($tablet) {
+	//     top: 10%;
+	//     left: 5%;
+	//     width: 50%;
+	//     height: 20rem;
 
-	    background-color: white;
-	    box-shadow: 0 8px 14px rgba(grey, 0.2);
+	//     background-color: white;
+	//     box-shadow: 0 8px 14px rgba(grey, 0.2);
 
-	    max-width: 40rem;
-	    min-width: 30rem;
+	//     max-width: 40rem;
+	//     min-width: 30rem;
 
-	}
+	// }
 }
 
 #project-description-cil {
@@ -93,9 +99,9 @@
     color: $black;
     line-height: 1.4;
 
-    @include min($tablet) {
-	font-size: 1em;
-    }
+    // @include min($tablet) {
+    // 	font-size: 1em;
+    // }
 }
 
 .project-description p {
@@ -103,10 +109,10 @@
     font-size: 1.5rem;
     margin-top: 1em;
 
-    @include min($tablet) {
-	font-size: 1em;
-        padding: 2rem 2rem 0 2rem;
-    }
+    // @include min($tablet) {
+    // 	font-size: 1em;
+    //     padding: 2rem 2rem 0 2rem;
+    // }
 }
 
 
@@ -116,42 +122,42 @@
     color: #738a94;
     margin-top: 1em;
     
-    @include min($tablet) {
-        position: absolute;
-        padding: 0 2rem 1rem 0;
-        right: 0;
-        bottom: 0;
-    }
+    // @include min($tablet) {
+    //     position: absolute;
+    //     padding: 0 2rem 1rem 0;
+    //     right: 0;
+    //     bottom: 0;
+    // }
 }
 
 #project-description-nvcyc h1 {
-    @include min($tablet) {
-	padding: 2rem 2rem 0 2rem;
-    }
+    // @include min($tablet) {
+    // 	padding: 2rem 2rem 0 2rem;
+    // }
 }
 
 #project-description-cil h1 {
-    @include min($tablet) {
-	position: relative;
-	color: white;
-	text-align: center;
-	font-family: $serif;
-	font-size: 2.5em;
-	font-weight: 600;
-    }
+    // @include min($tablet) {
+    // 	position: relative;
+    // 	color: white;
+    // 	text-align: center;
+    // 	font-family: $serif;
+    // 	font-size: 2.5em;
+    // 	font-weight: 600;
+    // }
 }
 
 #project-description-cil p {
-    @include min($tablet) {
-	margin-top: -1.2em;
-	padding: 0;
+    // @include min($tablet) {
+    // 	margin-top: -1.2em;
+    // 	padding: 0;
 	
-	font-family: $sans;
-	color: #eeeeee;
-	font-size: 0.9em;
-	font-weight: 400;
-	text-align: center;
-    }
+    // 	font-family: $sans;
+    // 	color: #eeeeee;
+    // 	font-size: 0.9em;
+    // 	font-weight: 400;
+    // 	text-align: center;
+    // }
 }
 
 #project-description-cil svg {
