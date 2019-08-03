@@ -65,19 +65,30 @@
 
 .photos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
+    grid-gap: 0.5em;
     justify-content: start;
     width: 100%;
-    max-height: 29em;
+    max-height: 17em;
     overflow: hidden;
+
+    @include min($phone) {
+	grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+	max-height: 29em;
+	grid-gap: 1em;
+    }
 }
 
 .photos-image {
-    height: 14em;
-    min-width: 12em;
+    height: 8em;
+    min-width: 6em;
     background-size: cover;
     background-position: center;
+
+    @include min($phone) {
+	height: 14em;
+	min-width: 12em;
+    }
 }
 
 .photos-cover {
