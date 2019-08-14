@@ -4,11 +4,6 @@
     max-width: $site-width;
     margin-left: auto;
     margin-right: auto;
-
-
-    // @include min($tablet) {
-    //     position: relative;
-    // }
 }
 
 .projects > h1 {
@@ -17,10 +12,6 @@
     color: $black;
     text-transform: uppercase;
     margin-bottom: 1em;
-
-    // @include min($tablet) {
-    //     margin-left: 15%;
-    // }
 }
 
 .projects-carousel {
@@ -58,27 +49,6 @@
 
 .project-description {
     padding: 1em;
-
-    // @include min($tablet) {
-    // 	position: absolute;
-    // 	padding: 0;
-    // }
-}
-
-#project-description-nvcyc {
-	// @include min($tablet) {
-	//     top: 10%;
-	//     left: 5%;
-	//     width: 50%;
-	//     height: 20rem;
-
-	//     background-color: white;
-	//     box-shadow: 0 8px 14px rgba(grey, 0.2);
-
-	//     max-width: 40rem;
-	//     min-width: 30rem;
-
-	// }
 }
 
 #project-description-cil {
@@ -100,21 +70,12 @@
     font-weight: 600;
     color: $black;
     line-height: 1.4;
-
-    // @include min($tablet) {
-    // 	font-size: 1em;
-    // }
 }
 
 .project-description p {
 
     font-size: 1.5rem;
     margin-top: 1em;
-
-    // @include min($tablet) {
-    // 	font-size: 1em;
-    //     padding: 2rem 2rem 0 2rem;
-    // }
 }
 
 
@@ -123,52 +84,4 @@
     text-align: right;
     color: #738a94;
     margin-top: 1em;
-    
-    // @include min($tablet) {
-    //     position: absolute;
-    //     padding: 0 2rem 1rem 0;
-    //     right: 0;
-    //     bottom: 0;
-    // }
 }
-
-#project-description-nvcyc h1 {
-    // @include min($tablet) {
-    // 	padding: 2rem 2rem 0 2rem;
-    // }
-}
-
-#project-description-cil h1 {
-    // @include min($tablet) {
-    // 	position: relative;
-    // 	color: white;
-    // 	text-align: center;
-    // 	font-family: $serif;
-    // 	font-size: 2.5em;
-    // 	font-weight: 600;
-    // }
-}
-
-#project-description-cil p {
-    // @include min($tablet) {
-    // 	margin-top: -1.2em;
-    // 	padding: 0;
-	
-    // 	font-family: $sans;
-    // 	color: #eeeeee;
-    // 	font-size: 0.9em;
-    // 	font-weight: 400;
-    // 	text-align: center;
-    // }
-}
-
-#project-description-cil svg {
-    position: absolute;
-    fill: white;
-    height: 1.5em;
-    width: 1.5em;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-

@@ -24,10 +24,6 @@
     letter-spacing: 0.5px;
     font-size: 1.25rem;
 
-    &:first-child {
-	border-right: 1px solid black;
-    }
-
     @include min($tablet) {
 	padding: 0 40px;
 	font-size: 2rem;
