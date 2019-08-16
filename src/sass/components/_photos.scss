@@ -65,27 +65,16 @@
 
 .photos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
-    grid-gap: 0.5em;
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    grid-gap: 0.2em;
     justify-content: start;
     width: 100%;
-
-    @include min($phone) {
-	grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
-	grid-gap: 0.2em;
-    }
 }
 
 .photos-image {
-    height: 8em;
-    min-width: 6em;
+    height: 14em;
     background-size: cover;
     background-position: center;
-
-    @include min($phone) {
-	height: 14em;
-	min-width: 14em;
-    }
 }
 
 .photos-cover {
