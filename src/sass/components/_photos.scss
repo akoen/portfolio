@@ -72,9 +72,13 @@
 }
 
 .photos-image {
-    height: 14em;
+    height: 10em;
     background-size: cover;
     background-position: center;
+
+    @include min($phone) {
+	height: 14em;
+    }
 }
 
 .photos-cover {
