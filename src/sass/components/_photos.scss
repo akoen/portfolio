@@ -160,7 +160,7 @@
     text-size: 2rem;
     font-family: $sans;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .lightbox-close {
@@ -168,9 +168,11 @@
 
 
 .lightbox:target {
-    /** Remove default browser outline */
-    outline: none;
+    @include min($tablet) {
+	/** Remove default browser outline */
+	outline: none;
 
-    /** Unhide lightbox **/
-    display: block;
+	/** Unhide lightbox **/
+	display: block;
+    }
 }
