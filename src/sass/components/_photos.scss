@@ -59,9 +59,21 @@
 }
 
 .photos-more-button {
-    color: #738a94;
-    margin-top: 0.4em;
+    // color: #78a94;
+    display: block;
+    padding-top: 0.4em;
 
+    svg {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	vertical-align: baseline;
+    	left: -0.3em;
+    	bottom: -2px;
+    }
+    @include min($desktop) {
+	display: none;
+    }
 }
 
 .photos-gallery {
@@ -135,6 +147,16 @@
 
 }
 
+.lightbox:target {
+    @include min($tablet) {
+	/** Remove default browser outline */
+	outline: none;
+
+	/** Unhide lightbox **/
+	display: block;
+    }
+}
+
 .lightbox-image {
     width: 100% - 2 * $site-gutter;
     height: 50%;
@@ -163,16 +185,3 @@
     font-weight: 500;
 }
 
-.lightbox-close {
-}
-
-
-.lightbox:target {
-    @include min($tablet) {
-	/** Remove default browser outline */
-	outline: none;
-
-	/** Unhide lightbox **/
-	display: block;
-    }
-}
