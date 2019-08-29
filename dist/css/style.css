@@ -510,7 +510,7 @@ h1 {
     position: absolute;
     height: 3em;
     width: 3em;
-    background-image: url(images/forward-arrow.svg);
+    background-image: url(../svg/forward-arrow.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     top: 50%;
