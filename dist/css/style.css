@@ -1,0 +1,726 @@
+/*!
+ * project-name v0.0.1
+ * A description for your project.
+ * (c) 2019 YOUR NAME
+ * MIT License
+ * http://link-to-your-git-repo.com
+ */
+
+/* line 1, src/sass/_reset.scss */
+html, body, div,
+header, footer, main, section, nav,
+h1, h2, h3, h4, h5, h6, img, svg,
+p, a, hr, span, ol, ul, li,
+form, input, label {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 16, src/sass/_reset.scss */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 22, src/sass/_reset.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 26, src/sass/_reset.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 30, src/sass/_reset.scss */
+input {
+  border-radius: 0;
+}
+
+/* line 34, src/sass/_reset.scss */
+::-webkit-input-placeholder {
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  opacity: 1;
+}
+::-ms-input-placeholder {
+  opacity: 1;
+}
+::placeholder {
+  opacity: 1;
+}
+
+/* line 38, src/sass/_reset.scss */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+/* line 3, src/sass/_base.scss */
+html {
+  font-size: 12px;
+  scroll-behavior: smooth;
+}
+
+/* line 9, src/sass/_base.scss */
+body {
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  background-color: #fbfbfb;
+}
+
+/* line 22, src/sass/_base.scss */
+.container {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 29, src/sass/_base.scss */
+.container.container-vertically-center {
+  align-item: center;
+}
+
+/* line 33, src/sass/_base.scss */
+.container.container-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 39, src/sass/_base.scss */
+.column {
+  margin: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+}
+
+/* line 46, src/sass/_base.scss */
+section:nth-of-type(5) .column:first-of-type {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
+  -ms-flex-preferred-size: 22px;
+      flex-basis: 22px;
+}
+
+/* line 52, src/sass/_base.scss */
+section:nth-of-type(6) .column:nth-of-type(2) {
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+  -ms-flex-negative: 4;
+      flex-shrink: 4;
+  -ms-flex-preferred-size: 66px;
+      flex-basis: 66px;
+}
+
+/* line 58, src/sass/_base.scss */
+h1 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 58, src/sass/_base.scss */
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* line 1, src/sass/components/_nav.scss */
+.nav {
+  position: relative;
+  padding: 2em 0.5em 0.5em;
+  align-item: center;
+  z-index: 10;
+}
+
+/* line 8, src/sass/components/_nav.scss */
+.nav_list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 8, src/sass/components/_nav.scss */
+  .nav_list {
+    margin: -20px 0 0;
+  }
+}
+
+/* line 20, src/sass/components/_nav.scss */
+.nav_list_item {
+  display: inline-block;
+  position: relative;
+  padding: 0 10px;
+  letter-spacing: 0.5px;
+  font-size: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 20, src/sass/components/_nav.scss */
+  .nav_list_item {
+    padding: 0 40px;
+    font-size: 2rem;
+  }
+}
+
+/* line 32, src/sass/components/_nav.scss */
+.nav_list_item:before, .nav_list_item:after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ff9a9e;
+}
+
+/* line 41, src/sass/components/_nav.scss */
+.nav_list_item:before {
+  opacity: 0;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* line 46, src/sass/components/_nav.scss */
+.nav_list_item:after {
+  opacity: 0;
+  -webkit-transform: translateY(8px/2);
+          transform: translateY(8px/2);
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* line 53, src/sass/components/_nav.scss */
+.nav_list_item:hover:before, .nav_list_item:hover:after, .nav_list_item:focus:before, .nav_list_item:focus:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* line 58, src/sass/components/_nav.scss */
+.nav_list_item:hover:before, .nav_list_item:focus:before {
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* line 61, src/sass/components/_nav.scss */
+.nav_list_item:hover:after, .nav_list_item:focus:after {
+  -webkit-transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* line 1, src/sass/components/_hero.scss */
+.hero {
+  width: 80%;
+  font-family: "Source Serif Pro", serif;
+  margin: 12vh 0 0 0;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 1, src/sass/components/_hero.scss */
+  .hero {
+    max-width: 450px;
+    margin: 42vh 0 0 0;
+  }
+}
+
+/* line 13, src/sass/components/_hero.scss */
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 13, src/sass/components/_hero.scss */
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* line 24, src/sass/components/_hero.scss */
+.hero p {
+  margin: 8% 0 0 0;
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 24, src/sass/components/_hero.scss */
+  .hero p {
+    font-size: 2rem;
+  }
+}
+
+/* line 34, src/sass/components/_hero.scss */
+.hero__underline {
+  background-image: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 80%;
+  -webkit-transition: background-size 0.25s ease-in;
+  transition: background-size 0.25s ease-in;
+}
+
+/* line 41, src/sass/components/_hero.scss */
+.hero__underline:hover {
+  background-size: 100% 100%;
+}
+
+/* line 1, src/sass/components/_about.scss */
+.about {
+  border-top: 2px solid #2d2d2d;
+  width: 100%;
+  background-color: #f3f3f3;
+  margin-top: 10em;
+}
+
+/* line 8, src/sass/components/_about.scss */
+.about .container {
+  width: 90%;
+  margin-right: 0;
+  margin-left: 10%;
+}
+
+/* line 14, src/sass/components/_about.scss */
+.about-description {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+  padding-top: 1em;
+  padding-right: 1em;
+}
+
+/* line 20, src/sass/components/_about.scss */
+.about-description h1 {
+  font-family: "Source Serif Pro", serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* line 26, src/sass/components/_about.scss */
+.about-description p {
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+}
+
+/* line 30, src/sass/components/_about.scss */
+.about img {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+/* line 1, src/sass/components/_projects.scss */
+.projects {
+  margin-top: 4em;
+  width: 80%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 9, src/sass/components/_projects.scss */
+.projects > h1 {
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-size: 0.7em;
+  color: #2d2d2d;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+/* line 17, src/sass/components/_projects.scss */
+.projects-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 -1.5em -1.5em;
+}
+
+/* line 25, src/sass/components/_projects.scss */
+.projects-carousel-item {
+  display: inline-block;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20em;
+          flex: 1 1 20em;
+  margin: 0 1.5em 1.5em;
+  -webkit-box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/* line 38, src/sass/components/_projects.scss */
+.projects-carousel-item:hover {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-transform: translate3D(0, -1px, 0) scale(1.02);
+          transform: translate3D(0, -1px, 0) scale(1.02);
+  cursor: pointer;
+}
+
+/* line 45, src/sass/components/_projects.scss */
+.projects img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* line 50, src/sass/components/_projects.scss */
+.project-description {
+  padding: 1em;
+}
+
+/* line 54, src/sass/components/_projects.scss */
+#project-description-cil {
+  top: 2em;
+  left: 0;
+  width: 100%;
+}
+
+/* line 60, src/sass/components/_projects.scss */
+#project-description-cil:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* line 67, src/sass/components/_projects.scss */
+.project-description h1 {
+  font-family: "Source Serif Pro", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1.4;
+}
+
+/* line 75, src/sass/components/_projects.scss */
+.project-description p {
+  font-size: 1.5rem;
+  margin-top: 1em;
+}
+
+/* line 83, src/sass/components/_projects.scss */
+.project-description h2 {
+  text-align: right;
+  color: #738a94;
+  margin-top: 1em;
+}
+
+/* line 1, src/sass/components/_photos.scss */
+.photos {
+  margin-top: 4em;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 1, src/sass/components/_photos.scss */
+  .photos {
+    margin-top: 8em;
+  }
+}
+
+/* line 9, src/sass/components/_photos.scss */
+.photos-text {
+  max-width: 600px;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 9, src/sass/components/_photos.scss */
+  .photos-text {
+    margin-right: 15vw;
+  }
+}
+
+/* line 20, src/sass/components/_photos.scss */
+.photos-text h2 {
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-size: 0.7em;
+  color: #2d2d2d;
+  text-transform: uppercase;
+  border-bottom: 2px solid #2d2d2d;
+}
+
+/* line 28, src/sass/components/_photos.scss */
+.photos-text h1 {
+  font-family: "Source Serif Pro", serif;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+/* line 34, src/sass/components/_photos.scss */
+.photos-more-arrow {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 34, src/sass/components/_photos.scss */
+  .photos-more-arrow {
+    display: inline;
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    background-image: url(images/forward-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: -4em;
+    g-index: 2;
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+  }
+  /* line 53, src/sass/components/_photos.scss */
+  .photos-more-arrow:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+
+/* line 61, src/sass/components/_photos.scss */
+.photos-more-button {
+  display: block;
+  padding-top: 0.4em;
+}
+
+/* line 66, src/sass/components/_photos.scss */
+.photos-more-button svg {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  vertical-align: baseline;
+  left: -0.3em;
+  bottom: -2px;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 61, src/sass/components/_photos.scss */
+  .photos-more-button {
+    display: none;
+  }
+}
+
+/* line 79, src/sass/components/_photos.scss */
+.photos-gallery {
+  position: relative;
+  width: 100%;
+}
+
+/* line 84, src/sass/components/_photos.scss */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-gap: 0.2em;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 100%;
+}
+
+/* line 92, src/sass/components/_photos.scss */
+.photos-image {
+  height: 10em;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-width: 480px) {
+  /* line 92, src/sass/components/_photos.scss */
+  .photos-image {
+    height: 14em;
+  }
+}
+
+/* line 102, src/sass/components/_photos.scss */
+.photos-cover {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+/* line 114, src/sass/components/_photos.scss */
+.photos-cover:hover {
+  display: relative;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* line 121, src/sass/components/_photos.scss */
+.photos-cover p {
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  mix-blend-mode: exclusion;
+}
+
+/* line 133, src/sass/components/_photos.scss */
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffffee;
+  cursor: url(images/x-cursor.png), default;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 150, src/sass/components/_photos.scss */
+  .lightbox:target {
+    /** Remove default browser outline */
+    outline: none;
+    /** Unhide lightbox **/
+    display: block;
+  }
+}
+
+/* line 160, src/sass/components/_photos.scss */
+.lightbox-image {
+  width: 80%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 24vh;
+  background-size: cover;
+  background-position: center;
+  cursor: default;
+}
+
+/* line 175, src/sass/components/_photos.scss */
+.lightbox-info {
+  padding-top: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 181, src/sass/components/_photos.scss */
+.lightbox h2 {
+  text-size: 2rem;
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* line 1, src/sass/components/_contact.scss */
+#contact {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 1, src/sass/components/_contact.scss */
+  #contact {
+    margin-top: 6em;
+  }
+}
+
+/* line 10, src/sass/components/_contact.scss */
+.contact__header {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+/* line 14, src/sass/components/_contact.scss */
+.contact__header h1 {
+  font-family: "Source Serif Pro", serif;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+/* line 20, src/sass/components/_contact.scss */
+.contact__header h1 a {
+  color: #388E8E;
+}
+
+/* line 24, src/sass/components/_contact.scss */
+.contact__links-list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 29, src/sass/components/_contact.scss */
+.contact__link-item {
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  margin-right: 3rem;
+}
