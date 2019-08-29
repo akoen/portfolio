@@ -44,7 +44,7 @@ const sizes = {
 
 // clean
 
-gulp.task('clean', () => del('docs'))
+gulp.task('clean', () => del('dist'))
 
 // html
 
@@ -54,7 +54,7 @@ gulp.task('html', ['images'], () => {
     .pipe(include({ prefix: '@', basepath: 'src/' }))
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(size(sizes))
-    .pipe(gulp.dest('docs'))
+    .pipe(gulp.dest('dist'))
 })
 
 // sass
@@ -73,7 +73,7 @@ gulp.task('sass', () => {
     .pipe(postcss(processors))
     .pipe(size(sizes))
     .pipe(maps.write('./maps', { addComment: false }))
-    .pipe(gulp.dest('docs'))
+    .pipe(gulp.dest('dist'))
 })
 
 // js
@@ -108,7 +108,7 @@ const read = {
 }
 
 const write = {
-  file: 'docs/bundle.js',
+  file: 'dist/bundle.js',
   format: 'iife',
   sourcemap: true,
   output: {
@@ -126,10 +126,10 @@ gulp.task('js', async () => {
 gulp.task('images', () => {
   return gulp.src('src/images/**/*.{gif,jpg,png,svg}')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(changed('docs/images'))
+    .pipe(changed('dist/images'))
     .pipe(imagemin({ progressive: true, interlaced: true }))
     .pipe(size(sizes))
-    .pipe(gulp.dest('docs/images'))
+    .pipe(gulp.dest('dist/images'))
 })
 
 // fonts, videos, favicon
@@ -154,7 +154,7 @@ others.forEach(object => {
   gulp.task(object.name, () => {
     return gulp.src('src' + object.src)
       .pipe(plumber({ errorHandler: onError }))
-      .pipe(gulp.dest('docs' + object.dest))
+      .pipe(gulp.dest('dist' + object.dest))
   })
 })
 
@@ -177,7 +177,7 @@ const sendMaps = (req, res, next) => {
 const options = {
   notify: false,
   server: {
-    baseDir: 'docs',
+    baseDir: 'dist',
     middleware: [
       sendMaps
     ]
@@ -201,9 +201,9 @@ gulp.task('watch', () => {
 // build and default tasks
 
 gulp.task('build', ['clean'], () => {
-  // create docs directories
-  fs.mkdirSync('docs')
-  fs.mkdirSync('docs/maps')
+  // create dist directories
+  fs.mkdirSync('dist')
+  fs.mkdirSync('dist/maps')
 
   // run the tasks
   gulp.start('html', 'sass', 'js', 'images', 'fonts', 'videos', 'favicon')
