@@ -632,7 +632,7 @@ h1 {
   top: 0;
   left: 0;
   background-color: #ffffffee;
-  cursor: url(images/x-cursor.png), default;
+  cursor: url(../images/x-cursor.png), default;
 }
 
 @media screen and (min-width: 768px) {
@@ -678,6 +678,11 @@ h1 {
   font-family: "Work Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+/* line 188, src/sass/components/_photos.scss */
+.lightbox-close {
+  cursor: pointer;
 }
 
 /* line 1, src/sass/components/_contact.scss */
