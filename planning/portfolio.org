@@ -1,0 +1,17 @@
+#+Title: Portfolio - Scheduling
+
+I want to finish my portfolio website by *Friday, August 30th*.
+
+To do this:
+
+* TODO [#A] Finish portfolio website
+DEADLINE: <2019-08-30 Fri>
+
+** TODO Write CIL Article
+DEADLINE: <2019-08-26 Mon>
+
+** TODO Add photo showcase page
+DEADLINE: <2019-08-28 Wed>
+
+** TODO Final tweaks
+DEADLINE: <2019-08-29 Thu>
