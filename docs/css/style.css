@@ -384,7 +384,7 @@ h1 {
   margin: 0 -1.5em -1.5em;
 }
 
-/* line 25, src/sass/components/_projects.scss */
+/* line 24, src/sass/components/_projects.scss */
 .projects-carousel-item {
   display: inline-block;
   position: relative;
@@ -401,7 +401,7 @@ h1 {
   transition: all 0.4s ease;
 }
 
-/* line 38, src/sass/components/_projects.scss */
+/* line 37, src/sass/components/_projects.scss */
 .projects-carousel-item:hover {
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
@@ -410,11 +410,12 @@ h1 {
   cursor: pointer;
 }
 
-/* line 45, src/sass/components/_projects.scss */
+/* line 44, src/sass/components/_projects.scss */
 .projects img {
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 14em;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* line 50, src/sass/components/_projects.scss */

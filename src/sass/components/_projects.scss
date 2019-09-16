@@ -21,7 +21,6 @@
     margin: 0 -1.5em -1.5em;
 }
 
-
 .projects-carousel-item {
     display: inline-block;
     position: relative;
@@ -44,7 +43,8 @@
 
 .projects img {
     width: 100%;
-    object-fit: contain;
+    height: 14em;
+    object-fit: cover;
 }
 
 .project-description {
