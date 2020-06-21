@@ -22,22 +22,21 @@
 }
 
 .projects-carousel-item {
-    display: inline-block;
-    position: relative;
     flex: 1 1 20em;
     margin: 0 1.5em 1.5em;
     box-shadow: 0 8px 14px rgba(black, 0.2);
-    overflow: hidden;
 
     border-radius: 5px;
-    background-color: #fff;
+    overflow: hidden; // For corners
 
+    background-color: #fff;
+    
     transition: all 0.4s ease;
 
     &:hover {
-	transition: all 0.6s ease;
-	transform: translate3D(0, -1px, 0) scale(1.02);
-	cursor: pointer;
+        transition: all 0.6s ease;
+        transform: translate3D(0, -1px, 0) scale(1.02);
+        cursor: pointer;
     }
 }
 
@@ -48,6 +47,9 @@
 }
 
 .project-description {
+    position: relative;
+    
+    height: 10em;
     padding: 1em;
 }
 
@@ -73,15 +75,14 @@
 }
 
 .project-description p {
-
     font-size: 1.5rem;
     margin-top: 1em;
 }
 
-
-
 .project-description h2 {
+    position: absolute;
     text-align: right;
     color: #738a94;
-    margin-top: 1em;
+    bottom: 0.5em;
+    right: 1em;
 }
