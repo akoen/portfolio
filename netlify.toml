@@ -4,3 +4,9 @@
 
     # Directory to publish from
     publish = "docs/"
+
+[[redirects]]
+    # Redirect all blog queries to subdomain
+    from = "/writing/*"
+    to = "https://blog.alexkoen.com/writing/:splat"
+    status = 200
