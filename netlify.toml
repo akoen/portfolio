@@ -1,0 +1,6 @@
+[build]
+    # Directory in which to build
+    base = "docs/"
+
+    # Directory to publish from
+    publish = "docs/"
