@@ -8,5 +8,5 @@
 [[redirects]]
     # Redirect all blog queries to subdomain
     from = "/writing/*"
-    to = "https://blog.alexkoen.com/writing/:splat"
+    to = "https://blog.alexkoen.com/:splat"
     status = 200
