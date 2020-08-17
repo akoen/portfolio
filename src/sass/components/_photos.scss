@@ -1,27 +1,16 @@
-.photos {
-    margin-top: 4em;
+@import '../typography';
+@import '../spacing';
 
-    @include min($desktop) {
-	margin-top: 8em;
-    }
+.photos {
+    margin-top: $margin-section;
+    @extend %container;
 }
 
 .photos-text {
-    // padding: 2rem;
-    max-width: 600px;
-    // margin-left: $site-gutter;
-    z-index: 1;
-
-    @include min($desktop) {
-        margin-right: 15vw;
-    }
 }
 
 .photos-text h2 {
-    font-family: $sans;
-    font-size: 0.7em;
-    color: $black;
-    text-transform: uppercase;
+    @extend %section-header;
     border-bottom: 2px solid $black;
 }
 
@@ -29,51 +18,7 @@
     font-family: $serif;
     color: $black;
     font-weight: 600;
-}
-
-.photos-more-arrow {
-    display: none;
-
-    @include min($desktop) {
-	display: inline;
-	position: absolute;
-	height: 3em;
-	width: 3em;
-	background-image: url(../svg/forward-arrow.svg) ;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-
-	top: 50%;
-	transform: translateY(-50%);
-	right: -4em;
-	g-index: 2;
-
-	transition: opacity 0.1s linear;
-
-	&:hover {
-	    opacity: 0.6;
-	    cursor: pointer;
-	}
-
-    }
-}
-
-.photos-more-button {
-    // color: #78a94;
-    display: block;
-    padding-top: 0.4em;
-
-    svg {
-	position: relative;
-	width: 1em;
-	height: 1em;
-	vertical-align: baseline;
-    	left: -0.3em;
-    	bottom: -2px;
-    }
-    @include min($desktop) {
-	display: none;
-    }
+    margin-bottom: 0.5em;
 }
 
 .photos-gallery {
@@ -173,6 +118,7 @@
 }
 
 .lightbox-info {
+    @extend %container;
     padding-top: 0.5em;
     justify-content: space-between;
     align-items: center;

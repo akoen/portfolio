@@ -20,19 +20,20 @@ body {
 // LAYOUT
 
 .container {
-  width: 100% - 2 * $site-gutter;
-  display: flex;
-  max-width: $site-width;
-  margin-right: auto;
-  margin-left: auto;
+    background-color: red;
+  // width: 100% - 2 * $site-gutter;
+  // display: flex;
+  // max-width: $site-width;
+  // margin-right: auto;
+  // margin-left: auto;
 
-  &.container-vertically-center {
-      align-item: center;
-  }   
+  // &.container-vertically-center {
+  //     align-item: center;
+  // }   
 
-  &.container-wrap {
-      flex-wrap: wrap;
-  }
+  // &.container-wrap {
+  //     flex-wrap: wrap;
+  // }
 
 }
 

@@ -1,7 +1,14 @@
+@import '../spacing';
+
 .hero {
-    width: 100% - 2 * $site-gutter;
+    @extend %container;
+
+    flex-direction: column;
+
     font-family: $serif;
-    margin: 12vh 0 0 0;
+    margin-top: 12vh;
+
+
 
     @include min($tablet) {
 	max-width: 450px;
@@ -10,9 +17,9 @@
 }
 
 
-.hero h1 {
+.hero-title {
     font-size: 2rem;
-    //font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    max-width: 450px;
     font-weight: 600;
     color: $black;
 
@@ -21,10 +28,12 @@
     }
 }
 
-.hero p {
+.hero-content {
     margin: 8% 0 0 0;
     font-family: $sans;
     font-size: 1.5rem;
+
+    max-width: 450px;
 
     @include min($tablet) {
 	font-size: 2rem;
@@ -41,4 +50,9 @@
     &:hover {
         background-size: 100% 100%;
     }
+}
+
+
+.hero a {
+    text-decoration: underline;
 }

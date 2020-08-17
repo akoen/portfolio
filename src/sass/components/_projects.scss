@@ -1,18 +1,15 @@
+@import '../typography';
+@import '../spacing';
+
+
 .projects {
-    margin-top: 4em;
-    width: 100% - 2 * $site-gutter;
-    max-width: $site-width;
-    margin-left: auto;
-    margin-right: auto;
+    @extend %container;
+    margin-top: $margin-section;
 }
 
 // Title
 .projects > h1 {
-    font-family: $sans;
-    font-size: 0.7em;
-    color: $black;
-    text-transform: uppercase;
-    margin-bottom: 1em;
+    @extend %section-header;
 }
 
 .projects-carousel {
@@ -70,6 +67,7 @@
     }
 
     h2 {
+	justify-self: flex-end;
 	text-align: right;
 	color: #738a94;
     }
