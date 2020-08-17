@@ -311,6 +311,11 @@ h1 {
   background-size: 100% 100%;
 }
 
+/* line 47, src/sass/components/_hero.scss */
+.hero a {
+  text-decoration: underline;
+}
+
 /* line 1, src/sass/components/_about.scss */
 .about {
   border-top: 2px solid #2d2d2d;
@@ -362,7 +367,7 @@ h1 {
   margin-right: auto;
 }
 
-/* line 9, src/sass/components/_projects.scss */
+/* line 10, src/sass/components/_projects.scss */
 .projects > h1 {
   font-family: "Work Sans", Helvetica, Arial, sans-serif;
   font-size: 0.7em;
@@ -371,7 +376,7 @@ h1 {
   margin-bottom: 1em;
 }
 
-/* line 17, src/sass/components/_projects.scss */
+/* line 18, src/sass/components/_projects.scss */
 .projects-carousel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -384,7 +389,7 @@ h1 {
   margin: 0 -1.5em -1.5em;
 }
 
-/* line 24, src/sass/components/_projects.scss */
+/* line 27, src/sass/components/_projects.scss */
 .projects-carousel-item {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 20em;
@@ -399,7 +404,7 @@ h1 {
   transition: all 0.4s ease;
 }
 
-/* line 36, src/sass/components/_projects.scss */
+/* line 39, src/sass/components/_projects.scss */
 .projects-carousel-item:hover {
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
@@ -408,7 +413,7 @@ h1 {
   cursor: pointer;
 }
 
-/* line 43, src/sass/components/_projects.scss */
+/* line 46, src/sass/components/_projects.scss */
 .projects img {
   width: 100%;
   height: 14em;
@@ -416,27 +421,19 @@ h1 {
      object-fit: cover;
 }
 
-/* line 49, src/sass/components/_projects.scss */
+/* line 52, src/sass/components/_projects.scss */
 .project-description {
-  position: relative;
-  height: 10em;
-  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em 1em 0.5em 1em;
 }
 
-/* line 56, src/sass/components/_projects.scss */
-#project-description-cil {
-  top: 2em;
-  left: 0;
-  width: 100%;
-}
-
-/* line 62, src/sass/components/_projects.scss */
-#project-description-cil:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-/* line 69, src/sass/components/_projects.scss */
+/* line 58, src/sass/components/_projects.scss */
 .project-description h1 {
   font-family: "Source Serif Pro", serif;
   font-size: 1.5rem;
@@ -445,19 +442,16 @@ h1 {
   line-height: 1.4;
 }
 
-/* line 77, src/sass/components/_projects.scss */
+/* line 67, src/sass/components/_projects.scss */
 .project-description p {
   font-size: 1.5rem;
   margin-top: 1em;
 }
 
-/* line 82, src/sass/components/_projects.scss */
+/* line 72, src/sass/components/_projects.scss */
 .project-description h2 {
-  position: absolute;
   text-align: right;
   color: #738a94;
-  bottom: 0.5em;
-  right: 1em;
 }
 
 /* line 1, src/sass/components/_photos.scss */
