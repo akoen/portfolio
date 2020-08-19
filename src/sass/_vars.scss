@@ -1,7 +1,4 @@
 
-$site-width:  960px;
-$site-gutter: 10%;
-
 // BREAKPOINTS
 $phone: 480px;
 $tablet:  768px;
@@ -9,6 +6,11 @@ $desktop: 1024px;
 $large: 1200px;
 $xlarge: 1400px;
 $xxlarge: 1600px;
+
+$site-width:  960px;
+
+$site-gutter-small: 5%;
+$site-gutter-large: 10%;
 
 // SPACING
 $margin-section: 4em;

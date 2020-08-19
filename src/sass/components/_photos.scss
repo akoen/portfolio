@@ -103,7 +103,7 @@
 }
 
 .lightbox-image {
-    width: 100% - 2 * $site-gutter;
+    width: 100% - 2 * $site-gutter-small;
     height: 50%;
     display: flex;
     max-width: $site-width;
