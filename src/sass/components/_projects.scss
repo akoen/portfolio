@@ -4,7 +4,6 @@
 
 .projects {
     @extend %container;
-    margin-top: $margin-section;
 }
 
 // Title
@@ -42,8 +41,12 @@
 
 .projects img {
     width: 100%;
-    height: 14em;
+    height: 10em;
     object-fit: cover;
+
+    @include min($tablet) {
+	height: 14em;
+    }
 }
 
 .project-description {

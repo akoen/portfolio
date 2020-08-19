@@ -1,13 +1,8 @@
 @import '../spacing';
 
 #contact {
-    margin-top: $margin-section;
-    margin-bottom: $margin-section;
+    margin-bottom: 5vw;
     @extend %container;
-
-    @include min($desktop) {
-	margin-top: 6em;
-    }
 }
 
 .contact__header {

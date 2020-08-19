@@ -26,6 +26,14 @@ body {
   flex-basis: 0;
 }
 
+section {
+    margin-top: $margin-section-small;
+
+    @include min($tablet){
+	margin-top: $margin-section-large;
+    }
+}
+
 section:nth-of-type(5) .column:first-of-type {
   flex-grow: 2;
   flex-shrink: 2;

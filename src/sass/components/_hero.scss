@@ -2,20 +2,16 @@
 
 .hero {
     @extend %container;
-
     flex-direction: column;
 
     font-family: $serif;
-    margin-top: 12vh;
-
-
+    margin-top: 12rem;;
 
     @include min($tablet) {
 	max-width: 450px;
 	margin: 42vh 0 0 0;
     }
 }
-
 
 .hero-title {
     font-size: 2rem;
@@ -29,7 +25,7 @@
 }
 
 .hero-content {
-    margin: 8% 0 0 0;
+    margin-top: 1em;
     font-family: $sans;
     font-size: 1.5rem;
 

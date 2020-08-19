@@ -1,6 +1,9 @@
+@import '../spacing';
+
 .nav {
+    @extend %container;
     position: relative;
-    padding: 2em 0.5em 0.5em;
+    margin-top: 1rem;
     align-item: center;
     z-index: 10;
 }
@@ -10,11 +13,6 @@
     margin: 0;
     padding: 0;
     text-align: right;
-
-
-    @include min($tablet) {
-        margin: -20px 0 0;
-    }
 }
 
 .nav_list_item {
