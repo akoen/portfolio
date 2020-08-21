@@ -102,12 +102,8 @@
 }
 
 .lightbox-image {
-    width: 100% - 2 * $site-gutter-small;
+    @extend %container;
     height: 50%;
-    display: flex;
-    max-width: $site-width;
-    margin-right: auto;
-    margin-left: auto;
     margin-top: 24vh;
 
     background-size: cover;
@@ -118,6 +114,7 @@
 
 .lightbox-info {
     @extend %container;
+    display: flex;
     padding-top: 0.5em;
     justify-content: space-between;
     align-items: center;

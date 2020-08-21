@@ -146,7 +146,7 @@ h1 {
 }
 
 /* line 1, src/sass/_spacing.scss */
-.nav, .hero, .projects, .photos, .lightbox-info, #contact {
+.nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
   width: 90%;
   max-width: 960px;
   margin-left: auto;
@@ -155,7 +155,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   /* line 1, src/sass/_spacing.scss */
-  .nav, .hero, .projects, .photos, .lightbox-info, #contact {
+  .nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
     width: 80%;
   }
 }
@@ -252,7 +252,7 @@ h1 {
 }
 
 /* line 1, src/sass/_spacing.scss */
-.nav, .hero, .projects, .photos, .lightbox-info, #contact {
+.nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
   width: 90%;
   max-width: 960px;
   margin-left: auto;
@@ -261,7 +261,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   /* line 1, src/sass/_spacing.scss */
-  .nav, .hero, .projects, .photos, .lightbox-info, #contact {
+  .nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
     width: 80%;
   }
 }
@@ -344,7 +344,7 @@ h1 {
 }
 
 /* line 1, src/sass/_spacing.scss */
-.nav, .hero, .projects, .photos, .lightbox-info, #contact {
+.nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
   width: 90%;
   max-width: 960px;
   margin-left: auto;
@@ -353,7 +353,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   /* line 1, src/sass/_spacing.scss */
-  .nav, .hero, .projects, .photos, .lightbox-info, #contact {
+  .nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
     width: 80%;
   }
 }
@@ -454,7 +454,7 @@ h1 {
 }
 
 /* line 1, src/sass/_spacing.scss */
-.nav, .hero, .projects, .photos, .lightbox-info, #contact {
+.nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
   width: 90%;
   max-width: 960px;
   margin-left: auto;
@@ -463,7 +463,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   /* line 1, src/sass/_spacing.scss */
-  .nav, .hero, .projects, .photos, .lightbox-info, #contact {
+  .nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
     width: 80%;
   }
 }
@@ -577,22 +577,18 @@ h1 {
 
 /* line 104, src/sass/components/_photos.scss */
 .lightbox-image {
-  width: 90%;
   height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 960px;
-  margin-right: auto;
-  margin-left: auto;
   margin-top: 24vh;
   background-size: cover;
   background-position: center;
   cursor: default;
 }
 
-/* line 119, src/sass/components/_photos.scss */
+/* line 115, src/sass/components/_photos.scss */
 .lightbox-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-top: 0.5em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -602,7 +598,7 @@ h1 {
           align-items: center;
 }
 
-/* line 126, src/sass/components/_photos.scss */
+/* line 123, src/sass/components/_photos.scss */
 .lightbox h2 {
   text-size: 2rem;
   font-family: "Work Sans", Helvetica, Arial, sans-serif;
@@ -610,13 +606,13 @@ h1 {
   font-weight: 500;
 }
 
-/* line 133, src/sass/components/_photos.scss */
+/* line 130, src/sass/components/_photos.scss */
 .lightbox-close {
   cursor: pointer;
 }
 
 /* line 1, src/sass/_spacing.scss */
-.nav, .hero, .projects, .photos, .lightbox-info, #contact {
+.nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
   width: 90%;
   max-width: 960px;
   margin-left: auto;
@@ -625,7 +621,7 @@ h1 {
 
 @media screen and (min-width: 768px) {
   /* line 1, src/sass/_spacing.scss */
-  .nav, .hero, .projects, .photos, .lightbox-info, #contact {
+  .nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
     width: 80%;
   }
 }
