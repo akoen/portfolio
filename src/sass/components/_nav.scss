@@ -10,23 +10,22 @@
 
 .nav_list {
     flex: 1 1 0;
-    margin: 0;
-    padding: 0;
     text-align: right;
 }
 
 .nav_list_item {
     display: inline-block;
     position: relative;
-    padding: 0 10px;
+    margin-left: 20px;
     letter-spacing: 0.5px;
     font-size: 1.25rem;
 
     @include min($tablet) {
-	padding: 0 40px;
+	margin-left: 60px;
 	font-size: 2rem;
     }
 
+    // Animation
     &:before,
     &:after {
         content: '';

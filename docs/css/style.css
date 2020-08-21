@@ -173,29 +173,27 @@ h1 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
-  margin: 0;
-  padding: 0;
   text-align: right;
 }
 
-/* line 18, src/sass/components/_nav.scss */
+/* line 16, src/sass/components/_nav.scss */
 .nav_list_item {
   display: inline-block;
   position: relative;
-  padding: 0 10px;
+  margin-left: 20px;
   letter-spacing: 0.5px;
   font-size: 1.25rem;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 18, src/sass/components/_nav.scss */
+  /* line 16, src/sass/components/_nav.scss */
   .nav_list_item {
-    padding: 0 40px;
+    margin-left: 60px;
     font-size: 2rem;
   }
 }
 
-/* line 30, src/sass/components/_nav.scss */
+/* line 29, src/sass/components/_nav.scss */
 .nav_list_item:before, .nav_list_item:after {
   content: '';
   position: absolute;
@@ -206,7 +204,7 @@ h1 {
   background-color: #ff9a9e;
 }
 
-/* line 39, src/sass/components/_nav.scss */
+/* line 38, src/sass/components/_nav.scss */
 .nav_list_item:before {
   opacity: 0;
   -webkit-transform: translateY(-8px);
@@ -217,7 +215,7 @@ h1 {
   transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* line 44, src/sass/components/_nav.scss */
+/* line 43, src/sass/components/_nav.scss */
 .nav_list_item:after {
   opacity: 0;
   -webkit-transform: translateY(8px/2);
@@ -228,14 +226,14 @@ h1 {
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* line 51, src/sass/components/_nav.scss */
+/* line 50, src/sass/components/_nav.scss */
 .nav_list_item:hover:before, .nav_list_item:hover:after, .nav_list_item:focus:before, .nav_list_item:focus:after {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-/* line 56, src/sass/components/_nav.scss */
+/* line 55, src/sass/components/_nav.scss */
 .nav_list_item:hover:before, .nav_list_item:focus:before {
   -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -243,7 +241,7 @@ h1 {
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* line 59, src/sass/components/_nav.scss */
+/* line 58, src/sass/components/_nav.scss */
 .nav_list_item:hover:after, .nav_list_item:focus:after {
   -webkit-transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
