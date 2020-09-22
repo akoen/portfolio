@@ -609,6 +609,11 @@ h1 {
   cursor: pointer;
 }
 
+/* line 135, src/sass/components/_photos.scss */
+.photos a {
+  text-decoration: underline;
+}
+
 /* line 1, src/sass/_spacing.scss */
 .nav, .hero, .projects, .photos, .lightbox-image, .lightbox-info, #contact {
   width: 90%;

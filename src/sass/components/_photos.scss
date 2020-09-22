@@ -131,3 +131,7 @@
     cursor: pointer;
 }
 
+// FIXME Lightbox descriptions are underlined
+.photos a {
+    text-decoration: underline;
+}
