@@ -113,22 +113,10 @@
     cursor: default;
 }
 
-.lightbox-info {
-    @extend %container;
-    display: flex;
-    padding-top: 0.5em;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.lightbox h2 {
-    text-size: 2rem;
-    font-family: $sans;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
 .lightbox-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
     cursor: pointer;
 }
 
