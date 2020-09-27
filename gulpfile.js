@@ -36,7 +36,7 @@ var paths = {
   },
   images: {
     input: 'src/images/**/*.{jpg,png,jpeg}',
-    output: 'docs/images',
+    output: 'src/copy/images',
   },
   copy: {
     input: 'src/copy/**/*',
@@ -276,9 +276,11 @@ var watchSource = function (done) {
 // gulp
 exports.default = series(
   cleanDist,
-  parallel(buildScripts, minimizeImages, lintScripts, buildStyles, buildSVGs, copyFiles),
+  parallel(buildScripts, lintScripts, buildStyles, buildSVGs, copyFiles),
 );
 
 // Watch and reload
 // gulp watch
 exports.watch = series(exports.default, startServer, watchSource);
+
+exports.images = series(minimizeImages);
