@@ -575,8 +575,8 @@ h1 {
 
 /* line 104, src/sass/components/_photos.scss */
 .lightbox-image {
-  height: 75%;
-  margin-top: 12.5%;
+  height: 75vh;
+  margin-top: 12.5vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
