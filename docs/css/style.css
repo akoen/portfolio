@@ -575,14 +575,15 @@ h1 {
 
 /* line 104, src/sass/components/_photos.scss */
 .lightbox-image {
-  height: 50%;
-  margin-top: 24vh;
-  background-size: cover;
+  height: 75%;
+  margin-top: 12.5%;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   cursor: default;
 }
 
-/* line 115, src/sass/components/_photos.scss */
+/* line 116, src/sass/components/_photos.scss */
 .lightbox-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -596,7 +597,7 @@ h1 {
           align-items: center;
 }
 
-/* line 123, src/sass/components/_photos.scss */
+/* line 124, src/sass/components/_photos.scss */
 .lightbox h2 {
   text-size: 2rem;
   font-family: "Work Sans", Helvetica, Arial, sans-serif;
@@ -604,13 +605,13 @@ h1 {
   font-weight: 500;
 }
 
-/* line 130, src/sass/components/_photos.scss */
+/* line 131, src/sass/components/_photos.scss */
 .lightbox-close {
   cursor: pointer;
 }
 
-/* line 134, src/sass/components/_photos.scss */
-.photos a {
+/* line 135, src/sass/components/_photos.scss */
+.photos-text a {
   text-decoration: underline;
 }
 

@@ -103,10 +103,11 @@
 
 .lightbox-image {
     @extend %container;
-    height: 50%;
-    margin-top: 24vh;
+    height: 75%;
+    margin-top: 12.5%;
 
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 
     cursor: default;
@@ -131,7 +132,6 @@
     cursor: pointer;
 }
 
-// FIXME Lightbox descriptions are underlined
-.photos a {
+.photos-text a {
     text-decoration: underline;
 }
