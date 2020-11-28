@@ -1,0 +1,7 @@
+name = "Custom"
+features = []
+min_version = "0.69"
+
+[author]
+  name = "Alex Koen"
+  homepage = "https://alexkoen.com"
