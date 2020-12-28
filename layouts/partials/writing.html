@@ -1,0 +1,13 @@
+<section>
+  <h1>Writing</h1>
+  {{ range where $.Site.RegularPages "Section" "posts"}}
+    {{ $url := replace .Permalink .Site.BaseURL "" }}
+        <li>
+            <aside class="dates">{{ .Date.Format "Jan 2" }}</aside>
+            <a href='{{ .Permalink }}'>
+                {{ .Title }}
+                <h2>{{ .Description | plainify }}</h2>
+            </a>
+        </li>
+  {{ end }}
+</section>
