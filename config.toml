@@ -1,3 +1,8 @@
 baseURL = "https://alexkoen.com/"
 languageCode = "en-ca"
 title = "Alex Koen"
+
+[params]
+	author = "Alex Koen"
+	hook = "Hi, I'm Alex Koen. I'm an engineering student at the University of British Columbia."
+	description = "In my spare time I love to play the piano, climb mountains, and document my experiences."

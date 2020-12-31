@@ -1,0 +1,57 @@
+// FONT
+
+html {
+    // 1rem = 10px
+    font-size: 100%;
+    scroll-behavior: smooth;
+
+    @include min($tablet) {
+        font-size: 112.5%;
+    }
+
+}
+
+body {
+    font-family: $sans;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: $black;
+    -webkit-font-smoothing: antialiased;
+    transition: 0.3s all;
+    background-color: $bg;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    margin-top: $margin-section-small;
+
+    @include min($tablet){
+        margin-top: $margin-section-large;
+    }
+}
+
+h1 {
+    font-size: $h1;
+}
+
+h2 {
+    font-size: $h2;
+}
+
+h3 {
+    font-size: $h3;
+}
+
+p {
+    font-size: $p;
+}
+
+// p, h1, h2, h3, h4 {
+//     margin: 0;
+// }

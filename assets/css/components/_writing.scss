@@ -1,0 +1,23 @@
+.writing {
+    &__posts {
+        padding: 0;
+        &__item {
+            list-style-type: none;
+
+            &__title {
+                display: block;
+                font-weight: 600;
+            }
+
+            &__date {
+                float: right;
+                position: relative;
+                color: #666;
+            }
+
+            &__summary {
+                color: #666;
+            }
+        }
+    }
+}

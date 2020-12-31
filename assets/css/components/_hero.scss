@@ -1,0 +1,19 @@
+.hero {
+    @include min($tablet) {
+        max-width: 450px;
+        margin-top: 42vh;
+    }
+
+    &__title {
+        font-family: $sans;
+        //line-height: 1.8em;
+        font-weight: 600;
+        color: $black;
+    }
+
+    &__subtitle {
+        margin-top: 1em;
+        font-family: $sans;
+        font-weight: 400;
+    }
+}

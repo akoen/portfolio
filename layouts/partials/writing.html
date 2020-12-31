@@ -1,13 +1,13 @@
-<section>
-  <h1>Writing</h1>
-  {{ range where $.Site.RegularPages "Section" "posts"}}
-    {{ $url := replace .Permalink .Site.BaseURL "" }}
-        <li>
-            <aside class="dates">{{ .Date.Format "Jan 2" }}</aside>
-            <a href='{{ .Permalink }}'>
-                {{ .Title }}
-                <h2>{{ .Description | plainify }}</h2>
-            </a>
-        </li>
-  {{ end }}
+<section class="writing">
+    <h2 class="section-header full-width-underline">Writing</h2>
+    <ul class="writing__posts">
+        {{ range first 8 (where $.Site.RegularPages "Section" "posts") }}
+            {{ $url := replace .Permalink .Site.BaseURL "" }}
+                <li class="writing__posts__item">
+                    <aside class="writing__posts__item__date">{{ .Date.Format "Jan 2" }}</aside>
+                    <a class="writing__posts__item__title" href='{{ .Permalink }}'> {{ .Title }} </a>
+                    <p class="writing__posts__item__summary">{{ .Summary | plainify}}</p>
+                </li>
+        {{ end }}
+    </ul>
 </section>
