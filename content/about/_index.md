@@ -8,4 +8,4 @@ Hi, I'm Alex. I'm a nineteen-year-old engineering student at the University of B
 
 I would love to hear your thoughts about my writing---or about anything else. There is nothing more special to me than meeting new people.
 
-Feel free to send me an [email](mailto:alex@koen.ca).
+Feel free to send me an [email](mailto:hi@jx7gq.com).

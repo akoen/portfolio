@@ -4,5 +4,12 @@ title = "Alex Koen"
 
 [params]
 	author = "Alex Koen"
-	hook = "Hi, I'm Alex Koen. I'm an engineering student at the University of British Columbia."
+	hook = "Hi, I'm Alex. I'm an engineering student at the University of British Columbia."
 	description = "In my spare time I love to play the piano, climb mountains, and document my experiences."
+
+[imaging.exif]
+  includeFields = ".*"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

@@ -7,17 +7,21 @@
             &__title {
                 display: block;
                 font-weight: 600;
+                margin-bottom: 0rem;
             }
 
             &__date {
                 float: right;
                 position: relative;
-                color: #666;
+                color: $faint;
+                font-size: $p;
             }
 
             &__summary {
-                color: #666;
+                margin-top: 0;
+                color: $faint;
             }
         }
     }
+
 }

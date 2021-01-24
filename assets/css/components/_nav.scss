@@ -1,0 +1,49 @@
+.nav {
+
+    font-size: $p;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 0;
+    }
+
+    &__list {
+        // justify-content: space-between;
+        align-items: baseline;
+
+        &__center {
+
+        }
+    }
+
+    &__name {
+        margin-right: auto;
+        color: #454cab;
+        font-weight: 700;
+        font-family: $serif;
+        font-size: $h3;
+    }
+
+    &__links {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        display: none;
+
+        @include min($tablet) {
+            display: inline-block;
+        }
+
+    }
+
+    &__contact {
+        margin-left: auto;
+        // display: none;
+
+        // @include min($tablet) {
+        //     display: inline-block;
+        // }
+    }
+
+}

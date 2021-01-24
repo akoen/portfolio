@@ -1,24 +1,33 @@
-<section class="photos">
+<section id="photos" class="photos">
   <!-- Chocolat plugin -->
   <h2 class="section-header full-width-underline">Photos</h2>
-  <!-- <div class="photos__grid"> -->
 
   <div class="chocolat-parent photos__grid">
-    {{ $url := .Title | printf "images/favourites/%s" }}
-    {{ $folder := .Title | printf "/static/images/favourites/%s" }}
-    {{ $files := readDir $folder }}
-    {{ range first 16 $files }}
-    <a class="chocolat-image photos__grid__item" href="{{ $url }}{{ .Name}}" title="Hello">
-      <img  class="photos__grid__item__img" src="{{ $url }}/{{ .Name}}"/>
+    {{ range $img := first 16 (sort (resources.Match "favourites/*.jpg") "Name" "desc") }}
+    {{ $thumb := $img.Resize "x400 q50"}}
+    {{ $orientation := $thumb.Exif.Tags.Orientation}}
+    <!-- Fix rotated photos. May not work %100 of the time. -->
+    {{ if eq $orientation 6 }}
+      {{ $thumb = $thumb.Resize "x400 r270" }}
+    {{ end }}
+    <!-- TODO Caption does not work -->
+    <a class="chocolat-image photos__grid__item" href="{{ .Permalink }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
+      <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy"/>
     </a>
     {{ end }}
   </div>
 
-  <script src="js/chocolat.js"></script>
+  <script src="/js/chocolat.js"></script>
   <script>
    document.addEventListener("DOMContentLoaded", function(event) {
     Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'))
 })
   </script>
+
+  <span class="more">
+    <a href="/gallery">
+      See more →
+    </a>
+  </span>
 
 </section>

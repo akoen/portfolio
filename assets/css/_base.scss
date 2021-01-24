@@ -6,7 +6,7 @@ html {
     scroll-behavior: smooth;
 
     @include min($tablet) {
-        font-size: 112.5%;
+        font-size: 112.5%;;
     }
 
 }
@@ -16,7 +16,7 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.8;
-    color: $black;
+    color: $fg;
     -webkit-font-smoothing: antialiased;
     transition: 0.3s all;
     background-color: $bg;
@@ -30,6 +30,7 @@ a {
 
 section {
     margin-top: $margin-section-small;
+    width: 100%;
 
     @include min($tablet){
         margin-top: $margin-section-large;
@@ -37,7 +38,7 @@ section {
 }
 
 h1 {
-    font-size: $h1;
+    font-size: $txl;
 }
 
 h2 {
@@ -50,6 +51,12 @@ h3 {
 
 p {
     font-size: $p;
+}
+
+.more {
+    float: right;
+    font-size: $p;
+    color: $primary-light;
 }
 
 // p, h1, h2, h3, h4 {

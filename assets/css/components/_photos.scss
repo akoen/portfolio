@@ -1,15 +1,17 @@
 .photos {
-    overflow: auto;
+    overflow: hidden;
     &__grid {
         display: flex;
         flex-flow: row wrap;
         overflow: hidden;
+        margin-right: -5px;
+        margin-bottom: 0.4em;
 
         &__item {
             flex-grow: 1;
             height: 14rem;
-            width: auto;
-            background-color: red;
+            flex-basis: auto; // Gives good-looking "random" layout
+            // flex-basis: 20rem; // Square layout
             margin: 0 5px 5px 0;
 
             &__img {
@@ -18,5 +20,12 @@
                 object-fit: cover;
             }
         }
+    }
+
+    &__more {
+        float: right;
+        font-weight: 400;
+        font-size: $h3;
+        text-decoration: underline;
     }
 }

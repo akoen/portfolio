@@ -5,11 +5,10 @@ tags = ["Writing"]
 +++
 
 > Memory is not so much a camera as a filter---the particulates it holds on to are nothing compared to what leaks through.
- 
--- John Green
+> 
+> -- John Green
 
 <!--more-->
---- 
 
 Our experiences are ephemeral. Like a sandcastle on a windy day, our memories will slowly but inevitably erode and distort over time, leaving behind only a vague impression of all that we once remembered.
 
@@ -23,8 +22,8 @@ The solution is simple: if you want to remember *anything*, write it down. You a
 
 Nevertheless, what we record in the present is all that we will remember in the future. Photos and videos capture experiences yet they are not personal. Words are the only medium that allow us to store memories from our own perspective.
 
-Two years ago I started a journal. Almost every day, I write a note detailing how I feel and what made the day special. Here is an example from an entry I wrote in April after finishing the [Stanford Cleantech Challenge](/writing/posts/stanford-cleantech/):
-![](/writing/img/journal.png)
+Two years ago I started a journal. Almost every day, I write a note detailing how I feel and what made the day special. Here is an example from an entry I wrote in April after finishing the [Stanford Cleantech Challenge](/posts/stanford-cleantech/):
+![](/img/journal.png)
 
 It's short and it's simple but it allows me to remember that day with a clarity that would otherwise be impossible. Writing these notes is easy and fun, and going through old entries never fails to bring me joy.
 

@@ -1,53 +1,21 @@
 <header>
-    {{/*  CSS functionality for menu toggle  */}}
-    <style type="text/css">
-        input#nav-toggle:checked~label#show-button {
-            display: none;
-        }
-
-        input#nav-toggle:checked~label#hide-button {
-            display: flex;
-        }
-
-        input#nav-toggle:checked~#nav-menu {
-            display: block;
-        }
-    </style>
-
-    <nav>
-        <a href="{{ .Site.Home.Permalink }}">
-            {{ .Site.Title }}
-        </a>
-
-        <input id="nav-toggle" type=checkbox>
-        <label id="show-button" for="nav-toggle" >
-            <svg>
-                <title>Menu Open</title>
-                <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
-            </svg>
-        </label>
-        <label id="hide-button" for="nav-toggle">
-            <svg>
-                <title>Menu Close</title>
-                <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                    transform="rotate(45 10 10)" />
-            </svg>
-        </label>
-
-        <ul id="nav-menu">
-          <li>
-            <a href="files/resume.pdf">Resume</a>
-          </li>
-            {{ with .Site.GetPage "/about" }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-            {{ range .Site.Sections }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-        </ul>
-    </nav>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__name">
+        <a href="{{ .Site.Home.Permalink }}"> {{ .Site.Title }} </a>
+      </li>
+      <li class="nav__links">
+        <a href="/#projects">Projects</a>
+      </li>
+      <li class="nav__links">
+        <a href="/#writing">Writing</a>
+      </li>
+      <li class="nav__links">
+        <a href="/#photos">Photos</a>
+      </li>
+      <li class="nav__contact">
+        <a href="contact"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </nav>
 </header>

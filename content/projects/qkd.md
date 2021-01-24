@@ -1,5 +1,7 @@
 +++
-title = "Reflect"
-description = "A neural-network based algorithm that provides social-media users with feedback on the civility of their comments."
-date = "2020-09-19"
+title = "Quantum Key Distribution"
+description = "Informal research paper on the applications of quantum mechanics to cryptosystems."
+date = "2019-06-05"
+img = "qkd.jpg"
+permalink = "/files/qkd.pdf"
 +++

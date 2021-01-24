@@ -7,6 +7,7 @@ $xlarge: 1400px;
 $xxlarge: 1600px;
 
 $site-width:  960px;
+$article-width:  700px;
 
 $site-gutter-small: 5%;
 $site-gutter-large: 10%;
@@ -20,7 +21,7 @@ $sans: "Work Sans", Helvetica, Arial, sans-serif;
 // NOTE: Loading the font as "Source Serif Pro" does not work
 $serif: "Source Serif", serif;
 
-$h1: 3.375rem;
+$txl: 3.375rem;
 $h2: 2.25rem;
 $h3: 1.5rem;
 $p: 1rem;
@@ -32,13 +33,18 @@ $black: #2d2d2d;
 $sub-black: #5d5d5d;
 //$primary-light: #2FE0C5;
 $primary-light: #388E8E;
-$red: #DABECA;
+$red: #e31b23;
+$orange: #fabea1;
 $primary-dark: #29C6B2;
 $primary-text: #3cdab4;
 $logo-light-green: #71f1d6;
 $logo-dark-green: #60d5b9;
 $white: #fff;
 $grey: #fbfbfb;
-$dark-grey: #666;
+$dark-grey: #999;
 $grey-border: #dadada;
+
+
 $bg: $grey;
+$fg: $black;
+$faint: $dark-grey;

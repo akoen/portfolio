@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="photos">
+
+  <div class="chocolat-parent photos__grid">
+    {{ range $img := sort (resources.Match "favourites/*") "Name" "desc" }}
+    {{ $thumb := $img.Resize "x400 q50"}}
+    {{ $orientation := $thumb.Exif.Tags.Orientation}}
+    <!-- TODO Fix orientation -->
+    {{ if eq $orientation 6}}
+    {{ $thumb = $thumb.Resize "x400 r270"}}
+    {{ end }}
+    <a class="chocolat-image photos__grid__item" href="{{ .Permalink }}" alt="{{ $img.Exif.Date }}" title="{{ $img.Exif.Date }}">
+      <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy"/>
+    </a>
+    {{ end }}
+  </div>
+
+  <script src="/js/chocolat.js"></script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function(event) {
+    Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'))
+})
+  </script>
+
+</section>
+{{ end }}

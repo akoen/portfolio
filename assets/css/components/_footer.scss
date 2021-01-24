@@ -1,0 +1,27 @@
+.footer {
+    text-align: center;
+    color: $faint;
+
+    margin-top: 2rem;
+
+
+    &__social {
+        &__icon {
+            font-size: $h3;
+            &:hover {
+                color: $primary-light;
+            }
+        }
+    }
+
+    &__copyright {
+        font-size: $sm;
+        margin-top: 0;
+    }
+}
+
+.fa-heart:hover {
+    color: red;
+    transition: 0.2s ease color;
+    cursor: pointer;
+}
