@@ -3,26 +3,28 @@
   <h2 class="section-header full-width-underline">Photos</h2>
 
   <div class="chocolat-parent photos__grid">
+
     {{ range $img := first 16 (sort (resources.Match "favourites/*.jpg") "Name" "desc") }}
+    {{ $img = $img.Resize "x1024 q75"}}
     {{ $thumb := $img.Resize "x400 q50"}}
     {{ $orientation := $thumb.Exif.Tags.Orientation}}
     <!-- Fix rotated photos. May not work %100 of the time. -->
     {{ if eq $orientation 6 }}
-      {{ $thumb = $thumb.Resize "x400 r270" }}
+    {{ $thumb = $thumb.Resize "x400 r270" }}
     {{ end }}
     <!-- TODO Caption does not work -->
     <a class="chocolat-image photos__grid__item" href="{{ .Permalink }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
       <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy"/>
     </a>
     {{ end }}
-  </div>
 
-  <script src="/js/chocolat.js"></script>
-  <script>
-   document.addEventListener("DOMContentLoaded", function(event) {
-    Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'))
-})
-  </script>
+    <script src="/js/chocolat.js"></script>
+    <script>
+     document.addEventListener("DOMContentLoaded", function(event) {
+       Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'))
+     })
+    </script>
+  </div>
 
   <span class="more">
     <a href="/gallery">
