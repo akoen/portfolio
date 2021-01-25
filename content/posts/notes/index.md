@@ -31,17 +31,17 @@ Consequently, a different system of note-taking---a system known as Zettelkasten
 1. **Notes are stored in a flat hierarchy.** There are no folders, notebooks, or other manual organization. 
 2. **These notes are connected using links.** Keywords in text are linked to other notes, creating a connection between their respective ideas. In my system, links are denoted with the § symbol. Shown below is a screenshot of my writing on the concept of first principles:
 
-![](/img/notes-fp.png)
+![](notes-fp.png)
 
 3. **These links are bi-directional.** Not only can I click on links to other notes, but the software also maintains a list of all the *other* notes that link to this one. These are called backlinks, and they create an interconnected web of ideas that is infinitely traversable.
 
-![](/writing/img/notes-fp2.png)
+![](notes-fp2.png)
 
 As a result, notes can have multiple contexts. For example, *personal discipline* is linked to not only from *goal-setting*, but also from *why little is done about climate change*. While these topics initially seem unrelated, this system promotes inter-disciplinary creativity by design, and that it why it is so powerful.
 
 For the past six months, I have been building my own private Zettelkasten where I store, create links between, and build upon ideas I come across in my everyday life. The entire repository of notes can be visualized as shown below. This visualization allows me to traverse the system and find previously-unseen connections between ideas. This ability is transformative, and makes creativity a repeatable workflow.
 
-![](/writing/img/notes-graph.png)
+![](notes-graph.png)
 
 
 # Why I'm publishing my notes
