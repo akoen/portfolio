@@ -17,5 +17,4 @@
 {{ $styles := resources.Get "css/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}">
 
-<link rel="stylesheet" href="/css/chocolat.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" media="screen" />

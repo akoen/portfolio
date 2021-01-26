@@ -6,6 +6,8 @@ title = "Alex Koen"
 	author = "Alex Koen"
 	hook = "Hi, I'm Alex. I'm an engineering student at the University of British Columbia."
 	description = "In my spare time I love to play the piano, climb mountains, and document my experiences."
+  landscapePhotoWidths = [2500, 1500, 1000]
+  portraitPhotoWidths = [1500, 1000, 750]
 
 [imaging.exif]
   includeFields = ".*"
@@ -13,3 +15,6 @@ title = "Alex Koen"
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
+
+[_build]
+  publishResources = false

@@ -1,27 +1,44 @@
 {{ define "main" }}
-<section class="photos">
+<section id="photos" class="photos">
 
   <div class="chocolat-parent photos__grid">
-    {{ range $img := sort (resources.Match "favourites/*") "Name" "desc" }}
-    {{ $img = $img.Resize "x800 q50"}}
+
+    {{ range $img := sort (resources.Match "favourites/*.jpg") "Name" "desc" }}
+    {{ $img = $img.Resize "x1024 q75"}}
+    {{ $id := md5 .Name}}
     {{ $thumb := $img.Resize "x400 q50"}}
-    {{ $orientation := $thumb.Exif.Tags.Orientation}}
-    <!-- TODO Fix orientation -->
-    {{ if eq $orientation 6}}
-    {{ $thumb = $thumb.Resize "x400 r270"}}
+    {{ $widths := $.Site.Params.landscapePhotoWidths }}
+    {{ $orientation := $img.Exif.Tags.Orientation}}
+    <!-- Fix rotated photos. May not work %100 of the time. -->
+    {{ if eq $orientation 6 }}
+    {{ $thumb = $thumb.Resize "x400 r270" }}
+    {{ $img = $img.Resize (printf "%dx r270" $img.Width) }}
+    {{ $widths := $.Site.Params.portraitPhotoWidths }}
     {{ end }}
-    <a class="chocolat-image photos__grid__item" href="{{ .Permalink }}" alt="{{ $img.Exif.Date }}" title="{{ $img.Exif.Date }}">
-      <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy"/>
-    </a>
+
+    {{ $imgSrc := "" }}
+    {{ $imgSrcSet := slice }}
+    {{ range $widths }}
+    {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
+    {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
+    {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
     {{ end }}
+    {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
+
+    <!-- TODO Caption does not work -->
+    <figure itemscope class="photos__grid__item">
+      <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
+        <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+      </a>
+    </figure>
+
+    <a href="#photos" id="{{ $id }}" class="photos__grid__lightbox">
+        <img class="photos__grid__lightbox__img" src={{ $imgSrc }} srcset="{{ $imgSrcSet }}" loading="lazy"/>
+      </a>
+    {{ end }}
+
+    <script>
+    </script>
   </div>
-
-  <script src="/js/chocolat.js"></script>
-  <script>
-   document.addEventListener("DOMContentLoaded", function(event) {
-    Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'))
-})
-  </script>
-
 </section>
 {{ end }}
