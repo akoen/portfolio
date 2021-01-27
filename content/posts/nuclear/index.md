@@ -2,6 +2,7 @@
 title = "Nuclear Energy and the Precautionary Principle"
 date = "2020-09-19"
 tags = ["Clean Energy", "Science"]
+draft = true
 +++
 
 Our world is dying; we need a climate revolution. But every year, we're using less-and-less low-carbon energy. From 1995 to now, the percentage of the world's energy produced by low-carbon means has dropped from 37% to 33%. That isn't drastic, but it isn't sustainable either---if we don't change we're going to kill the planet.
