@@ -14,6 +14,8 @@
 {{ end -}}
 {{ hugo.Generator }}
 
+<script src="/js/loading-attribute-polyfill.min.js"></script>
+
 {{ $styles := resources.Get "css/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}">
 

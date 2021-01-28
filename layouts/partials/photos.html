@@ -28,17 +28,18 @@
     <!-- TODO Caption does not work -->
     <figure itemscope class="photos__grid__item">
       <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
-        <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+        <noscript class="loading-lazy">
+          <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy" itemprop="thumbnail"/>
+        </noscript>
       </a>
     </figure>
 
     <a href="javascript:history.back()" id="{{ $id }}" class="photos__grid__lightbox">
-        <img class="photos__grid__lightbox__img" src={{ $imgSrc }} srcset="{{ $imgSrcSet }}" loading="lazy"/>
-      </a>
+        <noscript class="loading-lazy">
+          <img class="photos__grid__lightbox__img" src={{ $imgSrc }} srcset="{{ $imgSrcSet }}" loading="lazy"/>
+        </noscript>
+    </a>
     {{ end }}
-
-    <script>
-    </script>
   </div>
 
   <span class="more">
