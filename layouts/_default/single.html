@@ -1,10 +1,10 @@
 {{ define "main" }}
 <article class="article">
-  <p class="article__subtitle">
-    {{ .Date.Format "Jan 2, 2006"}}
-    · {{ .WordCount }} words
-    · {{ .ReadingTime }} minute read
-  </p>
+  <!-- <p class="article__subtitle">
+       {{ .Date.Format "Jan 2, 2006"}}
+       · {{ .WordCount }} words
+       · {{ .ReadingTime }} minute read
+       </p> -->
   <h1 class="article__title">{{ .Title }}</h1>
   <div class="article__content">
     {{ .TableOfContents }}

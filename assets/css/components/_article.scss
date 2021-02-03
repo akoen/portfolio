@@ -1,34 +1,44 @@
 .article {
     font-family: $serif;
     max-width: $article-width;
-    line-height: 1.6;
+    line-height: 1.5;
+    font-weight: 100;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6rem;
+    margin-top: 20vh;
 
     &__title {
-        //text-align: center;
+        text-align: center;
+        font-size: 2.5rem;
         font-weight: 400;
         line-height: 1.2;
         margin-top: 0;
+        margin-bottom: 4rem;
     }
 
-    &__subtitle {
-        margin-bottom: 0.6rem;
-        margin-top: 10vh;
-        //text-align: center;
-    }
+    // &__subtitle {
+    //     margin-bottom: 0.6rem;
+    //     margin-top: 10vh;
+    //     font-size: 1rem;
+    //     color: $faint;
+    //     //text-align: center;
+    // }
     &__content {
         font-size: $p;
+        font-weight: 400;
+
+        p {
+            margin-top: 1rem;
+        }
 
         h1 {
-            font-size: $h2;
-            font-weight: 400;
+            font-size: 1.5rem;
+            margin-top: 2rem;
         }
 
         h2 {
-            font-size: $h3;
-            font-weight: 400;
+            font-size: 1.25rem;
+            margin-top: 1rem;
         }
     }
 

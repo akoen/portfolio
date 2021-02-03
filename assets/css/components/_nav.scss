@@ -2,6 +2,7 @@
 
     font-size: $p;
 
+
     ul {
         list-style-type: none;
         display: flex;
@@ -20,7 +21,6 @@
 
     &__name {
         margin-right: auto;
-        color: #454cab;
         font-weight: 700;
         font-family: $serif;
         font-size: $h3;
