@@ -1,23 +1,26 @@
 .hero {
-
     @include min($tablet) {
         // max-width: 450px;
         // margin-top: 42vh;
     }
 
-    &__img {
+        max-width: 400px;
+        margin: 12rem auto 6rem auto;
 
+    &__img {
+        clip-path: circle(50% at center);
         width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
         display: block;
+        margin-bottom: 2rem;
     }
 
     &__title {
-        line-height: 1.5em;
-        font-size: 1.25rem;
-        // font-weight: 600;
-        font-weight: 400;
+        // margin-top: 3rem;
+        text-align: center;
+        line-height: 1.5;
+        font-size: 1rem;
+        // font-family: $serif;
+        // font-weight: 400;
         color: $black;
     }
 }
