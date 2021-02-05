@@ -1,17 +1,17 @@
 {{ define "main" }}
-<article class="article">
-  <!-- <p class="article__subtitle">
-       {{ .Date.Format "Jan 2, 2006"}}
-       · {{ .WordCount }} words
-       · {{ .ReadingTime }} minute read
-       </p> -->
-  <h1 class="article__title">{{ .Title }}</h1>
-  <div class="article__content">
-    {{ .TableOfContents }}
-    {{ .Content }}
+  <article class="article">
+    <!-- <p class="article__subtitle">
+         {{ .Date.Format "Jan 2, 2006"}}
+         · {{ .WordCount }} words
+         · {{ .ReadingTime }} minute read
+         </p> -->
+    <h1 class="article__title">{{ .Title }}</h1>
+    <div class="article__content">
+      {{ .TableOfContents }}
+      {{ .Content }}
 
-    <hr/>
-    <p><i>I would love to hear what you thought of this post. Loved it? Hated it? Want to share your hand-written poem with me via carrier pigeon? That might be challenging—try sending me an <a href="mailto:hi@jx7gq.com">email</a>.</i></p>
-  </div>
-</article>
+      <hr/>
+      <p><i>I would love to hear what you thought of this post. Loved it? Hated it? Want to share your hand-written poem with me via carrier pigeon? That might be challenging—try sending me an <a href="mailto:hi@jx7gq.com">email</a>.</i></p>
+    </div>
+  </article>
 {{ end }}
