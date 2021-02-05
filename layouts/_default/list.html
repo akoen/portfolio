@@ -3,9 +3,9 @@
   <section id="writing" class="writing">
 
     <!-- TODO Split into multiple pages -->
-    <h2 class="section-header full-width-underline">Writing</h2>
+    <h2 class="section-header full-width-underline">{{.Title}}</h2>
     <ul class="writing__posts">
-      {{ range where site.RegularPages "Section" "posts" }}
+      {{ range .Pages }}
         {{ $url := replace .Permalink .Site.BaseURL "" }}
         <li class="writing__posts__item">
           <aside class="writing__posts__item__date">{{ .Date.Format "Jan 2" }}</aside>

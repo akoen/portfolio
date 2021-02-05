@@ -6,6 +6,7 @@ title = "Alex Koen"
 	author = "Alex Koen"
   landscapePhotoWidths = [2500, 1500, 1000]
   portraitPhotoWidths = [1500, 1000, 750]
+  pluralizeListTitles = false
 
 [imaging.exif]
   includeFields = ".*"
