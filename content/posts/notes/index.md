@@ -46,4 +46,4 @@ For the past six months, I have been building my own private Zettelkasten where 
 
 # Why I'm publishing my notes
 
-My Zettelkasten is now publicly-available at <https://notes.alexkoen.com/>. Like with my writing, I wanted to [show my work](/writing/posts/show-your-work) and pressure myself to refine my ideas in the same way that I dress better when I leave the house. I am [not](https://notes.andymatuschak.org/About_these_notes) [alone](https://braindump.jethro.dev/), and I hope that my ideas may be of value to you.
+My Zettelkasten is now publicly-available at <https://notes.alexkoen.com/>. Like with my writing, I wanted to [show my work](/posts/show-your-work) and pressure myself to refine my ideas in the same way that I dress better when I leave the house. I am [not](https://notes.andymatuschak.org/About_these_notes) [alone](https://braindump.jethro.dev/), and I hope that my ideas may be of value to you.
