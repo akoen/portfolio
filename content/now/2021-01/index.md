@@ -3,7 +3,7 @@ date = "2021-01-13"
 title = "January 2021"
 +++
 
-# What I'm doing right now
+> This is a [now page](https://sive.rs/now). I post one every month, and you should too. It's the best way to connect with people you don't talk to often.
 
 Just last week I started my first ever real job working for an engineering company (https://kardium.com/) that makes devices for heart surgery. I really like it so far as I get to analyze a lot of data, do math with it, and work in a lab—the kind of stuff I enjoy.
 

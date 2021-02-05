@@ -11,7 +11,6 @@
             flex-grow: 1;
             height: 14rem;
             flex-basis: auto; // Gives good-looking "random" layout
-            // flex-basis: 20rem; // Square layout
             margin: 0 5px 5px 0;
 
             &__img {
@@ -29,7 +28,7 @@
             top: 0;
             left: 0;
 
-            background-color: #ffffffee;
+            background-color: rgba(white, 0.94);
             cursor: url(/images/icons/x-cursor.png), pointer;
 
             &:target {
@@ -49,12 +48,5 @@
                 display: block;
             }
         }
-    }
-
-    &__more {
-        float: right;
-        font-weight: 400;
-        font-size: $h3;
-        text-decoration: underline;
     }
 }
