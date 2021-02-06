@@ -9,12 +9,12 @@ School has been extremely challenging, especially because of the apocalypse, and
 
 My dad finished building me a beautiful desk, which I've absolutely loved working on.
 
-![](desk.jpeg)
+{{<figure src="desk.jpeg">}}
 
 Otherwise, I've been working mostly on coursework and side projects (trying to write my own neural network), but always make time on Saturdays to get outside.
 
-![](hollyburn.jpeg)
-![](hollyburn-2.jpeg)
+{{<figure src="hollyburn.jpeg">}}
+{{<figure src="hollyburn-2.jpeg">}}
 
 
 Cheerio.

@@ -9,7 +9,7 @@ Will be starting Engineering Physics at UBC next week. Trying to climb as much a
 
 
 A few weeks ago I went paragliding with a friend and immediately got hooked:
-![](paragliding.png)
+{{<figure src="paragliding.png">}}
 
 We're already planning to go back and learn to do it ourselves.
 

@@ -13,7 +13,7 @@ Our world is dying; we need a climate revolution. But every year, we're using le
 
 The obvious solution is investment in renewable energy. Not only is this good for the planet, it makes financial sense. The diagram below shows the levelized cost of energy, or LCOE, for common renewable and conventional energy sources. This metric describes the cost for which a power plant must sell electricity in order to make a profit over the lifetime of the project.
 
-![](nuclear-cost.png)
+{{<figure src="nuclear-cost.png">}}
 
 In general, solar and wind are the cheapest means of energy production, even compared to fossil fuels. Yet solar and wind are intermittent---they don't produce power when the sun isn't out or when the wind isn't blowing. What's more, there are few effective ways of storing the excess energy they create. Batteries are still too expensive and pumped-storage hydropower (pumping water uphill to later run it through a turbine) only works in mountainous regions.
 

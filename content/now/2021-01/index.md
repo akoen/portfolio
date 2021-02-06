@@ -9,7 +9,7 @@ Just last week I started my first ever real job working for an engineering compa
 
 Otherwise, I've been skiing on weekends and getting outside when I can like usual.
 
-![](skiing.jpeg)
+{{<figure src="skiing.jpeg">}}
 
 {{< video src="cypress" width="400px" >}}
 
