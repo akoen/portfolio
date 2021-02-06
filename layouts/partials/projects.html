@@ -1,19 +1,19 @@
 <section id="projects" class="projects">
   <h2 class="section-header full-width-underline">Projects</h2>
   <div class="projects__carousel">
-    {{ range where $.Site.RegularPages "Section" "projects"}}
-        {{ $url := replace .Permalink .Site.BaseURL "" }}
-        <a class="projects__carousel__link" href="{{ .Params.permalink }}">
-            <img class="projects__carousel__link__image" src="images/projects/{{ .Params.img }}"/>
-            <div class="projects__carousel__link__content">
-                <h3 class="projects__carousel__link__content__title">{{ .Title }}</h3>
-                <p class="projects__carousel__link__content__description">{{ .Description | plainify }}</p>
+    {{ range where site.RegularPages "Section" "projects"}}
+      {{ $url := replace .Permalink .Site.BaseURL "" }}
+      <a class="projects__carousel__link" href="{{ .Params.permalink }}">
+        <img class="projects__carousel__link__image" src="images/projects/{{ .Params.img }}"/>
+        <div class="projects__carousel__link__content">
+          <h3 class="projects__carousel__link__content__title">{{ .Title }}</h3>
+          <p class="projects__carousel__link__content__description">{{ .Description | plainify }}</p>
 
-                  <p class="more projects__carousel__link__content__more">
-                    Read More
-                  </p>
-            </div>
-        </a>
+          <p class="more projects__carousel__link__content__more">
+            Read More
+          </p>
+        </div>
+      </a>
     {{ end }}
   </div>
 </section>

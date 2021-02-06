@@ -1,10 +1,9 @@
 .hero {
-    @include min($tablet) {
-        // max-width: 450px;
-        // margin-top: 42vh;
-    }
+    margin: 6rem auto;
 
-        margin: 12rem auto 6rem auto;
+    @include min($tablet) {
+        margin-top: 12rem;
+    }
 
     &__img {
         clip-path: circle(50% at center);
@@ -19,9 +18,9 @@
     &__title {
         text-align: center;
         max-width: 400px;
-        line-height: 1.5;
+        line-height: 1.6;
         margin: 0 auto;
-        font-size: 1.25rem;
+        font-weight: 400;
         color: $black;
     }
 }

@@ -4,41 +4,41 @@
   <div class="chocolat-parent photos__grid">
 
     {{ range $img := first 16 (sort (resources.Match "favourites/*.jpg") "Name" "desc") }}
-    {{ $img = $img.Resize "x1024 q75"}}
-    {{ $id := md5 .Name}}
-    {{ $thumb := $img.Resize "x400 q50"}}
-    {{ $widths := $.Site.Params.landscapePhotoWidths }}
-    {{ $orientation := $img.Exif.Tags.Orientation}}
-    <!-- Fix rotated photos. May not work %100 of the time. -->
-    {{ if eq $orientation 6 }}
-    {{ $thumb = $thumb.Resize "x400 r270" }}
-    {{ $img = $img.Resize (printf "%dx r270" $img.Width) }}
-    {{ $widths := $.Site.Params.portraitPhotoWidths }}
-    {{ end }}
+      {{ $img = $img.Resize "x1024 q75"}}
+      {{ $id := md5 .Name}}
+      {{ $thumb := $img.Resize "x400 q50"}}
+      {{ $widths := $.Site.Params.landscapePhotoWidths }}
+      {{ $orientation := $img.Exif.Tags.Orientation}}
+      <!-- Fix rotated photos. May not work %100 of the time. -->
+      {{ if eq $orientation 6 }}
+        {{ $thumb = $thumb.Resize "x400 r270" }}
+        {{ $img = $img.Resize (printf "%dx r270" $img.Width) }}
+        {{ $widths := $.Site.Params.portraitPhotoWidths }}
+      {{ end }}
 
-    {{ $imgSrc := "" }}
-    {{ $imgSrcSet := slice }}
-    {{ range $widths }}
-    {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
-    {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
-    {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
-    {{ end }}
-    {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
+      {{ $imgSrc := "" }}
+      {{ $imgSrcSet := slice }}
+      {{ range $widths }}
+        {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
+        {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
+        {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
+      {{ end }}
+      {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
 
-    <!-- TODO Caption does not work -->
-    <figure itemscope class="photos__grid__item">
-      <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
-        <noscript class="loading-lazy">
-          <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy" itemprop="thumbnail"/>
-        </noscript>
-      </a>
-    </figure>
+      <!-- TODO Caption does not work -->
+      <figure itemscope class="photos__grid__item">
+        <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
+          <noscript class="loading-lazy">
+            <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy" itemprop="thumbnail"/>
+          </noscript>
+        </a>
+      </figure>
 
-    <a href="javascript:history.back()" id="{{ $id }}" class="photos__grid__lightbox">
+      <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
         <noscript class="loading-lazy">
           <img class="photos__grid__lightbox__img" src={{ $imgSrc }} srcset="{{ $imgSrcSet }}" loading="lazy"/>
         </noscript>
-    </a>
+      </a>
     {{ end }}
   </div>
 
@@ -47,5 +47,4 @@
       See more →
     </a>
   </span>
-
 </section>

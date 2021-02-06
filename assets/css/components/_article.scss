@@ -1,7 +1,7 @@
 .article {
     font-family: $serif;
     max-width: $article-width;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: 100;
     margin-left: auto;
     margin-right: auto;
@@ -9,7 +9,6 @@
 
     &__title {
         text-align: center;
-        font-size: 2.5rem;
         font-weight: 400;
         line-height: 1.2;
         margin-top: 0;
@@ -32,12 +31,12 @@
         }
 
         h1 {
-            font-size: 1.5rem;
+            font-size: $h2;
             margin-top: 2rem;
         }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: $h3;
             margin-top: 1rem;
         }
     }
@@ -55,9 +54,13 @@
 
     }
 
-    img {
+    figure {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    img, video {
         max-width: 100%;
-        max-height: 100%;
     }
 
 }

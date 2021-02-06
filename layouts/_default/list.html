@@ -1,20 +1,20 @@
 {{ define "main" }}
-<!-- TODO Not very DRY with writing.html -->
-<section id="writing" class="writing">
+  <!-- TODO Not very DRY with writing.html -->
+  <section id="writing" class="writing">
 
-  <!-- TODO Split into multiple pages -->
-  <h2 class="section-header full-width-underline">Writing</h2>
-  <ul class="writing__posts">
-    {{ range where site.RegularPages "Section" "posts" }}
-    {{ $url := replace .Permalink .Site.BaseURL "" }}
-    <li class="writing__posts__item">
-      <aside class="writing__posts__item__date">{{ .Date.Format "Jan 2" }}</aside>
-      <a href="{{ .Permalink }}">
-        <h3 class="writing__posts__item__title"> {{ .Title }}</h3>
-        <p class="writing__posts__item__summary">{{ .Summary | plainify | htmlUnescape}}</p>
-      </a>
-    </li>
-    {{ end }}
-  </ul>
-</section>
+    <!-- TODO Split into multiple pages -->
+    <h2 class="section-header full-width-underline">{{.Title}}</h2>
+    <ul class="writing__posts">
+      {{ range .Pages }}
+        {{ $url := replace .Permalink .Site.BaseURL "" }}
+        <li class="writing__posts__item">
+          <aside class="writing__posts__item__date">{{ .Date.Format "Jan 2" }}</aside>
+          <a href="{{ .Permalink }}">
+            <h3 class="writing__posts__item__title"> {{ .Title }}</h3>
+            <p class="writing__posts__item__summary">{{ .Summary | plainify | htmlUnescape}}</p>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
 {{ end }}

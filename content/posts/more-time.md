@@ -19,7 +19,7 @@ When we make a commitment to spend a portion of our day on tasks that are import
 
 - Derek Sivers wrote *Anything You Want*, his bestselling book, in ten days.
 - Equally, Brendan Eich wrote javascript in just ten days.
-- NASA successfully launched Apollo 8 143 days after first conception (see [Rocket Men](https://alexkoen.com/writing/posts/rocket-men/))
+- NASA successfully launched Apollo 8 143 days after first conception (see [Rocket Men](/posts/rocket-men/))
 
 Today, I chose to write. I have homework to finish, emails to respond to, and applications to finish, but I'm taking the time this morning to write this post.
 

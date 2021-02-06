@@ -31,19 +31,19 @@ Consequently, a different system of note-taking---a system known as Zettelkasten
 1. **Notes are stored in a flat hierarchy.** There are no folders, notebooks, or other manual organization. 
 2. **These notes are connected using links.** Keywords in text are linked to other notes, creating a connection between their respective ideas. In my system, links are denoted with the § symbol. Shown below is a screenshot of my writing on the concept of first principles:
 
-![](notes-fp.png)
+{{<figure src="notes-fp.png">}}
 
 3. **These links are bi-directional.** Not only can I click on links to other notes, but the software also maintains a list of all the *other* notes that link to this one. These are called backlinks, and they create an interconnected web of ideas that is infinitely traversable.
 
-![](notes-fp2.png)
+{{<figure src="notes-fp2.png">}}
 
 As a result, notes can have multiple contexts. For example, *personal discipline* is linked to not only from *goal-setting*, but also from *why little is done about climate change*. While these topics initially seem unrelated, this system promotes inter-disciplinary creativity by design, and that it why it is so powerful.
 
 For the past six months, I have been building my own private Zettelkasten where I store, create links between, and build upon ideas I come across in my everyday life. The entire repository of notes can be visualized as shown below. This visualization allows me to traverse the system and find previously-unseen connections between ideas. This ability is transformative, and makes creativity a repeatable workflow.
 
-![](notes-graph.png)
+{{<figure src="notes-graph.png">}}
 
 
 # Why I'm publishing my notes
 
-My Zettelkasten is now publicly-available at <https://notes.alexkoen.com/>. Like with my writing, I wanted to [show my work](/writing/posts/show-your-work) and pressure myself to refine my ideas in the same way that I dress better when I leave the house. I am [not](https://notes.andymatuschak.org/About_these_notes) [alone](https://braindump.jethro.dev/), and I hope that my ideas may be of value to you.
+My Zettelkasten is now publicly-available at <https://notes.alexkoen.com/>. Like with my writing, I wanted to [show my work](/posts/show-your-work) and pressure myself to refine my ideas in the same way that I dress better when I leave the house. I am [not](https://notes.andymatuschak.org/About_these_notes) [alone](https://braindump.jethro.dev/), and I hope that my ideas may be of value to you.
