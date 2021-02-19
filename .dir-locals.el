@@ -1,2 +1,3 @@
-((nil . ((eval . (web-mode-set-engine "go"))
+((nil . ((eval . (web-mode))
+         (eval . (web-mode-set-engine "go"))
          )))
