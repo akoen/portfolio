@@ -3,10 +3,10 @@
 
   <div class="chocolat-parent photos__grid">
 
-    {{ range $img := sort (resources.Match "favourites/*.jpg") "Name" "desc" }}
-    {{ $img = $img.Resize "x1024 q75"}}
+    {{ range $img := sort (resources.Match "favourites/*.jpeg") "Name" "desc" }}
+    {{ $img = $img.Resize "x1024 q90"}}
     {{ $id := md5 .Name}}
-    {{ $thumb := $img.Resize "x400 q50"}}
+    {{ $thumb := $img.Resize "x400 q75"}}
     {{ $widths := $.Site.Params.landscapePhotoWidths }}
     {{ $orientation := $img.Exif.Tags.Orientation}}
     <!-- Fix rotated photos. May not work %100 of the time. -->
