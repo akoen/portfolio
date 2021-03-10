@@ -42,9 +42,9 @@
         </figure>
 
         <a href="#!" id="{{ $id }}" class="photos__grid__lightbox" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'>
-          <video id="{{ $id }}-vid" controls autoplay class="lazy photos__grid__lightbox__img video" data-poster="{{ $thumb.Permalink }}">
-             <source type="video/webm" data-src="{{ $webm.Permalink }}" />
-             <source type="video/mp4" data-src="{{ $file.Permalink }}" />
+          <video id="{{ $id }}-vid" controls autoplay playsinline class="lazy photos__grid__lightbox__img video" data-poster="{{ $thumb.Permalink }}">
+            <source type="video/webm" data-src="{{ $webm.Permalink }}" />
+            <source type="video/mp4" data-src="{{ $file.Permalink }}" />
           </video>
         </a>
       {{ end }}
