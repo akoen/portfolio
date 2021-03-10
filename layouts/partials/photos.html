@@ -54,7 +54,9 @@
         </figure>
 
         <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
-          <video class="photos__grid__lightbox__img" src="{{ $file.Permalink }}" preload="none" poster="{{ $thumb.Permalink }}" controls/>
+            <noscript class="loading-lazy">
+              <video controls class="photos__grid__lightbox__img" src="{{ $file.Permalink }}" preload="none" poster="{{ $thumb.Permalink }}" />
+            </noscript>
         </a>
       {{ end }}
     {{ end  }}
