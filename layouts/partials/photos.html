@@ -3,7 +3,7 @@
 
   <div class="chocolat-parent photos__grid">
 
-    {{ range $file := first 16 (sort (resources.Match "favourites/*{jpeg,webm}") "Name" "desc") }}
+    {{ range $file := first 16 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc") }}
       {{ $id := md5 .Name}}
       {{ if (eq $file.ResourceType "image") }}
         {{ $img := $file.Resize "x1024 q90"}}
@@ -31,7 +31,8 @@
         </a>
 
       {{ else }}
-        {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".webm" ".jpg") }}
+        {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".mp4" ".jpg") }}
+        {{ $webm := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-webm" | replaceRE ".mp4" ".webm") }}
 
         <figure itemscope class="photos__grid__item">
           <a href="#{{ $id }}" onClick='document.getElementById("{{ $id }}"+"-vid").play()'>
@@ -41,7 +42,10 @@
         </figure>
 
         <a href="#!" id="{{ $id }}" class="photos__grid__lightbox" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'>
-          <video id="{{ $id }}-vid" controls autoplay class="lazy photos__grid__lightbox__img video" data-src="{{ $file.Permalink }}" data-poster="{{ $thumb.Permalink }}" />
+          <video id="{{ $id }}-vid" controls autoplay class="lazy photos__grid__lightbox__img video" data-poster="{{ $thumb.Permalink }}">
+             <source type="video/webm" data-src="{{ $webm.Permalink }}" />
+             <source type="video/mp4" data-src="{{ $file.Permalink }}" />
+          </video>
         </a>
       {{ end }}
     {{ end  }}

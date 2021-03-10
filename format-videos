@@ -1,0 +1,7 @@
+#!/bin/bash
+for file in $FAVOURITES_DIR_REMOTE/*.{mp4,mov}; do
+    dur=$(ffprobe -loglevel error -show_entries format=duration -of default=nk=1:nw=1 "$file")
+    ffmpeg -n -i "$file" -ss "$(echo "$dur / 1.5" | bc -l)" -vframes 1 -filter "scale=400:-1" -q:v 2 "$FAVOURITES_DIR_LOCAL/video-thumbs/$(basename $file).jpg"
+    ffmpeg -n -i "$file" -c:v libvpx-vp9 -b:v 1M -c:a libopus -b:a 128k -vf scale=720:-1 "$FAVOURITES_DIR_LOCAL/video-webm/$(basename $file).webm"
+    ffmpeg -n -i "$file" -vcodec libx265 -crf 28 -vf scale=720:-1 "$FAVOURITES_DIR_LOCAL/$(basename $file).mp4"
+done
