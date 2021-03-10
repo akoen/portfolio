@@ -22,16 +22,12 @@
         <!-- TODO Caption does not work -->
         <figure itemscope class="photos__grid__item">
           <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
-            <noscript class="loading-lazy">
-              <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy" itemprop="thumbnail"/>
-            </noscript>
+            <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
           </a>
         </figure>
 
         <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
-          <noscript class="loading-lazy">
-            <img class="photos__grid__lightbox__img" src={{ $imgSrc }} srcset="{{ $imgSrcSet }}" loading="lazy"/>
-          </noscript>
+          <img class="lazy photos__grid__lightbox__img" data-src={{ $imgSrc }} data-srcset="{{ $imgSrcSet }}"/>
         </a>
 
       {{ else }}
@@ -39,14 +35,12 @@
 
         <figure itemscope class="photos__grid__item">
           <a href="#{{ $id }}">
-            <noscript class="loading-lazy">
-              <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy" itemprop="thumbnail"/>
-            </noscript>
+            <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
           </a>
         </figure>
 
         <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
-          <video controls class="photos__grid__lightbox__img" src="{{ $file.Permalink }}" preload="none" poster="{{ $thumb.Permalink }}" />
+          <video controls class="lazy photos__grid__lightbox__img" data-src="{{ $file.Permalink }}" data-poster="{{ $thumb.Permalink }}" />
         </a>
       {{ end }}
     {{ end  }}
@@ -57,4 +51,10 @@
       See more →
     </a>
   </span>
+
+  <script>
+   var lazyLoadInstance = new LazyLoad({
+
+   })
+  </script>
 </section>
