@@ -1,6 +1,0 @@
-#!/bin/bash
-for file in ./Originals/*; do
-    dur=$(ffprobe -loglevel error -show_entries format=duration -of default=nk=1:nw=1 "$file")
-    ffmpeg -y -i "$file" -ss "$(echo "$dur / 1.5" | bc -l)" -vframes 1 -filter "scale=400:-1" -q:v 2 "./Thumbs/$(basename $file).jpg"
-    ffmpeg -i "$file" -c:v libvpx-vp9 -b:v 1M -c:a libopus -b:a 128k -vf "scale=iw/2:ih/2" "./Compressed/$(basename $file).webm"
-done

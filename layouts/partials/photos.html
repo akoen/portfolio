@@ -3,20 +3,13 @@
 
   <div class="chocolat-parent photos__grid">
 
-    {{ range $file := first 16 (sort (union (resources.Match "favourites/*.jpeg") (resources.Match "videos/compressed/*.webm")) "Name" "desc") }}
+    {{ range $file := first 16 (sort (resources.Match "favourites/*{jpeg,webm}") "Name" "desc") }}
+      {{ $id := md5 .Name}}
       {{ if (eq $file.ResourceType "image") }}
         {{ $img := $file.Resize "x1024 q90"}}
-        {{ $id := md5 .Name}}
         {{ $thumb := $img.Resize "x400 q75"}}
         {{ $widths := $.Site.Params.landscapePhotoWidths }}
         {{ $orientation := $img.Exif.Tags.Orientation}}
-        <!-- Fix rotated photos. May not work %100 of the time. -->
-        {{ if eq $orientation 6 }}
-          {{ $thumb = $thumb.Resize "x400 r270" }}
-          {{ $img = $img.Resize (printf "%dx r270" $img.Width) }}
-          {{ $widths := $.Site.Params.portraitPhotoWidths }}
-        {{ end }}
-
         {{ $imgSrc := "" }}
         {{ $imgSrcSet := slice }}
         {{ range $widths }}
@@ -42,8 +35,7 @@
         </a>
 
       {{ else }}
-        {{ $id := md5 .Name }}
-        {{ $thumb := resources.GetMatch ($file.Title | replaceRE "compressed" "thumbs" | replaceRE ".webm" ".jpg") }}
+        {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".webm" ".jpg") }}
 
         <figure itemscope class="photos__grid__item">
           <a href="#{{ $id }}">
@@ -54,9 +46,7 @@
         </figure>
 
         <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
-            <noscript class="loading-lazy">
-              <video controls class="photos__grid__lightbox__img" src="{{ $file.Permalink }}" preload="none" poster="{{ $thumb.Permalink }}" />
-            </noscript>
+          <video controls class="photos__grid__lightbox__img" src="{{ $file.Permalink }}" preload="none" poster="{{ $thumb.Permalink }}" />
         </a>
       {{ end }}
     {{ end  }}
