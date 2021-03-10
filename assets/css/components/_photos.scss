@@ -8,6 +8,7 @@
         margin-bottom: 0.4em;
 
         &__item {
+            position: relative;
             flex-grow: 1;
             height: 14rem;
             flex-basis: auto; // Gives good-looking "random" layout
@@ -18,7 +19,15 @@
                 height: 100%;
                 object-fit: cover;
             }
+
+            &__play {
+                position: absolute;
+                top: 0.4rem;
+                right: 0.4rem;
+            }
+
         }
+
 
         &__lightbox {
             display: none;
@@ -33,6 +42,7 @@
 
             &:target {
                 display: block;
+                z-index: 999;
             }
 
             &__img {

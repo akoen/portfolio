@@ -34,13 +34,14 @@
         {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".webm" ".jpg") }}
 
         <figure itemscope class="photos__grid__item">
-          <a href="#{{ $id }}">
+          <a href="#{{ $id }}" onClick='document.getElementById("{{ $id }}"+"-vid").play()'>
             <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+            <i class="fa fa-play photos__grid__item__play" aria-hidden="true"></i>
           </a>
         </figure>
 
-        <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
-          <video controls class="lazy photos__grid__lightbox__img" data-src="{{ $file.Permalink }}" data-poster="{{ $thumb.Permalink }}" />
+        <a href="#!" id="{{ $id }}" class="photos__grid__lightbox" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'>
+          <video id="{{ $id }}-vid" controls autoplay class="lazy photos__grid__lightbox__img video" data-src="{{ $file.Permalink }}" data-poster="{{ $thumb.Permalink }}" />
         </a>
       {{ end }}
     {{ end  }}
