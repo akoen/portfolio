@@ -4,7 +4,7 @@ for file in $FAVOURITES_DIR_REMOTE/*.{mp4,mov}; do
     dur=$(ffprobe -loglevel error -show_entries format=duration -of default=nk=1:nw=1 "$file")
     ffmpeg -n -i "$file" -ss "$(echo "$dur / 1.5" | bc -l)" -vframes 1 -filter "scale=400:-1" -q:v 2 "$FAVOURITES_DIR_LOCAL/video-thumbs/${base}.jpg"
     ffmpeg -n -i "$file" -c:v libvpx-vp9 -b:v 1M -c:a libopus -b:a 128k -vf scale=720:-1 "$FAVOURITES_DIR_LOCAL/video-webm/${base}.webm"
-    # ffmpeg -n -i "$file" -vcodec libx265 -crf 28 -acodec aac -vf scale=720:-1 "$FAVOURITES_DIR_LOCAL/$(basename $file).mp4"
+    # ffmpeg -n -i "$file" -c:v libx265 -crf 28 -tag:v hvc1 -acodec aac -vf scale=720:-2 "$FAVOURITES_DIR_LOCAL/${base}.mp4"
+
     ffmpeg -n -i "$file" -c:v libx264 -crf 28 -acodec aac -vf scale=720:-2 "$FAVOURITES_DIR_LOCAL/${base}.mp4"
-    break
 done

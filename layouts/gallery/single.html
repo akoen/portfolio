@@ -38,7 +38,7 @@
 
         <figure itemscope class="photos__grid__item">
           <a href="#{{ $id }}" onClick='document.getElementById("{{ $id }}"+"-vid").play()'>
-            <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+            <img class="lazy photos__grid__item__img photos__grid__item__img--video" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
             <i class="fa fa-play photos__grid__item__play" aria-hidden="true"></i>
           </a>
         </figure>
