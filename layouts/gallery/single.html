@@ -1,45 +1,71 @@
 {{ define "main" }}
+
 <section id="photos" class="photos">
 
-  <div class="chocolat-parent photos__grid">
+  <div class="photos__grid">
 
-    {{ range $img := sort (resources.Match "favourites/*.jpeg") "Name" "desc" }}
-    {{ $img = $img.Resize "x1024 q90"}}
-    {{ $id := md5 .Name}}
-    {{ $thumb := $img.Resize "x400 q75"}}
-    {{ $widths := $.Site.Params.landscapePhotoWidths }}
-    {{ $orientation := $img.Exif.Tags.Orientation}}
-    <!-- Fix rotated photos. May not work %100 of the time. -->
-    {{ if eq $orientation 6 }}
-    {{ $thumb = $thumb.Resize "x400 r270" }}
-    {{ $img = $img.Resize (printf "%dx r270" $img.Width) }}
-    {{ $widths := $.Site.Params.portraitPhotoWidths }}
-    {{ end }}
+    {{ range $file := sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc" }}
+      {{ $id := md5 .Name}}
+      {{ if (eq $file.ResourceType "image") }}
+        {{ $img := $file.Resize "x1024 q90"}}
+        {{ $thumb := $img.Resize "x400 q75"}}
+        {{ $widths := $.Site.Params.landscapePhotoWidths }}
+        {{ $orientation := $img.Exif.Tags.Orientation}}
+        {{ $imgSrc := "" }}
+        {{ $imgSrcSet := slice }}
+        {{ range $widths }}
+          {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
+          {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
+          {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
+        {{ end }}
+        {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
 
-    {{ $imgSrc := "" }}
-    {{ $imgSrcSet := slice }}
-    {{ range $widths }}
-    {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
-    {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
-    {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
-    {{ end }}
-    {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
+        <!-- TODO Caption does not work -->
+        <figure itemscope class="photos__grid__item">
+          <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
+            <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+          </a>
+        </figure>
 
-    <!-- TODO Caption does not work -->
-    <figure itemscope class="photos__grid__item">
-      <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
-        <noscript class="loading-lazy">
-          <img class="photos__grid__item__img" src="{{ $thumb.Permalink }}" loading="lazy" itemprop="thumbnail"/>
-        </noscript>
-      </a>
-    </figure>
+        <div id="{{ $id }}" class="photos__grid__lightbox">
+          <img class="lazy photos__grid__lightbox__img" data-src={{ $imgSrc }} data-srcset="{{ $imgSrcSet }}"/>
+        <a href="#!" class="backdrop"></a>
+        </div>
 
-    <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
-      <noscript class="loading-lazy">
-        <img class="photos__grid__lightbox__img" src={{ $imgSrc }} srcset="{{ $imgSrcSet }}" loading="lazy"/>
-      </noscript>
+      {{ else }}
+        {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".mp4" ".jpg") }}
+        {{ $webm := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-webm" | replaceRE ".mp4" ".webm") }}
+
+        <figure itemscope class="photos__grid__item">
+          <a href="#{{ $id }}" onClick='document.getElementById("{{ $id }}"+"-vid").play()'>
+            <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+            <i class="fa fa-play photos__grid__item__play" aria-hidden="true"></i>
+          </a>
+        </figure>
+
+        <div id="{{ $id }}" class="photos__grid__lightbox" >
+          <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-poster="{{ $thumb.Permalink }}">
+            <source type="video/webm" data-src="{{ $webm.Permalink }}" />
+            <source type="video/mp4" data-src="{{ $file.Permalink }}" />
+          </video>
+          <a href="#!" class="backdrop" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'></a>
+        </div>
+      {{ end }}
+    {{ end  }}
+  </div>
+
+  <span class="more">
+    <a href="/gallery">
+      See more →
     </a>
-    {{ end }}
+  </span>
+
+  <script>
+   var lazyLoadInstance = new LazyLoad({
+
+   })
+  </script>
+</section>
 
   </div>
 </section>

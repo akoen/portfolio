@@ -1,7 +1,7 @@
 <section id="photos" class="photos">
   <h2 class="section-header full-width-underline">Photos</h2>
 
-  <div class="chocolat-parent photos__grid">
+  <div class="photos__grid">
 
     {{ range $file := first 16 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc") }}
       {{ $id := md5 .Name}}
@@ -26,9 +26,10 @@
           </a>
         </figure>
 
-        <a href="#!" id="{{ $id }}" class="photos__grid__lightbox">
+        <div id="{{ $id }}" class="photos__grid__lightbox">
           <img class="lazy photos__grid__lightbox__img" data-src={{ $imgSrc }} data-srcset="{{ $imgSrcSet }}"/>
-        </a>
+          <a href="#!" class="backdrop"></a>
+        </div>
 
       {{ else }}
         {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".mp4" ".jpg") }}
@@ -41,14 +42,22 @@
           </a>
         </figure>
 
-        <a href="#!" id="{{ $id }}" class="photos__grid__lightbox" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'>
-          <video id="{{ $id }}-vid" controls autoplay playsinline class="lazy photos__grid__lightbox__img video" data-poster="{{ $thumb.Permalink }}">
+        <div id="{{ $id }}" class="photos__grid__lightbox" >
+          <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-poster="{{ $thumb.Permalink }}">
             <source type="video/webm" data-src="{{ $webm.Permalink }}" />
             <source type="video/mp4" data-src="{{ $file.Permalink }}" />
           </video>
-        </a>
+          <a href="#!" class="backdrop" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'></a>
+        </div>
       {{ end }}
     {{ end  }}
+  </div>
+
+  <span class="more">
+    <a href="/gallery">
+      See more →
+    </a>
+  </span>
   </div>
 
   <span class="more">
