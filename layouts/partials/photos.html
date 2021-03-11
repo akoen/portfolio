@@ -44,7 +44,7 @@
 
         <div id="{{ $id }}" class="photos__grid__lightbox" >
           <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-poster="{{ $thumb.Permalink }}">
-            <source type="video/webm" data-src="{{ $webm.Permalink }}" />
+            <!-- <source type="video/webm" data-src="{{ $webm.Permalink }}" /> -->
             <source type="video/mp4" data-src="{{ $file.Permalink }}" />
           </video>
           <a href="#!" class="backdrop" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'></a>
@@ -59,12 +59,6 @@
     </a>
   </span>
   </div>
-
-  <span class="more">
-    <a href="/gallery">
-      See more →
-    </a>
-  </span>
 
   <script>
    var lazyLoadInstance = new LazyLoad({
