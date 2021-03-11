@@ -43,7 +43,7 @@
         </figure>
 
         <div id="{{ $id }}" class="photos__grid__lightbox" >
-          <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-src="{{ $file.Permalink }}"data-poster="{{ $thumb.Permalink }}">
+          <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-poster="{{ $thumb.Permalink }}">
             <source type="video/webm" data-src="{{ $webm.Permalink }}" />
             <source type="video/mp4" data-src="{{ $file.Permalink }}" />
           </video>
