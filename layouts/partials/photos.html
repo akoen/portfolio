@@ -9,7 +9,6 @@
         {{ $img := $file.Resize "x1024 q90"}}
         {{ $thumb := $img.Resize "x400 q75"}}
         {{ $widths := $.Site.Params.landscapePhotoWidths }}
-        {{ $orientation := $img.Exif.Tags.Orientation}}
         {{ $imgSrc := "" }}
         {{ $imgSrcSet := slice }}
         {{ range $widths }}
@@ -21,7 +20,7 @@
 
         <!-- TODO Caption does not work -->
         <figure itemscope class="photos__grid__item">
-          <a href="#{{ $id }}" title='{{ cond (isset $img.Exif.Tags "Caption") $img.Exif.Tags.Caption $img.Exif.Date }}'>
+          <a href="#{{ $id }}">
             <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
           </a>
         </figure>

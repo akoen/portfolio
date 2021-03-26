@@ -1,5 +1,6 @@
 #!/bin/bash
-for file in $FAVOURITES_DIR_REMOTE/*.{mp4,mov}; do
+imagemin "$FAVOURITES_DIR_REMOTE/*.{jpg,jpeg}" --out-dir "$FAVOURITES_DIR_LOCAL"
+for file in ${FAVOURITES_DIR_REMOTE}/*.{mov,mp4}; do
     base=$(basename "${file%.*}")
     dur=$(ffprobe -loglevel error -show_entries format=duration -of default=nk=1:nw=1 "$file")
     ffmpeg -n -i "$file" -ss "$(echo "$dur / 1.5" | bc -l)" -vframes 1 -filter "scale=400:-1" -q:v 2 "$FAVOURITES_DIR_LOCAL/video-thumbs/${base}.jpg"
