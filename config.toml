@@ -1,6 +1,7 @@
 baseURL = ""
 languageCode = "en-ca"
 title = "Alex Koen"
+timeout = 60000
 
 [author]
   name = "Alex Koen"
