@@ -2,8 +2,11 @@ baseURL = ""
 languageCode = "en-ca"
 title = "Alex Koen"
 
+[author]
+  name = "Alex Koen"
+
 [params]
-	author = "Alex Koen"
+  description = "Engineering student, writer, climber and photographer."
   landscapePhotoWidths = [2500, 1500, 1000]
   portraitPhotoWidths = [1500, 1000, 750]
   pluralizeListTitles = false

@@ -4,6 +4,7 @@ title = "April 2021"
 +++
 
 > This is a [now page](https://sive.rs/now). I post one every month, and you should too. It's the best way to connect with people you don't talk to often. You can read them all [here](/now).
+<!--more-->
 
 This past month has again been simple. Most memorably, my good friend and I skied an ultra-classic couloir north of Pemberton that we had been talking about for some time.
 
