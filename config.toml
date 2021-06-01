@@ -8,9 +8,10 @@ timeout = 60000
 
 [params]
   description = "Engineering student, writer, climber and photographer."
+  pluralizeListTitles = false
   landscapePhotoWidths = [2500, 1500, 1000]
   portraitPhotoWidths = [1500, 1000, 750]
-  pluralizeListTitles = false
+  thumbQuality = "x400 q75"
 
 [imaging.exif]
   includeFields = ".*"
