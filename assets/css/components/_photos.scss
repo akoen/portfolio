@@ -1,38 +1,43 @@
 .photos {
     overflow: hidden;
     &__grid {
-        display: flex;
-        flex-flow: row wrap;
-        overflow: hidden;
-        margin-right: -5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
         margin-bottom: 0.4em;
+        margin-right: -$margin-gallery-small;
+        @include min($tablet) { margin-right: $margin-gallery-large; }
 
         &__item {
+            // to position overlays
             position: relative;
-            flex-grow: 1;
-            height: 14rem;
-            flex-basis: auto; // Gives good-looking "random" layout
-            margin: 0 5px 5px 0;
 
+            margin: 0 $margin-gallery-small $margin-gallery-small 0;
+            @include min($tablet) {
+                margin: 0 $margin-gallery-large $margin-gallery-large 0;
+            }
 
             &__img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
 
+                &:hover {
+                    filter: brightness(75%);
+                }
                 &--video {
                     filter: brightness(50%);
                 }
-
             }
 
             &__play {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 8%;
+                right: 2%;
                 transform: translate(-50%, -50%);
                 font-size: 3rem;
-                color: white;
+                color: $white;
+                opacity: 0.8;
             }
 
         }
