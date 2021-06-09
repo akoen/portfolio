@@ -2,8 +2,8 @@
   <h2 class="section-header full-width-underline">Photos</h2>
 
   <!-- The number 12 was deliberately chosen to make a nice grid -->
-  {{ partial "gallery.html" (dict "context" .
-    "photos" (first 12 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  }}
+  <!-- NOTE: Templates cannot span newlines -->
+  {{ partial "gallery.html" (dict "context" . "photos" (first 12 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  }}
 
   <span class="more">
     <a href="/gallery">
