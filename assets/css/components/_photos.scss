@@ -6,7 +6,7 @@
 
         margin-bottom: 0.4em;
         margin-right: -$margin-gallery-small;
-        @include min($tablet) { margin-right: $margin-gallery-large; }
+        @include min($tablet) { margin-right: -$margin-gallery-large; }
 
         &__item {
             // to position overlays
