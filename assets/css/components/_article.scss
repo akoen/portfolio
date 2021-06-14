@@ -1,48 +1,67 @@
 .article {
     font-family: $serif;
     max-width: $article-width;
-    line-height: 1.6;
-    font-weight: 100;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20vh;
 
     &__title {
         text-align: center;
-        font-weight: 400;
-        line-height: 1.2;
+        font-family: $sans;
+        font-weight: 800;
+        line-height: 1.1;
         margin-top: 0;
-        margin-bottom: 4rem;
+        margin-bottom: 0;
     }
 
-    // &__subtitle {
-    //     margin-bottom: 0.6rem;
-    //     margin-top: 10vh;
-    //     font-size: 1rem;
-    //     color: $faint;
-    //     //text-align: center;
-    // }
+    &__subtitle {
+        // margin-bottom: 4rem;
+        // margin-top: 10vh;
+        // font-size: 0.6rem;
+
+        // font-size: modular-scale(-1);
+        font-style: italic;
+        font-family: $serif;
+        // color: $faint;
+        text-align: center;
+    }
     &__content {
-        font-size: $p;
         font-weight: 400;
+        // font-family: "Vollkorn";
+
+        a {
+            text-decoration-line: none;
+            font-weight: 600;
+
+            &:after {
+                position: relative;
+                content: "\FEFF°";
+                margin-left: 0.10em;
+                font-size: 90%;
+                top: -0.10em;
+                color: #933;
+                font-feature-settings: "caps";
+                font-variant-numeric: normal;
+            }
+        }
 
         p {
-            margin-top: 1rem;
+            margin-top: 0;
+            line-height: 1.6rem;
         }
 
         h1 {
-            font-size: $h2;
-            margin-top: 2rem;
+            // font-size: $h2;
+            // margin-top: 2rem;
+            // line-height: 3.2rem;
+            // margin-top: 4.8rem;
+            // margin-bottom: 1.6rem;
         }
 
         h2 {
-            font-size: $h3;
-            margin-top: 1rem;
+            // font-size: $h3;
+            // margin-top: 1rem;
         }
-    }
-
-    a {
-        text-decoration: underline;
     }
 
     blockquote {
