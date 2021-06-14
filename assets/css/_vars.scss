@@ -6,8 +6,8 @@ $large: 1200px;
 $xlarge: 1400px;
 $xxlarge: 1600px;
 
-$site-width:  960px;
-$article-width:  700px;
+$site-width: 960px;
+$article-width: 600px;
 
 $site-gutter-small: 5%;
 $site-gutter-large: 10%;
@@ -19,10 +19,13 @@ $margin-section-large: 6rem;
 $margin-gallery-small: 5px;
 $margin-gallery-large: 20px;
 
-// FONTS
+// TYPOGRAPHY
 $sans: "Work Sans", Helvetica, Arial, sans-serif;
 // NOTE: Loading the font as "Source Serif Pro" does not work
 $serif: "Source Serif", serif;
+
+$base-line-height: 1.6;
+$modular-scale-ratio: 1.333; // Perfect Fifth
 
 $h1: 2.5rem;
 $h2: 1.5rem;
@@ -43,11 +46,12 @@ $primary-text: #3cdab4;
 $logo-light-green: #71f1d6;
 $logo-dark-green: #60d5b9;
 $white: #fff;
-$grey: #fdfbfb;
+$lightest-grey: #fdfbfb;
+$light-grey: #eeeeee;
 $dark-grey: #999;
-$grey-border: #dadada;
+$grey-border: $sub-black;
 
 
-$bg: $grey;
+$bg: $lightest-grey;
 $fg: $black;
 $faint: $dark-grey;
