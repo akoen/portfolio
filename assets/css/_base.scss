@@ -6,7 +6,7 @@ html {
     scroll-behavior: smooth;
 
     @include min($tablet) {
-        font-size: 112.5%;;
+        font-size: 125%;;
     }
 
 }
@@ -14,11 +14,62 @@ html {
 body {
     font-family: $sans;
     font-weight: 400;
-    color: $fg;
-    line-height: 1.8rem;
-    -webkit-font-smoothing: antialiased;
     transition: 0.3s all;
+    color: $fg;
     background-color: $bg;
+}
+
+* {
+    // line-height: $leading;
+    margin-bottom: margin(1);
+    // @include line-height(1);
+    margin-top: 0px;
+}
+
+* {
+    line-height: line-height(1);
+}
+
+.huge {
+    font-size: modular-scale(4);
+}
+
+h1 {
+    font-size: modular-scale(3);
+    line-height: line-height(2);
+    margin-top: margin(2);
+    margin-bottom: margin(1);
+    // @include margin-bottom(3);
+}
+
+h2 {
+
+    font-size: modular-scale(2);
+    line-height: line-height(1.5);
+    margin-top: margin(1);
+    margin-bottom: margin(0);
+    font-weight: 800;
+    // @include margin-bottom(2);
+}
+
+h3 {
+    font-size: modular-scale(1);
+    line-height: line-height(1);
+    margin-top: margin(1);
+    margin-bottom: margin(0);
+    font-weight: 800;
+    // @include margin-bottom(0.5);
+    // @include margin-top(2);
+}
+
+p {
+    font-size: modular-scale(1);
+    font-size: 1rem;
+    // @include margin-bottom(1);
+}
+
+.small {
+    font-size: modular-scale(-1);
 }
 
 
@@ -28,30 +79,46 @@ a {
 }
 
 section {
-    margin-top: $margin-section-small;
+    // margin-top: $margin-section-small;
+    margin-bottom: margin(3);
     width: 100%;
 
     @include min($tablet){
-        margin-top: $margin-section-large;
+        // margin-top: $margin-section-large;
     }
 }
-
-h1 {
-    font-size: 2.5rem;
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-bottom: 2px solid $grey-border;
 }
 
-h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
+th, td {
+    font-size: modular-scale(-1);
+    font-family: $sans;
+    border-bottom: 1px solid $grey-border;
+    padding: margin(0.1);
+    margin: 0;
 }
 
-h3 {
-    font-size: 1.25rem;
-    font-weight: 400;
+th {
+    border-top: 2px solid $grey-border;
+    border-bottom: 2px solid $grey-border;
 }
 
-p {
-    font-size: 1rem;
+tr:nth-child(even) {
+    background-color:  #f6f8fa;
+}
+
+// Show bullets outside of main text
+ul, ol {
+    padding-left: 0;
+    list-style-position: outside;
+}
+
+li {
+    font-style: italic;
+    margin-bottom: margin(0.5);
 }
 
 .more {
@@ -59,7 +126,3 @@ p {
     font-size: $p;
     color: $primary-light;
 }
-
-// p, h1, h2, h3, h4 {
-//     margin: 0;
-// }
