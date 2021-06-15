@@ -3,10 +3,10 @@
         padding: 0;
         &__item {
             list-style-type: none;
+            font-style: normal;
 
             &__title {
                 display: block;
-                font-weight: 600;
                 margin-bottom: 0rem;
             }
 
@@ -14,7 +14,6 @@
                 float: right;
                 position: relative;
                 color: $faint;
-                font-size: $p;
             }
 
             &__summary {

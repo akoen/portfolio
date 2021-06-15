@@ -30,6 +30,10 @@ body {
     line-height: line-height(1);
 }
 
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
 .huge {
     font-size: modular-scale(4);
 }
@@ -48,7 +52,6 @@ h2 {
     line-height: line-height(1.5);
     margin-top: margin(1);
     margin-bottom: margin(0);
-    font-weight: 800;
     // @include margin-bottom(2);
 }
 
@@ -57,9 +60,15 @@ h3 {
     line-height: line-height(1);
     margin-top: margin(1);
     margin-bottom: margin(0);
-    font-weight: 800;
     // @include margin-bottom(0.5);
     // @include margin-top(2);
+}
+
+h4 {
+    font-size: modular-scale(0);
+    line-height: line-height(1);
+    margin-top: margin(1);
+    margin-bottom: margin(0);
 }
 
 p {
@@ -94,16 +103,18 @@ table {
 
 th, td {
     font-size: modular-scale(-1);
-    font-family: $sans;
-    border-bottom: 1px solid $grey-border;
-    padding: margin(0.1);
-    margin: 0;
+    padding: margin(0.125);
 }
 
 th {
     border-top: 2px solid $grey-border;
     border-bottom: 2px solid $grey-border;
 }
+
+td {
+    border-bottom: 1px solid $grey-border;
+}
+
 
 tr:nth-child(even) {
     background-color:  #f6f8fa;
@@ -120,7 +131,24 @@ li {
     margin-bottom: margin(0.5);
 }
 
+blockquote {
+    font-style: italic;
+    background-color: darken($color: $bg, $amount: 3);
+    margin-left: 0;
+    // padding: margin(1);
+    padding: margin(1);
+    // HACK This must be a bug
+    padding-bottom: 1px;
+    // padding: 0.5em 0.5em 0.5em 1em;
+    border-left: 8px solid lighten($color: $orange, $amount: 5);
+}
+
 .more {
     text-align: right;
+    margin-bottom: 0;
     color: $primary-light;
+
+    a {
+        margin-bottom: 0;
+    }
 }
