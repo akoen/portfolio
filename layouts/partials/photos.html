@@ -5,10 +5,10 @@
   <!-- NOTE: Templates cannot span newlines -->
   {{ partial "gallery.html" (dict "context" . "photos" (first 12 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  }}
 
-  <span class="more">
+  <div class="more">
     <a href="/gallery">
       See more →
     </a>
-  </span>
+  </div>
 
 </section>

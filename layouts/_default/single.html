@@ -1,11 +1,10 @@
 {{ define "main" }}
+  {{ partial "nav-minimal.html" }}
   <article class="article">
-    <!-- <p class="article__subtitle">
-         {{ .Date.Format "Jan 2, 2006"}}
-         · {{ .WordCount }} words
-         · {{ .ReadingTime }} minute read
-         </p> -->
-    <h1 class="article__title">{{ .Title }}</h1>
+    <h1 class="article__title huge">{{ .Title }}</h1>
+    <p class="article__subtitle small">
+      {{ .Date.Format "Jan 2, 2006"}}
+    </p>
     <div class="article__content">
       {{ .TableOfContents }}
       {{ .Content }}
