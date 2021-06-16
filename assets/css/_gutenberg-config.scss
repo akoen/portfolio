@@ -4,9 +4,9 @@
 $edit-mode: false !default; // [ true / false ] - Enables/disables the grid toggle button.
 
 // Theme / Fonts
-$theme: Merriweather !default; // [ Merriweather / OpenSans / custom ]
-$custom-font-body: null !default; // [ "Libre Baskerville", Georgia, serif ]
-$custom-font-headings: null !default;
+$theme: custom !default; // [ Merriweather / OpenSans / custom ]
+$custom-font-body: "Work Sans" !default; // [ "Libre Baskerville", Georgia, serif ]
+$custom-font-headings: "Work Sans" !default;
 
 // Paragraph indenting
 $paragraph-indent: false; // [ true / false ]

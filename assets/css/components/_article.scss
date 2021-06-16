@@ -1,17 +1,18 @@
 .article {
     font-family: $serif;
-    max-width: $article-width;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10vh;
+    max-width: $max-width;
+    // max-width: $article-width;
+    // margin-left: auto;
+    // margin-right: auto;
+    // margin-top: 10vh;
 
     &__title {
-        text-align: center;
-        font-family: $sans;
-        font-weight: 800;
-        line-height: 1.1;
-        margin-top: 0;
-        margin-bottom: 0;
+        // text-align: center;
+        // font-family: $sans;
+        // font-weight: 800;
+        // line-height: 1.1;
+        // margin-top: 0;
+        // margin-bottom: 0;
     }
 
     &__subtitle {
@@ -19,41 +20,40 @@
         // margin-top: 10vh;
         // font-size: 0.6rem;
 
-        // font-size: modular-scale(-1);
-        font-style: italic;
-        font-family: $serif;
-        // color: $faint;
-        text-align: center;
+        // // font-size: modular-scale(-1);
+        // font-style: italic;
+        // font-family: $serif;
+        // // color: $faint;
+        // text-align: center;
     }
     &__content {
-        font-weight: 400;
-        // font-family: "Vollkorn";
+        // font-weight: 400;
 
-        a {
-            text-decoration-line: none;
-            font-weight: 600;
+        // a {
+        //     text-decoration-line: none;
+        //     font-weight: 600;
 
-            &:after {
-                position: relative;
-                content: "\FEFF°";
-                margin-left: 0.10em;
-                font-size: 90%;
-                top: -0.10em;
-                color: #933;
-                font-feature-settings: "caps";
-                font-variant-numeric: normal;
-            }
-        }
+        //     &:after {
+        //         position: relative;
+        //         content: "\FEFF°";
+        //         margin-left: 0.10em;
+        //         font-size: 90%;
+        //         top: -0.10em;
+        //         color: #933;
+        //         font-feature-settings: "caps";
+        //         font-variant-numeric: normal;
+        //     }
+        // }
 
     }
 
-    figure {
-        margin-left: 0;
-        width: 100%;
-    }
+    // figure {
+    //     margin-left: 0;
+    //     width: 100%;
+    // }
 
-    img, video {
-        max-width: 100%;
-    }
+    // img, video {
+    //     max-width: 100%;
+    // }
 
 }

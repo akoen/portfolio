@@ -3,22 +3,22 @@
         padding: 0;
         &__item {
             list-style-type: none;
-            font-style: normal;
+            // font-style: normal;
 
             &__title {
-                display: block;
-                margin-bottom: 0rem;
+                // display: block;
+                // margin-bottom: 0rem;
             }
 
             &__date {
                 float: right;
-                position: relative;
-                color: $faint;
+                // position: relative;
+                // color: $faint;
             }
 
             &__summary {
-                margin-top: 0;
-                color: $faint;
+                // margin-top: 0;
+                // color: $faint;
             }
         }
     }

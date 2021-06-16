@@ -1,16 +1,18 @@
 {{ define "main" }}
   {{ partial "nav-minimal.html" }}
   <article class="article">
-    <h1 class="article__title huge">{{ .Title }}</h1>
-    <p class="article__subtitle small">
-      {{ .Date.Format "Jan 2, 2006"}}
-    </p>
-    <div class="article__content">
+    <hgroup class="alignCenter">
+      <h1 class="article__title huge">{{ .Title }}</h1>
+      <p class="article__subtitle small">
+        {{ .Date.Format "Jan 2, 2006"}}
+      </p>
+    </hgroup>
+    <!-- <div class="article__content"> -->
       {{ .TableOfContents }}
       {{ .Content }}
 
       <hr/>
       <p><i>I would love to hear what you thought of this post. Loved it? Hated it? Want to share your hand-written poem with me via carrier pigeon? That might be challenging—try sending me an <a href="mailto:hi@koen.ca">email</a>.</i></p>
-    </div>
+      <!-- </div> -->
   </article>
 {{ end }}

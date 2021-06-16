@@ -1,10 +1,13 @@
 @import "reset";
 @import "mixins";
 
+@import "gutenberg";
+
 @import "vars";
 @import "base";
 @import "spacing";
 @import "typography";
+
 
 // Components
 @import "components/nav";
@@ -16,5 +19,3 @@
 @import "components/footer";
 
 @import "components/article";
-
-@import "gutenberg"

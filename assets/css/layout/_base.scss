@@ -32,7 +32,9 @@ html {
 // Line-height & margin reset
 * {
   @include line-height(1);
-  @include margin(0, 0, 1);
+
+  // TODO Currently using containers instead
+  // @include margin(0, 0, 1);
 
   @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
     $leading: $leading-desktop;
@@ -43,10 +45,11 @@ html {
 
     @include line-height(1);
     @include margin-bottom(1);
-    max-width: #{$max-width * $base-desktop + 'px'};
-    max-width: #{$max-width + 'rem'};
-    margin-left: auto;
-    margin-right: auto;
+    // TODO Currently using containers instead
+    // max-width: #{$max-width * $base-desktop + 'px'};
+    // max-width: #{$max-width + 'rem'};
+    // margin-left: auto;
+    // margin-right: auto;
   }
 
 }
