@@ -8,17 +8,22 @@
             &__title {
                 // display: block;
                 // margin-bottom: 0rem;
+                @include margin-top(0.5);
+                @include margin-bottom(0);
+                // REVIEW: inconsistency
+                font-weight: 600;
             }
 
             &__date {
                 float: right;
                 // position: relative;
-                // color: $faint;
+                margin-left: 1rem;
+                color: $faint;
             }
 
             &__summary {
-                // margin-top: 0;
-                // color: $faint;
+                @include margin-top(0);
+                color: $faint;
             }
         }
     }
