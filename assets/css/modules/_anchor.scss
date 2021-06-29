@@ -9,26 +9,27 @@ $color-link-visited: $color-font-light;
 a {
   background: transparent;
   color: $color-link-normal;
-  transition: all .3s;
+  // transition: all .3s;
+  text-decoration: none;
 
-  &:active,
-  &:hover {
-    outline: 0;
-  }
+  // &:active,
+  // &:hover {
+  //   outline: 0;
+  // }
 
-  &:hover {
-    color: $color-link-hover;
-  }
+  // &:hover {
+  //   color: $color-link-hover;
+  // }
 
-  &:visited {
-    color: $color-link-visited;
+  // &:visited {
+  //   color: $color-link-visited;
 
-    &:hover {
-      color: $color-link-hover;
-    }
-  }
+  //   &:hover {
+  //     color: $color-link-hover;
+  //   }
+  // }
 
-  &:active {
-    color: $color-link-active;
-  }
+  // &:active {
+  //   color: $color-link-active;
+  // }
 }

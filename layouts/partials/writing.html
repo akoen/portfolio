@@ -1,7 +1,7 @@
 <section id="writing" class="writing">
   <h2 class="section-header full-width-underline">Writing</h2>
   <ul class="writing__posts">
-    {{ range union (first 1 (where site.RegularPages "Section" "now")) (first 2 (where site.RegularPages "Section" "posts")) }}
+    {{ range union (first 1 (where site.RegularPages "Section" "now")) (first 4 (where site.RegularPages "Section" "posts")) }}
       {{ $url := replace .Permalink .Site.BaseURL "" }}
       <li class="writing__posts__item">
         <aside class="writing__posts__item__date">{{ .Date.Format "Jan 2" }}</aside>
