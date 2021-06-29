@@ -6,6 +6,22 @@
     // margin-right: auto;
     // margin-top: 10vh;
 
+    a {
+        text-decoration-line: none;
+        font-weight: 600;
+
+        &:after {
+            position: relative;
+            content: "\FEFF°";
+            margin-left: 0.10em;
+            font-size: 90%;
+            top: -0.10em;
+            color: #933;
+            font-feature-settings: "caps";
+            font-variant-numeric: normal;
+        }
+    }
+
     &__title {
         // text-align: center;
         // font-family: $sans;
@@ -28,22 +44,6 @@
     }
     &__content {
         // font-weight: 400;
-
-        // a {
-        //     text-decoration-line: none;
-        //     font-weight: 600;
-
-        //     &:after {
-        //         position: relative;
-        //         content: "\FEFF°";
-        //         margin-left: 0.10em;
-        //         font-size: 90%;
-        //         top: -0.10em;
-        //         color: #933;
-        //         font-feature-settings: "caps";
-        //         font-variant-numeric: normal;
-        //     }
-        // }
 
     }
 
