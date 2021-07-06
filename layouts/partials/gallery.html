@@ -1,0 +1,88 @@
+<!-- Responsive gallery partial.
+
+     Example (remove /* */ in template):
+
+     {{/* partial "gallery.html" (dict
+     "context" .
+     "photos" (first 16 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  */}}
+
+     where CONTEXT is the site context (always .) and PHOTOS is an array of media
+     resources in .jpeg or mp4 format.
+
+     must define site params:
+     .params.thumbQuality
+     .params.landscapePhotoWidths
+
+     AUTHOR: Alex Koen
+-->
+
+<div class="photos__grid">
+  {{ range $file := .photos }}
+
+    <!-- Give each image a unique identifier -->
+    {{ $id := md5 .Name}}
+
+    {{ if (eq $file.ResourceType "image") }}
+      <!-- IMAGES -->
+      {{ $img := $file.Resize "x1024 q90"}}
+      {{ $thumb := $img.Fill $.context.Site.Params.thumbQuality }}
+
+      <!-- Create responsive images -->
+      {{ $imgSrc := "" }}
+      {{ $imgSrcSet := slice }}
+      {{ $widths := $.context.Site.Params.landscapePhotoWidths }}
+      {{ range $widths }}
+        {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
+        {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
+        <!-- Make the image url the smallest of the generated images -->
+        {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
+      {{ end }}
+      {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
+
+      <!-- Thumbnail -->
+      <figure itemscope class="photos__grid__item">
+        <a href="#{{ $id }}">
+          <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+        </a>
+      </figure>
+
+      <!-- Lighbox -->
+      <div id="{{ $id }}" class="photos__grid__lightbox">
+        <img class="lazy photos__grid__lightbox__img" data-src={{ $imgSrc }} data-srcset="{{ $imgSrcSet }}"/>
+        <a href="#!" class="backdrop"></a>
+      </div>
+
+    {{ else }}
+      <!-- VIDEOS -->
+      {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".mp4" ".jpg") }}
+      {{ $thumb := $thumb.Fill $.context.Site.Params.thumbQuality }}
+      {{ $webm := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-webm" | replaceRE ".mp4" ".webm") }}
+
+      <!-- NOTE: We use javascript to play/pause the video when the lightbox is
+           opened/closed -->
+
+      <!-- Thumbnail -->
+      <figure itemscope class="photos__grid__item">
+        <a href="#{{ $id }}" onClick='document.getElementById("{{ $id }}"+"-vid").play()'>
+          <img class="lazy photos__grid__item__img photos__grid__item__img--video" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
+          <i class="fa fa-play photos__grid__item__play" aria-hidden="true"></i>
+        </a>
+      </figure>
+
+      <!-- Lighbox -->
+      <div id="{{ $id }}" class="photos__grid__lightbox" >
+        <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-poster="{{ $thumb.Permalink }}">
+          <source type="video/webm" data-src="{{ $webm.Permalink }}" />
+          <source type="video/mp4" data-src="{{ $file.Permalink }}" />
+        </video>
+        <a href="#!" class="backdrop" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'></a>
+      </div>
+    {{ end }}
+  {{ end  }}
+</div>
+
+<script>
+ var lazyLoadInstance = new LazyLoad({
+
+ })
+</script>

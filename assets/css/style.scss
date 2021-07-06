@@ -1,10 +1,12 @@
 @import "reset";
 @import "mixins";
-
 @import "vars";
+
+@import "gutenberg";
 @import "base";
 @import "spacing";
 @import "typography";
+
 
 // Components
 @import "components/nav";

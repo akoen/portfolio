@@ -3,3 +3,5 @@ resources/
 package-lock.json
 .log/
 public/
+.envrc
+.dir-locals.el

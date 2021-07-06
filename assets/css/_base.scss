@@ -6,60 +6,86 @@ html {
     scroll-behavior: smooth;
 
     @include min($tablet) {
-        font-size: 112.5%;;
+        font-size: 125%;;
     }
 
 }
 
 body {
-    font-family: $sans;
-    font-weight: 400;
-    color: $fg;
-    line-height: 1.8rem;
-    -webkit-font-smoothing: antialiased;
+    // font-family: $sans;
     transition: 0.3s all;
+    color: $fg;
     background-color: $bg;
 }
 
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+// a {
+//     text-decoration: none;
+//     color: inherit;
+// }
 
-section {
-    margin-top: $margin-section-small;
-    width: 100%;
+// section {
+//     margin-bottom: margin(2);
+//     width: 100%;
 
-    @include min($tablet){
-        margin-top: $margin-section-large;
-    }
-}
+//     @include min($tablet){
+//         // margin-top: $margin-section-large;
+//     }
+// }
+// table {
+//     border-spacing: 0;
+//     border-collapse: collapse;
+//     border-bottom: 2px solid $grey-border;
+// }
 
-h1 {
-    font-size: 2.5rem;
-}
+// th, td {
+//     font-size: modular-scale(-1);
+//     padding: margin(0.125);
+// }
 
-h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
+// th {
+//     border-top: 2px solid $grey-border;
+//     border-bottom: 2px solid $grey-border;
+// }
 
-h3 {
-    font-size: 1.25rem;
-    font-weight: 400;
-}
+// td {
+//     border-bottom: 1px solid $grey-border;
+// }
 
-p {
-    font-size: 1rem;
-}
+
+// tr:nth-child(even) {
+//     background-color:  #f6f8fa;
+// }
+
+// Show bullets outside of main text
+// ul, ol {
+//     padding-left: 0;
+//     list-style-position: outside;
+// }
+
+// li {
+//     font-style: italic;
+//     margin-bottom: margin(0.5);
+// }
+
+// blockquote {
+//     font-style: italic;
+//     background-color: darken($color: $bg, $amount: 3);
+//     margin-left: 0;
+//     // padding: margin(1);
+//     padding: margin(1);
+//     // HACK This must be a bug
+//     padding-bottom: 1px;
+//     // padding: 0.5em 0.5em 0.5em 1em;
+//     border-left: 8px solid lighten($color: $orange, $amount: 5);
+// }
 
 .more {
-    float: right;
-    font-size: $p;
-    color: $primary-light;
-}
+    text-align: right;
+    margin-bottom: 0;
 
-// p, h1, h2, h3, h4 {
-//     margin: 0;
-// }
+    a {
+        margin-bottom: 0;
+        color: $primary-light;
+    }
+}

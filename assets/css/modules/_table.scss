@@ -1,0 +1,29 @@
+// Remove most spacing between table cells.
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    &:last-child {
+        border-bottom: 2px solid $fg;
+        color: red;
+    }
+}
+
+td,
+th {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+thead {
+    border-top: 2px solid $fg;
+    border-bottom: 2px solid $fg;
+}
+
+tr {
+    border-bottom: 1px solid $fg;
+}
+
+tbody:last-child {
+    border-bottom: 2px solid $fg;
+}

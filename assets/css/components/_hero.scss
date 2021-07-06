@@ -1,18 +1,12 @@
 .hero {
-    margin: 6rem auto;
-
-    @include min($tablet) {
-        margin-top: 12rem;
-    }
+    margin-top: margin(4);
 
     &__img {
         clip-path: circle(50% at center);
         width: 80%;
-        // width: 100%;
         max-width: 400px;
         display: block;
-        margin: 0 auto 2rem auto;
-        margin-bottom: 2rem;
+        margin: 0 auto margin(1) auto;
     }
 
     &__title {

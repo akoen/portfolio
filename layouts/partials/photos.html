@@ -1,67 +1,14 @@
 <section id="photos" class="photos">
   <h2 class="section-header full-width-underline">Photos</h2>
 
-  <div class="photos__grid">
+  <!-- The number 12 was deliberately chosen to make a nice grid -->
+  <!-- NOTE: Templates cannot span newlines -->
+  {{ partial "gallery.html" (dict "context" . "photos" (first 12 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  }}
 
-    {{ range $file := first 16 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc") }}
-      {{ $id := md5 .Name}}
-      {{ if (eq $file.ResourceType "image") }}
-        {{ $img := $file.Resize "x1024 q90"}}
-        {{ $thumb := $img.Resize "x400 q75"}}
-        {{ $widths := $.Site.Params.landscapePhotoWidths }}
-        {{ $imgSrc := "" }}
-        {{ $imgSrcSet := slice }}
-        {{ range $widths }}
-          {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
-          {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
-          {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
-        {{ end }}
-        {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
-
-        <!-- TODO Caption does not work -->
-        <figure itemscope class="photos__grid__item">
-          <a href="#{{ $id }}">
-            <img class="lazy photos__grid__item__img" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
-          </a>
-        </figure>
-
-        <div id="{{ $id }}" class="photos__grid__lightbox">
-          <img class="lazy photos__grid__lightbox__img" data-src={{ $imgSrc }} data-srcset="{{ $imgSrcSet }}"/>
-          <a href="#!" class="backdrop"></a>
-        </div>
-
-      {{ else }}
-        {{ $thumb := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-thumbs" | replaceRE ".mp4" ".jpg") }}
-        {{ $webm := resources.GetMatch ($file.Title | replaceRE "favourites" "favourites/video-webm" | replaceRE ".mp4" ".webm") }}
-
-        <figure itemscope class="photos__grid__item">
-          <a href="#{{ $id }}" onClick='document.getElementById("{{ $id }}"+"-vid").play()'>
-            <img class="lazy photos__grid__item__img photos__grid__item__img--video" data-src="{{ $thumb.Permalink }}" itemprop="thumbnail"/>
-            <i class="fa fa-play photos__grid__item__play" aria-hidden="true"></i>
-          </a>
-        </figure>
-
-        <div id="{{ $id }}" class="photos__grid__lightbox" >
-          <video id="{{ $id }}-vid" controls autoplay muted playsinline class="lazy photos__grid__lightbox__img video" preload="metadata" data-poster="{{ $thumb.Permalink }}">
-            <source type="video/webm" data-src="{{ $webm.Permalink }}" />
-            <source type="video/mp4" data-src="{{ $file.Permalink }}" />
-          </video>
-          <a href="#!" class="backdrop" onClick='document.getElementById("{{ $id }}"+"-vid").pause()'></a>
-        </div>
-      {{ end }}
-    {{ end  }}
-  </div>
-
-  <span class="more">
+  <div class="more">
     <a href="/gallery">
       See more →
     </a>
-  </span>
+  </div>
 
-  <script>
-   var lazyLoadInstance = new LazyLoad({
-
-   })
-
-  </script>
 </section>
