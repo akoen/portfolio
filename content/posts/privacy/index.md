@@ -113,7 +113,7 @@ Privacy is healthy. Privacy blinds the system, forces these institutions to trea
 
 I want to live in a world where I can take a picture on my phone without it being brought up in an interview or share secrets with a loved one in confidence. When I know that my every move is being watched, I become tired and afraid. I no longer want to express myself in my freest capacity or share an opinion that may lose me points on an invisible scoreboard that determines my future.
 
-I want to be forgotten.
+I want the right to be forgotten.
 
 # Read some more
 
@@ -123,4 +123,4 @@ I want to be forgotten.
 
 - [The Datafication of Employment](https://tcf.org/content/report/datafication-employment-surveillance-capitalism-shaping-workers-futures-without-knowledge/#easy-footnote-bottom-17) is an incredibly well-written paper on the use of "people analytics" algorithms in hiring and compensation decisions.
 
-- Anything written by the [Electronic Frontier Foundation](https://www.eff.org/), a bastion of light in a backwards world.
+- Anything written by the [Electronic Frontier Foundation](https://www.eff.org/), a bastion of light in a backward world.
