@@ -1,6 +1,6 @@
 +++
 title = "The Importance of Privacy"
-date = "2021-04-06"
+date = "2021-06-06"
 tags = ["Privacy"]
 summary = "Why your personal information is worth protecting."
 +++
