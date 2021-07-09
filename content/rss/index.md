@@ -5,7 +5,7 @@ tags = ["Privacy"]
 summary = "Why your personal information is worth protecting."
 +++
 
-You can use {{<rawhtml >}} <a href="/posts/index.xml">RSS <i class="fa fa-rss" style="font-size: 60%;"></i></a> {{</rawhtml>}} to be notified when I post something new.
+You can follow my writing by adding {{<rawhtml >}} <a href="/posts/index.xml">this link <i class="fa fa-rss" style="font-size: 60%;"></i></a> {{</rawhtml>}} to your RSS reader.
 # What is RSS?
 
 RSS is a universal subscribe button—a simple protocol that allows you to stay up-to-date with you favourite creators. Podcasts all use RSS to publish new episodes, but it is also used widely by [newspapers](https://archive.nytimes.com/www.nytimes.com/services/xml/rss/index.html) and [writers](https://seths.blog/subscribe/). [HowStuffWorks](https://computer.howstuffworks.com/internet/basics/rss.htm) provides a great overview.
