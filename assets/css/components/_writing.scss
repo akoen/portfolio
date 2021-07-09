@@ -27,4 +27,18 @@
             }
         }
     }
+
+    .section-header > aside {
+        float: right;
+        margin-bottom: 0;
+
+        * {
+          margin-bottom: 0;
+        }
+
+        a {
+            text-transform: none;
+        }
+    }
+
 }

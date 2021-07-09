@@ -1,5 +1,8 @@
 <section id="writing" class="writing">
-  <h2 class="section-header full-width-underline">Writing</h2>
+  <h2 class="section-header full-width-underline">Writing
+    <aside><a href="/rss"><i class="fa fa-rss"></i> Get updates</a></aside>
+  </h2>
+
   <ul class="writing__posts">
     {{ range union (first 1 (where site.RegularPages "Section" "now")) (first 4 (where site.RegularPages "Section" "posts")) }}
       {{ $url := replace .Permalink .Site.BaseURL "" }}

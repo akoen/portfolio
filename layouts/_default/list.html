@@ -3,7 +3,9 @@
   <section id="writing" class="writing">
 
     <!-- TODO Split into multiple pages -->
-    <h2 class="section-header full-width-underline">{{.Title}}</h2>
+    <h2 class="section-header full-width-underline">{{.Title}}
+      <aside><a href="/rss"><i class="fa fa-rss"></i> Get updates</a></aside>
+    </h2>
     <ul class="writing__posts">
       {{ range .Pages }}
         {{ $url := replace .Permalink .Site.BaseURL "" }}
