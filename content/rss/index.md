@@ -5,7 +5,7 @@ tags = ["Privacy"]
 summary = "Why your personal information is worth protecting."
 +++
 
-In short: add {{<rawhtml >}} <a href="/posts/index.xml">this link <i class="fa fa-rss" style="font-size: 60%;"></i></a> {{</rawhtml>}} to your RSS reader. 
+In short: add {{<rawhtml >}} <a href="/posts/index.xml">this link <i class="fa fa-rss" style="font-size: 60%;"></i></a> {{</rawhtml>}}&nbsp;to your RSS reader. 
 
 # What is RSS?
 
