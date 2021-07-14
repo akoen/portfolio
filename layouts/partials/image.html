@@ -4,7 +4,7 @@
 
 {{ $img := .img }}
 {{ $widths := $.ctx.Site.Params.landscapePhotoWidths }}
-
+{{ $class := .class}}
 
 {{ $imgSrcSet := slice }}
 {{ $imgSrc := "" }}
@@ -21,7 +21,7 @@
 
 <figure >
   <img
-    class="lazy"
+    class="lazy {{ if $class }} {{ $class }} {{ end  }}"
     widths="(min-width: 35em) 1200px, 100vw"
     data-src="{{ $imgSrc }}"
     data-srcset="{{ $imgSrcSet }}"

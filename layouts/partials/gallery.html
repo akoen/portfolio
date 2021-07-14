@@ -27,18 +27,6 @@
       {{ $img := $file.Resize "x1024 q90"}}
       {{ $thumb := $img.Fill $.context.Site.Params.thumbQuality }}
 
-      <!-- Create responsive images -->
-      {{ $imgSrc := "" }}
-      {{ $imgSrcSet := slice }}
-      {{ $widths := $.context.Site.Params.landscapePhotoWidths }}
-      {{ range $widths }}
-        {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
-        {{ $imgSrcSet = $imgSrcSet | append (printf "%s %dw" $srcUrl .) }}
-        <!-- Make the image url the smallest of the generated images -->
-        {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
-      {{ end }}
-      {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
-
       <!-- Thumbnail -->
       <figure itemscope class="photos__grid__item">
         <a href="#{{ $id }}">
@@ -48,7 +36,7 @@
 
       <!-- Lighbox -->
       <div id="{{ $id }}" class="photos__grid__lightbox">
-        <img class="lazy photos__grid__lightbox__img" data-src={{ $imgSrc }} data-srcset="{{ $imgSrcSet }}"/>
+        {{ partial "image" (dict "ctx" $.context "img" $img "class" "photos__grid__lightbox__img") }}
         <a href="#!" class="backdrop"></a>
       </div>
 
