@@ -1,9 +1,14 @@
+{{/*
+IMAGE.HTML - Responsive images using srcset.
 
-{{/* hugo will resize to all of these widths that are smaller than your original. configure if you like! */}}
-{{/* $widths := [480, 800, 1200, 1500] */}}
+Must set site parameters:
+- imageResponsiveWidths
+- imageWidths
+*/}}
+
 
 {{ $img := .img }}
-{{ $widths := $.ctx.Site.Params.landscapePhotoWidths }}
+{{ $widths := $.ctx.Site.Params.imageResponsiveWidths }}
 {{ $class := .class}}
 
 {{ $imgSrcSet := slice }}
@@ -22,7 +27,7 @@
 <figure >
   <img
     class="lazy {{ if $class }} {{ $class }} {{ end  }}"
-    widths="(min-width: 35em) 1200px, 100vw"
+    widths="{{ $.ctx.Site.Params.imageWidths }}"
     data-src="{{ $imgSrc }}"
     data-srcset="{{ $imgSrcSet }}"
   />
