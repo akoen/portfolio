@@ -18,7 +18,7 @@ REQUIRED SITE PARAMETERS:
 {{ $imgSrc := "" }}
 {{ $imgSrcPair := "" }}
 {{ range $widths }}
-  {{ $srcUrl := (printf "%dx" . | $img.Resize).RelPermalink }}
+  {{ $srcUrl := (printf "%dx" . | $img.Resize).Permalink }}
   {{ $imgSrcPair = (printf "%s %dw" $srcUrl .) }}
   {{ $imgSrcSet = (append $imgSrcPair $imgSrcSet) }}
   <!-- Make the image url the smallest of the generated images -->
@@ -27,11 +27,9 @@ REQUIRED SITE PARAMETERS:
 {{ $imgSrcSet = (delimit $imgSrcSet ",") }}
 
 
-<figure >
-  <img
-    class="lazy {{ if $class }} {{ $class }} {{ end  }}"
-    widths="{{ $.ctx.Site.Params.imageWidths }}"
-    data-src="{{ $imgSrc }}"
-    data-srcset="{{ $imgSrcSet }}"
-  />
-</figure>
+<img
+  class="lazy {{ if $class }} {{ $class }} {{ end }}"
+  widths="{{ $.ctx.Site.Params.imageWidths }}"
+  data-src="{{ $imgSrc }}"
+  data-srcset="{{ $imgSrcSet }}"
+/>

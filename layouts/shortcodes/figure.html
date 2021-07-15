@@ -1,3 +1,6 @@
 {{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
 
-{{ partial "image" (dict "ctx" . "img" $img) }}
+<figure>
+  {{ partial "image" (dict "ctx" . "img" $img) }}
+  <figcaption>{{ (.Get "caption") }}</figcaption>
+</figure>
