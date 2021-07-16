@@ -11,7 +11,7 @@ REQUIRED SITE PARAMETERS:
 
 
 {{ $img := .img }}
-{{ $widths := $.ctx.Site.Params.imageResponsiveWidths }}
+{{ $widths := site.Params.imageResponsiveWidths }}
 {{ $class := .class}}
 
 {{ $imgSrcSet := slice }}
