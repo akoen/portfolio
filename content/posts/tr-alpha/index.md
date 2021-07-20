@@ -9,7 +9,7 @@ Last weekend my friend Tobias and I had an amazing trip: we slept on the summit 
 
 Anyone planning a trip to the Tantalus must consider how they will cross the Squamish river. While many simply fly to Lake Lovely Water, we aren't cheaters, and so we borrowed a (very unstable) inflatable paddleboard and shuttled the two of us and our gear across in a single trip.
 
-{{<figure src="2021-07-10_09-49-56_IMG_20210710_094955.jpg" caption="Party in front of us crossing the Squamish River in a much more stable craft">}}
+{{<figure src="2021-07-10_09-49-56_IMG_20210710_094955.jpg" caption="Party in front of us crossing the Squamish River in a much more stable craft.">}}
 
 From there, it's a long hike to the lake, gaining almost 1100m. We powered up it in a few hours and stopped for a swim.
 
