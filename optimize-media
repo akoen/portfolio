@@ -2,6 +2,7 @@
 
 # https://evilmartians.com/chronicles/better-web-video-with-av1-codec
 # https://engineering.fb.com/2018/04/10/video-engineering/av1-beats-x264-and-libvpx-vp9-in-practical-use-case/
+# https://www.s-config.com/video-transcoding-ffmpeg/
 
 imagemin "$FAVOURITES_DIR_REMOTE/*.{jpg,jpeg}" --out-dir "$FAVOURITES_DIR_LOCAL"
 for file in ${FAVOURITES_DIR_REMOTE}/*.{mov,mp4}; do
