@@ -4,8 +4,10 @@
 {{ $video_h264 := (resources.Get (printf "%s.h264.mp4" $video_src)).Permalink }}
 {{ $video_h265 := (resources.Get (printf "%s.h265.mp4" $video_src)).Permalink }}
 
-<video controls playsinline class="lazy">
-  <source type="video/webm; codecs=vp9" data-src="{{ $video_webm }}" />
-  <source type="video/mp4; codecs=hvc1" data-src="{{ $video_h265 }}" />
-  <source type="video/mp4" data-src="{{ $video_h264 }}" />
-</video>
+<figure>
+  <video controls playsinline class="lazy">
+    <source type="video/webm; codecs=vp9" data-src="{{ $video_webm }}" />
+    <source type="video/mp4; codecs=hvc1" data-src="{{ $video_h265 }}" />
+    <source type="video/mp4" data-src="{{ $video_h264 }}" />
+  </video>
+</figure>
