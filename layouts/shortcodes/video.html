@@ -1,13 +1,13 @@
-{{ $video_src := (printf "videos/content%s%s" $.Page.RelPermalink (.Get "src")) }}
-{{ $video := resources.Get $video_src }}
-{{ $video_webm := (resources.Get (printf "%s.vp9.webm" $video_src)).Permalink }}
-{{ $video_h264 := (resources.Get (printf "%s.h264.mp4" $video_src)).Permalink }}
-{{ $video_h265 := (resources.Get (printf "%s.h265.mp4" $video_src)).Permalink }}
+{{ $src := (printf "/videos/content%s%s" $.Page.RelPermalink (.Get "src")) }}
+{{ $playlist := (printf "%s/playlist.m3u8" $src) }}
+{{ $poster := (printf "%s/thumb.jpg" $src) }}
 
 <figure>
-  <video controls playsinline class="video-js vjs-theme-city" data-setup='{}'>
-    <source type="video/webm; codecs=vp9" src="{{ $video_webm }}" />
-    <source type="video/mp4; codecs=hvc1" src="{{ $video_h265 }}" />
-    <source type="video/mp4" data-src="{{ $video_h264 }}" />
+  <video controls
+         playsinline
+         class="video-js vjs-fluid vjs-theme-city"
+         poster="{{ $poster }}"
+         data-setup='{}'>
+    <source type="application/x-mpegurl" src="{{ $playlist }}">
   </video>
 </figure>
