@@ -8,11 +8,10 @@ set -e
 # comment/add lines here to control which renditions would be created
 renditions=(
 # resolution  bitrate  audio-rate
-#  "426x240    400k    64k"
-  "640x360    800k     96k"
-  "842x480    1400k    128k"
-  "1280x720   2800k    128k"
-  "1920x1080  5000k    192k"
+  "360    800k     96k"
+  "480    1400k    128k"
+  "720    2800k    128k"
+  "1080   5000k    192k"
 )
 
 segment_target_duration=4       # try to create a new segment every X seconds
@@ -29,6 +28,10 @@ if [[ ! "${target}" ]]; then
 fi
 mkdir -p ${target}
 
+source_width="$(ffprobe -v error -show_entries stream=width -of default=noprint_wrappers=1:nokey=1 "$source")"
+source_height="$(ffprobe -v error -show_entries stream=height -of default=noprint_wrappers=1:nokey=1 "$source")"
+
+echo $source_width
 
 key_frames_interval="$(echo `ffprobe ${source} 2>&1 | grep -oE '[[:digit:]]+(.[[:digit:]]+)? fps' | grep -oE '[[:digit:]]+(.[[:digit:]]+)?'`*2 | bc || echo '')"
 key_frames_interval=${key_frames_interval:-50}
@@ -52,19 +55,26 @@ for rendition in "${renditions[@]}"; do
   rendition="${rendition/[[:space:]]+/ }"
 
   # rendition fields
-  resolution="$(echo ${rendition} | cut -d ' ' -f 1)"
+  size="$(echo ${rendition} | cut -d ' ' -f 1)"
   bitrate="$(echo ${rendition} | cut -d ' ' -f 2)"
   audiorate="$(echo ${rendition} | cut -d ' ' -f 3)"
 
   # calculated fields
-  width="$(echo ${resolution} | grep -oE '^[[:digit:]]+')"
-  height="$(echo ${resolution} | grep -oE '[[:digit:]]+$')"
   maxrate="$(echo "`echo ${bitrate} | grep -oE '[[:digit:]]+'`*${max_bitrate_ratio}" | bc)"
   bufsize="$(echo "`echo ${bitrate} | grep -oE '[[:digit:]]+'`*${rate_monitor_buffer_ratio}" | bc)"
   bandwidth="$(echo ${bitrate} | grep -oE '[[:digit:]]+')000"
-  name="${height}p"
-  
-  cmd+=" ${static_params} -vf scale=w=${width}:h=${height}:force_original_aspect_ratio=decrease"
+
+
+  if [ "$source_height" -gt "$source_width" ]
+  then
+      scale="${size}:-2"
+  else
+      scale="-2:${size}"
+  fi
+
+  Name=""${size}p"
+
+  cmd+=" ${static_params} -vf scale=${scale}"
   cmd+=" -b:v ${bitrate} -maxrate ${maxrate%.*}k -bufsize ${bufsize%.*}k -b:a ${audiorate}"
   cmd+=" -hls_segment_filename ${target}/${name}_%03d.ts ${target}/${name}.m3u8"
   
@@ -74,9 +84,12 @@ done
 
 # start conversion
 echo -e "Executing command:\nffmpeg ${misc_params} -i ${source} ${cmd}"
-ffmpeg ${misc_params} -i ${source} ${cmd}
+ffmpeg ${misc_params} -n -i ${source} ${cmd}
 
 # create master playlist file
 echo -e "${master_playlist}" > ${target}/playlist.m3u8
+
+# create thumbnail
+ffmpeg -n -i ${source} -vf thumbnail,scale=400:-1 -frames:v 1 "${target}/thumb.jpg"
 
 echo "Done - encoded HLS is at ${target}/"
