@@ -5,9 +5,9 @@
 {{ $video_h265 := (resources.Get (printf "%s.h265.mp4" $video_src)).Permalink }}
 
 <figure>
-  <video controls playsinline class="lazy">
-    <source type="video/webm; codecs=vp9" data-src="{{ $video_webm }}" />
-    <source type="video/mp4; codecs=hvc1" data-src="{{ $video_h265 }}" />
+  <video controls playsinline class="video-js vjs-theme-city" data-setup='{}'>
+    <source type="video/webm; codecs=vp9" src="{{ $video_webm }}" />
+    <source type="video/mp4; codecs=hvc1" src="{{ $video_h265 }}" />
     <source type="video/mp4" data-src="{{ $video_h264 }}" />
   </video>
 </figure>
