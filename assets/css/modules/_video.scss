@@ -1,11 +1,5 @@
-video {
-  max-width: 100%;
-}
-
+// HACK: Bottom bar otherwise sticks up.
+// FIXME: Play button is not centred.
 .vjs-control-bar {
-    margin: 0;
-
-    & * {
-        margin: 0;
-    }
+    margin-bottom: 0;
 }
