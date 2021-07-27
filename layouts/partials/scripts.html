@@ -12,10 +12,13 @@
 
 <!-- lightGallery -->
 <script src="{{ (resources.Get "lib/lightgallery/lightgallery.min.js" | fingerprint).Permalink }}"></script>
+<script src="{{ (resources.Get "lib/lightgallery/lg-hash.min.js" | fingerprint).Permalink }}"></script>
 <script>lightGallery(document.getElementById('gallery'), {
+   plugins: [lgHash],
+   customSlideName: true,
+   download: false,
  });
 </script>
-
 
 <!-- GoatCounter -->
 <script data-goatcounter="https://alexkoen.goatcounter.com/count"
