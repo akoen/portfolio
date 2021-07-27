@@ -11,7 +11,7 @@ timeout = 300000
   pluralizeListTitles = false
 
   imageThumbQuality = "400x400 q75 Center"
-  imageResponsiveWidths = [2500, 1500, 1000]
+  imageResponsiveWidths = [1500, 1000, 800, 400]
   imageWidths = "(min-width: 35em) 1200px, 100vw"
 
 [imaging.exif]

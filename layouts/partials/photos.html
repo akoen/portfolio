@@ -3,7 +3,7 @@
 
   <!-- The number 12 was deliberately chosen to make a nice grid -->
   <!-- NOTE: Templates cannot span newlines -->
-  {{ partial "gallery.html" (dict "context" . "photos" (first 12 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  }}
+  {{ partial "lightgallery.html" (dict "context" . "photos" (first 12 (sort (resources.Match "favourites/*.{jpg,h264.mp4}") "Name" "desc")))  }}
 
   <div class="more">
     <a href="/gallery">

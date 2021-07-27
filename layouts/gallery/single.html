@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ partial "nav-minimal.html" }}
   <section id="photos" class="photos">
-    {{ partial "gallery.html" (dict "context" . "photos" (after 12 (sort (resources.Match "favourites/*{jpeg,mp4}") "Name" "desc")))  }}
+    {{ partial "lightgallery.html" (dict "context" . "photos" (after 12 (sort (resources.Match "favourites/*.{jpg,h264.mp4}") "Name" "desc"))) }}
   </section>
 {{ end }}

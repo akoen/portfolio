@@ -1,0 +1,16 @@
+{{ $img := . }}
+{{ $widths := site.Params.imageResponsiveWidths }}
+
+{{ $imgSrcSet := slice }}
+{{ $imgSrc := "" }}
+{{ $imgSrcPair := "" }}
+{{ range $widths }}
+  {{ $srcUrl := (printf "%dx" . | $img.Resize).Permalink }}
+  {{ $imgSrcPair = (printf "%s %dw" $srcUrl .) }}
+  {{ $imgSrcSet = (append $imgSrcPair $imgSrcSet) }}
+  <!-- Make the image url the smallest of the generated images -->
+  {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
+{{ end }}
+{{ $imgSrcSet = (delimit $imgSrcSet ",") }}
+
+{{ return (dict "srcURL" $imgSrc "srcset" $imgSrcSet) }}
