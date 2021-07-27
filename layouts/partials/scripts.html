@@ -10,6 +10,15 @@
 <!-- TODO: Make local -->
 <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 
+<!-- lightGallery -->
+<script src="{{ (resources.Get "lib/lightgallery/lightgallery.min.js" | fingerprint).Permalink }}"></script>
+<script>lightGallery(document.getElementById('gallery'), {
+   thumbnail: true,
+   customSlideName: true,
+ });
+</script>
+
+
 <!-- GoatCounter -->
 <script data-goatcounter="https://alexkoen.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

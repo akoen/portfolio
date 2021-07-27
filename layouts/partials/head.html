@@ -19,14 +19,19 @@
 
 <meta name="author" content="{{ .Site.Author.name}}" />
 
-<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
-<link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet" />
 
+<!-- STYLES -->
 {{ $styles := resources.Get "css/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}">
 
+<!-- LIBRARIES -->
+<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+<link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet" />
 <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" media="screen" />
 
+<link type="text/css" rel="stylesheet" href="{{ (resources.Get "lib/lightgallery/lightgallery.css" | fingerprint).Permalink }}" >
+
+<!-- FONTS -->
 <link rel="preload" href="/fonts/work-sans-v8-latin-500.woff2" as="font" type="font/woff2"/>
 <link rel="preload" href="/fonts/work-sans-v8-latin-regular.woff2" as="font" type="font/woff2"/>
 <link rel="preload" href="/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff"/>
