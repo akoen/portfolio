@@ -33,9 +33,6 @@ html {
 * {
   @include line-height(1);
 
-  // TODO Currently using containers instead
-  // @include margin(0, 0, 1);
-
   @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
     $leading: $leading-desktop;
     $leading-rem: $leading-rem-desktop;
@@ -44,7 +41,6 @@ html {
     @import '../mixins/margin';
 
     @include line-height(1);
-    @include margin-bottom(1);
     // TODO Currently using containers instead
     // max-width: #{$max-width * $base-desktop + 'px'};
     // max-width: #{$max-width + 'rem'};
