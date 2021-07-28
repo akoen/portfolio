@@ -20,6 +20,15 @@
    download: false,
    videojs: false,
  });
+
+ // Close lightbox on back button press
+ document.querySelectorAll(".gallery__item").forEach(i => {
+   i.addEventListener("click", (event) => {
+     var stateObj = { lg: "close" };
+     var url = window.location.href;
+     history.pushState(stateObj, "Products", url);
+   });
+ });
 </script>
 
 <!-- GoatCounter -->
