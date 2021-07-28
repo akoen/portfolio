@@ -4,8 +4,9 @@ figcaption {
   display: block;
   font-size: .8125rem;
   font-style: italic;
-  margin-bottom: 0;
   text-align: center;
+
+  @include margin-top(0.5);
 
   @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
     $leading: $leading-desktop;
@@ -14,15 +15,16 @@ figcaption {
     @import '../mixins/line-height';
 
     @include line-height(1);
-    margin-bottom: 0;
-  }
 
+  }
 }
 
 figure {
   display: block;
   margin-left: 0;
   margin-right: 0;
+  max-width: 100%;
+  @include margin-bottom(1);
 }
 
 figure.floatLeft,

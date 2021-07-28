@@ -72,6 +72,10 @@ sub {
 /* Paragraph
 ========================================================================== */
 
+p {
+    @include margin-bottom(1);
+}
+
 @if $paragraph-indent == true {
 
   p + p {

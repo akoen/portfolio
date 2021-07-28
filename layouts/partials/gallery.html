@@ -30,7 +30,10 @@
          data-srcset="{{ $srcset.srcset }}"
          data-sizes="100vw" >
         <img class="lazy gallery__item__img"
-             data-src="{{ $thumb.Permalink }}" />
+             data-src="{{ $thumb.Permalink }}"
+             width="400"
+             height="400"
+        />
       </a>
     {{ else }}
 
