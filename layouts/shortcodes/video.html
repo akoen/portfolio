@@ -1,16 +1,18 @@
 <!-- Inspired by https://blog.cavelab.dev/2021/06/video-solutions-for-blog/ and
-https://blog.zazu.berlin/internet-programmierung/mpeg-dash-and-hls-adaptive-bitrate-streaming-with-ffmpeg.html -->
+     https://www.s-config.com/video-transcoding-ffmpeg
+     /https://blog.zazu.berlin/internet-programmierung/mpeg-dash-and-hls-adaptive-bitrate-streaming-with-ffmpeg.html -->
 
-{{ $src := (printf "/videos/content%s%s" $.Page.RelPermalink (.Get "src")) }}
-{{ $playlist := (printf "%s/playlist.m3u8" $src) }}
-{{ $poster := (printf "%s/thumb.jpg" $src) }}
+
+{{ $src := (.Get "src") }}
+{{ $h264 := .Page.Resources.GetMatch (printf "%s.h264.mp4" $src) }}
+{{ $basename := ($h264.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
+{{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
 
 <figure>
   <video controls
          playsinline
-         class="video-js vjs-4-3 vjs-big-play-centered"
-         poster="{{ $poster }}"
-         data-setup='{}'>
-    <source type="application/x-mpegurl" src="{{ $playlist }}">
+         poster="{{ $thumb.Permalink }}"
+         preload="metadata">
+    <source src="{{ $h264.Permalink }}" type="video/mp4"/>
   </video>
 </figure>

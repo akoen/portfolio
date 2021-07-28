@@ -13,10 +13,12 @@
 <!-- lightGallery -->
 <script src="{{ (resources.Get "lib/lightgallery/lightgallery.min.js" | fingerprint).Permalink }}"></script>
 <script src="{{ (resources.Get "lib/lightgallery/lg-hash.min.js" | fingerprint).Permalink }}"></script>
+<script src="{{ (resources.Get "lib/lightgallery/lg-video.min.js" | fingerprint).Permalink }}"></script>
 <script>lightGallery(document.getElementById('gallery'), {
-   plugins: [lgHash],
+   plugins: [lgHash, lgVideo],
    customSlideName: true,
    download: false,
+   videojs: false,
  });
 </script>
 

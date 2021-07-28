@@ -1,0 +1,38 @@
+#! /usr/bin/python
+import subprocess
+from pathlib import Path
+
+EXTENSIONS = ['mp4', 'mov']
+CODEC_SCRIPTS = {
+    'h264': 'scripts/transcode-h264',
+    'h265': 'scripts/transcode-h265',
+    'vp9': './scripts/transcode-vp9',
+    'thumb': 'scripts/transcode-thumb'
+}
+
+cwd = Path.cwd()
+path_to_videos = Path('videos')
+
+videos = []
+for ext in EXTENSIONS:
+    videos += sorted(path_to_videos.rglob(f'*.{ext}'))
+
+for video in videos:
+    name = video.stem
+    path = video.relative_to('videos')
+    # output_folder = ('static/videos' / path).parents[0]
+    output_folder = path.parents[0]
+    Path.mkdir(output_folder, parents=True, exist_ok=True)
+    # subprocess.call([CODEC_SCRIPTS['h264'], video, f"{output_folder}/{name}.h264.mp4"])
+    # subprocess.call([CODEC_SCRIPTS['h265'], video, f"{output_folder}/{name}.h265.mp4"])
+    # subprocess.run([CODEC_SCRIPTS['vp9'], video, f"{output_folder}/{name}.vp9.webm"])
+    subprocess.call([CODEC_SCRIPTS['thumb'], video, f"assets/video-thumbs/{name}.jpg"])
+
+def video_vertical(path) -> bool:
+    subprocess.run(["ffprobe",
+                    "-v", "error",
+                    "-show_entries",
+                    "stream=height",
+                    "-of",
+                    "default=noprint_wrappers=1:nokey=1",
+                    path])
