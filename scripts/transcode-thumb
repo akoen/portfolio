@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+source="$1"
+target="$2"
+
+# create thumbnail
+ffmpeg -y -i "$source" -vf thumbnail,scale=400:-1 -frames:v 1 "$target"

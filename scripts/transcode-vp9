@@ -1,0 +1,29 @@
+#! /usr/bin/python
+# https://developers.google.com/media/vp9/settings/vod
+
+import sys
+import subprocess
+
+source = sys.argv[1]
+target = sys.argv[2]
+
+print(source)
+
+common = ['ffmpeg',
+          '-i', source,
+          '-c:v', 'libvpx-vp9',
+          '-r', '30',
+          '-vf', 'scale=720:-2',
+          '-b:v', '1000k', '-minrate', '500k', '-maxrate', '1500k',
+          '-tile-columns', '2', '-g', '240',
+          '-frame-parallel', '0',
+          '-auto-alt-ref', '1', '-lag-in-frames', '25',
+          '-threads', '8',
+          '-movflags', '+faststart']
+
+# Pass 1
+pass_1 = common + ['-pass', '1', '-speed', '4', '-an', '-f', 'webm', '-y', '/dev/null']
+pass_2 = common + ['-pass', '2', '-speed', '2', '-c:a', 'libopus', '-b:a', '64k', '-y', target]
+
+subprocess.run(pass_1)
+subprocess.run(pass_2)

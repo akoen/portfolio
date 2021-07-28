@@ -1,0 +1,27 @@
+#! /usr/bin/python
+
+import sys
+import subprocess
+
+source = sys.argv[1]
+target = sys.argv[2]
+
+print(target)
+
+common = ['ffmpeg',
+          '-i', source,
+          '-c:v', 'libx264',
+          '-profile:v', 'high', '-preset', 'veryslow',
+          '-r', '30',
+          '-vf', 'scale=720:-2',
+          '-b:v', '1000k', '-minrate', '500k', '-maxrate', '1500k',
+          '-bufsize', '5000k',
+          '-movflags', '+faststart',
+          '-threads', '0']
+
+# Pass 1
+pass_1 = common + ['-pass', '1', '-an', '-f', 'mp4', '-y', '/dev/null']
+pass_2 = common + ['-pass', '2', '-c:a', 'aac', '-b:a', '128k', '-y', target]
+
+subprocess.run(pass_1)
+subprocess.run(pass_2)

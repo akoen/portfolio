@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+source="$1"
+target="$2"
+
+ffmpeg -n -i "$source" \
+       -c:v libx265 \
+       -crf 28 \
+       -r 24 \
+        -pix_fmt yuv420p \
+       -movflags +faststart \
+       -tag:v hvc1 \
+       -vf scale=720:-2 \
+       -c:a aac -b:a 128k -ac 1 \
+       -threads 0 \
+       "$target"
+
+       # -preset veryslow \

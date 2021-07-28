@@ -11,7 +11,7 @@ Otherwise, I've been skiing on weekends and getting outside when I can like usua
 
 {{<figure src="skiing.jpeg">}}
 
-{{< video src="cypress" width="400px" >}}
+{{<video src="cypress" width="400px">}}
 
 
 Updated January 13th, 2021 from North Vancouver, British Columbia

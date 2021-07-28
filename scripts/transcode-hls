@@ -89,7 +89,4 @@ ffmpeg ${misc_params} -n -i ${source} ${cmd}
 # create master playlist file
 echo -e "${master_playlist}" > ${target}/playlist.m3u8
 
-# create thumbnail
-ffmpeg -n -i ${source} -vf thumbnail,scale=400:-1 -frames:v 1 "${target}/thumb.jpg"
-
 echo "Done - encoded HLS is at ${target}/"
