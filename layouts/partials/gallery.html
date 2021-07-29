@@ -16,7 +16,7 @@
      AUTHOR: Alex Koen
 -->
 
-<div id="gallery">
+<div id="gallery" class="pswp-gallery">
   {{ range $file := .photos }}
     {{ if (eq $file.ResourceType "image") }}
       <!-- IMAGES -->
@@ -25,12 +25,14 @@
       {{ $srcset := (partial "srcset.html" $img) }}
 
       <a class="gallery__item"
-         href="{{ $srcset.src }}"
-         data-slide-name="{{ .Name | md5 }}"
-         data-srcset="{{ $srcset.srcset }}"
-         data-sizes="100vw" >
-        <img class="lazy gallery__item__img"
-             data-src="{{ $thumb.Permalink }}"
+         href="{{ $img.Permalink }}"
+         data-pswp-width="{{ $img.Width }}"
+         data-pswp-height="{{ $img.Height }}"
+         target="_blank"
+         data2-srcset="{{ $srcset.srcset }}"
+      >
+        <img class="gallery__item__img"
+             src="{{ $thumb.Permalink }}"
              width="400"
              height="400"
         />

@@ -10,21 +10,40 @@
 <script src="{{ (resources.Get "lib/lightgallery/lightgallery.min.js" | fingerprint).Permalink }}"></script>
 <script src="{{ (resources.Get "lib/lightgallery/lg-hash.min.js" | fingerprint).Permalink }}"></script>
 <script src="{{ (resources.Get "lib/lightgallery/lg-video.min.js" | fingerprint).Permalink }}"></script>
-<script>lightGallery(document.getElementById('gallery'), {
-   plugins: [lgHash, lgVideo],
-   customSlideName: true,
-   download: false,
-   videojs: false,
- });
+<!-- <script>lightGallery(document.getElementById('gallery'), {
+     plugins: [lgHash, lgVideo],
+     customSlideName: true,
+     download: false,
+     videojs: false,
+     });
 
- // Close lightbox on back button press
- document.querySelectorAll(".gallery__item").forEach(i => {
-   i.addEventListener("click", (event) => {
+     // Close lightbox on back button press
+     document.querySelectorAll(".gallery__item").forEach(i => {
+     i.addEventListener("click", (event) => {
      var stateObj = { lg: "close" };
      var url = window.location.href;
      history.pushState(stateObj, "Products", url);
-   });
+     });
+     });
+     </script> -->
+
+<!-- PhotoSwipe -->
+<script type="module">
+ // Include Lightbox
+ import PhotoSwipeLightbox from '{{ (resources.Get "lib/photoswipe/photoswipe-lightbox.esm.js" | fingerprint).Permalink }}';
+
+ const lightbox = new PhotoSwipeLightbox({
+   // may select multiple "galleries"
+   gallerySelector: '#gallery',
+
+   // Elements within gallerySelector (slides)
+   childSelector: 'a',
+
+   // Include PhotoSwipe Core
+   // and use absolute path (that starts with http(s)://)
+   pswpModule: '{{ (resources.Get "lib/photoswipe/photoswipe.esm.js" | fingerprint).Permalink }}'
  });
+ lightbox.init();
 </script>
 
 <!-- GoatCounter -->
