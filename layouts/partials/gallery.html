@@ -20,7 +20,7 @@
   {{ range $file := .photos }}
     {{ if (eq $file.ResourceType "image") }}
       <!-- IMAGES -->
-      {{ $img := $file.Resize "x1024 q90"}}
+      {{ $img := $file}}
       {{ $thumb := $img.Resize $.context.Site.Params.imageThumbQuality }}
       {{ $srcset := (partial "srcset.html" $img) }}
 
@@ -39,6 +39,20 @@
         </div>
       </a>
     {{ else }}
+      {{ $basename := ($file.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
+      {{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
+      {{ $squareThumb := $thumb.Fill $.context.Site.Params.imageThumbQuality }}
+
+      <a class="gallery__item"
+         href="{{ $file.Permalink }} "
+         data-pswp-width="{{ $thumb.Width }}"
+         data-pswp-height="{{ $thumb.Height }}"
+         data-pswp-is-video="true"
+         >
+        <img class="lazy gallery__item__img"
+             data-src="{{ $thumb.Permalink }}"/>
+        <i class="fa fa-play gallery__item__play" aria-hidden="true"></i>
+      </a>
     {{ end  }}
   {{ end  }}
 </div>

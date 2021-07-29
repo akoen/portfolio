@@ -43,6 +43,19 @@
    // and use absolute path (that starts with http(s)://)
    pswpModule: '{{ (resources.Get "lib/photoswipe/photoswipe.esm.js" | fingerprint).Permalink }}'
  });
+
+ // Video support
+ lightbox.on('itemData', (e) => {
+   const element = e.itemData.element;
+
+   if (element  && element.dataset.pswpIsVideo) {
+     const videoURL = element.href;
+     e.itemData = {
+       html: `<video controls preload="none"><source src="${videoURL}" type="video/mp4"> </video>`
+     };
+   }
+ });
+
  lightbox.init();
 </script>
 
