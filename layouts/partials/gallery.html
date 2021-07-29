@@ -21,37 +21,24 @@
     {{ if (eq $file.ResourceType "image") }}
       <!-- IMAGES -->
       {{ $img := $file.Resize "x1024 q90"}}
-      {{ $thumb := $img.Fill $.context.Site.Params.imageThumbQuality }}
+      {{ $thumb := $img.Resize $.context.Site.Params.imageThumbQuality }}
       {{ $srcset := (partial "srcset.html" $img) }}
 
       <a class="gallery__item"
          href="{{ $img.Permalink }}"
          data-pswp-width="{{ $img.Width }}"
          data-pswp-height="{{ $img.Height }}"
+         data-cropped="true"
          target="_blank"
          data2-srcset="{{ $srcset.srcset }}"
       >
-        <img class="gallery__item__img"
-             src="{{ $thumb.Permalink }}"
-             width="400"
-             height="400"
-        />
+        <div>
+          <img class="gallery__item__img"
+               src="{{ $thumb.Permalink }}"
+          />
+        </div>
       </a>
     {{ else }}
-
-      {{ $basename := ($file.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
-      {{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
-      {{ $squareThumb := $thumb.Fill $.context.Site.Params.imageThumbQuality }}
-
-      <!-- FIXME: Poster is stretched before video plays -->
-      <a class="gallery__item"
-         data-slide-name="{{ .Name | md5 }}"
-         data-video='{"source": [{"src":"{{- $file.Permalink -}}", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'
-         data-poster="{{ $thumb.Permalink }}">
-        <img class="lazy gallery__item__img"
-             data-src="{{ $squareThumb.Permalink }}"/>
-        <i class="fa fa-play gallery__item__play" aria-hidden="true"></i>
-      </a>
     {{ end  }}
   {{ end  }}
 </div>

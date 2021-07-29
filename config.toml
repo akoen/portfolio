@@ -10,7 +10,7 @@ timeout = 300000
   description = "Engineering student, writer, climber and photographer."
   pluralizeListTitles = false
 
-  imageThumbQuality = "400x400 q75 Center"
+  imageThumbQuality = "x400 q75"
   imageResponsiveWidths = [1500, 1000, 800, 400]
   imageWidths = "(min-width: 35em) 1200px, 100vw"
 
