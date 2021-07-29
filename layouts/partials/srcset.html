@@ -6,11 +6,15 @@
 {{ $imgSrcPair := "" }}
 {{ range $widths }}
   {{ $srcUrl := (printf "%dx" . | $img.Resize).Permalink }}
+  <!-- NOTE: Depending on the name of the srcset attribute (e.g data-pswp-srcset),
+       Hugo might replace all spaces with %20 thinking that it is a URL.
+       Consequently, srcset will not work. See
+       https://github.com/gohugoio/hugo/blob/3d5dbdcb1a11b059fc2f93ed6fadb9009bf72673/tpl/internal/go_templates/htmltemplate/attr.go -->
   {{ $imgSrcPair = (printf "%s %dw" $srcUrl .) }}
   {{ $imgSrcSet = (append $imgSrcPair $imgSrcSet) }}
   <!-- Make the image url the smallest of the generated images -->
   {{ if eq $imgSrc "" }}{{ $imgSrc = $srcUrl }}{{ end }}
 {{ end }}
-{{ $imgSrcSet = (delimit $imgSrcSet ",") }}
+{{ $imgSrcSet = (delimit $imgSrcSet ", ") }}
 
 {{ return (dict "srcURL" $imgSrc "srcset" $imgSrcSet) }}
