@@ -72,3 +72,12 @@
     transform: translate(-50%, -50%);
     max-height: 100%;
 }
+
+.pswp-swipe-surface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
