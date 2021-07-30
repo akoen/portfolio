@@ -51,7 +51,7 @@
    if (element  && element.dataset.pswpIsVideo) {
      const videoURL = element.href;
      e.itemData = {
-       html: `<video preload="none"><source src="${videoURL}" type="video/mp4"></video><div class="pswp-swipe-surface"></div>`
+       html: `<video preload="metadata"><source src="${videoURL}" type="video/mp4"></video><div class="pswp-swipe-surface"></div>`
      };
    }
  });
