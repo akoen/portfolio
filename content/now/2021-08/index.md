@@ -19,4 +19,4 @@ I climbed relentlessly, and did several trips. Two of these stood out: [Sleeping
 {{<figure src="dairyland" caption="Climbing the best handcrack in the West on Dairyland. We demolished the 1400m approach in just over 2 hours.">}}
 
 
-Updated August 8th, 2021 from North Vancouver, British Columbia
+Updated August 2nd, 2021 from North Vancouver, British Columbia
