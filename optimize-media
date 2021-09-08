@@ -5,20 +5,3 @@
 # https://www.s-config.com/video-transcoding-ffmpeg/
 
 imagemin "$FAVOURITES_DIR_REMOTE/*.{jpg,jpeg}" --out-dir "$FAVOURITES_DIR_LOCAL"
-for file in ${FAVOURITES_DIR_REMOTE}/*.{mov,mp4}; do
-    base=$(basename "${file%.*}")
-    dur=$(ffprobe -loglevel error -show_entries format=duration -of default=nk=1:nw=1 "$file")
-
-
-    # ffmpeg -n -i "$file" -c:v libx265 -crf 28 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -c:a aac -vf scale=720:-2 "$FAVOURITES_DIR_LOCAL/${base}.mp4"
-
-    ffmpeg -n -i "$file" -c:v libx264 -pix_fmt yuv420p -profile:v baseline -level 3.0 -preset veryslow -crf 28 -acodec aac -vf scale=720:-2 -movflags +faststart -threads 0 "$FAVOURITES_DIR_LOCAL/${base}.mp4"
-
-    # ffmpeg -n -i "$file" -c:v libaom-av1 -pix_fmt yuv420p -crf 38 -movflags +faststart -b:v 0 -acodec libopus -vf scale=720:-2 -threads 0 "$FAVOURITES_DIR_LOCAL/${base}.mp4"
-
-    ffmpeg -n -i "$file" -ss "$(echo "$dur / 1.5" | bc -l)" -vframes 1 -filter "scale=400:-1" -q:v 2 "$FAVOURITES_DIR_LOCAL/video-thumbs/${base}.jpg"
-
-    ffmpeg -n -i "$file" -c:v libvpx-vp9 -pix_fmt yuv420p -b:v 1M -c:a libopus -b:a 128k -vf scale=720:-1 "$FAVOURITES_DIR_LOCAL/video-webm/${base}.webm"
-
-
-done

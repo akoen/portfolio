@@ -33,6 +33,7 @@
     @return margin($multiplier)
 }
 
+// Inspired by https://every-layout.dev/rudiments/modular-scale/
 @function modular-scale($value, $ms-ratio: $modular-scale-ratio){
     $size: pow($ms-ratio, $value);
     @return #{ $size + "rem" };
