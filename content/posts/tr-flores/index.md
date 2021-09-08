@@ -1,15 +1,14 @@
 +++
-title = "Trip Report: Paddling around Flores Island"
+title = "Trip Report: Paddling Around Flores Island"
 date = "2021-08-13"
 description = "The Sony's last album"
 +++
 
 {{<figure src="track.png" caption="">}}
 
-Last week my dad and I—along with a few of his friends—circumnavigated Flores Island by kayak. It took us six days and featured whales, wolves, my favourite place on earth, and the unfortunate death of my camera.
+Last week my dad and I—along with a few of his friends—circumnavigated Flores Island by kayak. It took us six days and featured whales, wolves, my favourite place on earth and a terrifying midnight meeting with the ocean.
 
-
-We left Tofino on a sunny Tuesday afternoon. We paddled for a few hours until the winds began to rise, and then camped on a gravel beach tucked away on a small island on the north shore of Vargas Island.
+We left Tofino on a sunny Tuesday afternoon. We paddled for a few hours until the winds began to rise and then camped on a gravel beach tucked away on a small island on the north shore of Vargas Island.
 
 {{<figure src="2021-08-04_19-16-22_DSC02899_EDIT.jpg" caption="">}}
 
@@ -17,7 +16,7 @@ With nothing better to do, we paddled around the island for sunset.
 
 {{<figure src="2021-08-04_20-26-26_DSC02954_EDIT.jpg" caption="">}}
 
-Vargas is known for its wildlife, and I awoke early the next morning to the sound of my dad yelling "wolf, wolf!" Unforunately, by the time I mustered the energy to leave my sleeping bag it had ducked back in to the forest.
+Vargas is known for its wildlife, and I awoke early the next morning to the sound of my dad yelling "wolf, wolf!" Unfortunately, by the time I mustered the energy to leave my sleeping bag it had ducked back in to the forest.
 
 {{<figure src="2021-08-05_06-59-17_DSC02979_EDIT.jpg" caption="">}}
 
@@ -27,7 +26,7 @@ By the time we embarked our kayaks were shrouded in fog.
 
 After another short paddle, we arrived at White Sand Cove, a sandy beach on Flores Island. Given that it was only mid-afternoon, Osa and I decided to explore. Others told of a natural spring on the shoreline that someone had fashioned into an outdoor pool, only a few kilometres away. It proved to be well hidden, but after almost four hours of searching we managed to find it.
 
-The water was tepid and crystal-clear, perfect for washing.
+The water was tepid and crystal-clear:
 
 {{<figure src="2021-08-05_17-25-43_DSC03040_EDIT.jpg" caption="A remote spring-fed pool on the shoreline of Matilda Inlet.">}}
 
@@ -77,4 +76,4 @@ Needless to say, that event put a downer on the whole trip, but luckily it was a
 
 {{<figure src="2021-08-08_20-53-35_P8080170_EDIT.jpg" caption="">}}
 
-It was a trip full of ups and downs, but I will remember it for years to come. To me, this area epitomizes the beauty of the West Coast, and I feel so lucky to be able to explore it, if only briefly.
+It was a trip full of ups and downs, but I will remember it for years to come. To me, this area epitomizes the beauty of the West Coast and I feel so lucky to be able to explore it, if only for a few days.
