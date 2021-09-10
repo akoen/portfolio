@@ -1,6 +1,6 @@
 +++
 title = "Trip Report: The West Coast Trail"
-date = "2021-09-03"
+date = "2021-09-09"
 +++
 
 # Day 1
@@ -12,19 +12,14 @@ date = "2021-09-03"
 
 {{<figure src="2021-08-26_19-54-48_DSCF1210_EDIT.jpg" caption="">}}
 
-{{<figure src="2021-08-26_19-59-06_DSCF1214.jpg" caption="">}}
+{{<figure src="2021-08-26_19-59-06_DSCF1214.jpg" caption="Thrasher Cove, our first campsite.">}}
 
 {{<figure src="2021-08-26_19-59-58_DSCF1215_EDIT.jpg" caption="">}}
-
-
-
-
 
 # Day 2
 {{<figure src="2021-08-27_08-53-06_DSCF1222.jpg" caption="The journey around Owen point is the most difficult—and most scenic—section of the whole trail.">}}
 
 {{<figure src="2021-08-27_09-22-49_DSCF1229_EDIT.jpg" caption="">}}
-
 
 {{<figure src="2021-08-27_10-24-13_DSCF1254.jpg" caption="">}}
 
@@ -33,9 +28,11 @@ date = "2021-09-03"
 {{<figure src="2021-08-27_11-36-57_DSCF1308.jpg" caption="">}}
 
 
+{{<figure src="2021-08-27_17-10-56_DSCF1347.jpg" caption="">}}
+{{<figure src="2021-08-27_17-09-18_DSCF1343_EDIT.jpg" caption="">}}
 
-{{<figure src="2021-08-27_17-10-56_DSCF1347.jpg" caption="Mom">}}
-{{<figure src="2021-08-27_17-09-18_DSCF1343_EDIT.jpg" caption="Cynthia">}}
+{{<figure src="2021-08-27_18-03-09_DSCF1356_EDIT.jpg" caption="Fishing vessels dotted the coastline.">}}
+
 
 # Day 3
 {{<figure src="2021-08-28_08-29-11_DSCF1371_EDIT.jpg" caption="">}}
@@ -44,7 +41,7 @@ date = "2021-09-03"
 
 {{<figure src="2021-08-28_12-13-35_DSCF1427_EDIT.jpg" caption="">}}
 
-{{<figure src="2021-08-28_15-22-57_DSCF1475_EDIT.jpg" caption="The first of more than thirty kilometres of beach-walking.">}}
+{{<figure src="2021-08-28_15-22-57_DSCF1475_EDIT.jpg" caption="The first of over thirty kilometres of beach-walking.">}}
 
 
 {{<figure src="2021-08-28_19-39-01_DSCF1561_EDIT.jpg" caption="Sunset at Bonilla Pt.">}}
@@ -64,7 +61,7 @@ date = "2021-09-03"
 
 {{<figure src="2021-08-29_15-40-13_DSCF1714.jpg" caption="A well-warranted meal at the Crabshack.">}}
 {{<figure src="2021-08-29_16-10-13_DSCF1729_EDIT.jpg" caption="Not the only ones having a meal">}}
-{{<figure src="2021-08-29_16-33-34_DSCF1736.jpg" caption="Vanessa and the dog">}}
+<!-- {{<figure src="2021-08-29_16-33-34_DSCF1736.jpg" caption="Vanessa and the dog">}} -->
 
 {{<figure src="2021-08-29_19-42-47_DSCF1759_EDIT.jpg" caption="Tsusiat Falls">}}
 
