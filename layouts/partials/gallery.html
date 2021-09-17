@@ -21,6 +21,7 @@
     {{ if (eq $file.ResourceType "image") }}
       <!-- IMAGES -->
       {{ $img := $file}}
+      {{ $unloadedThumb := $img.Resize "x1" }}
       {{ $thumb := $img.Resize $.context.Site.Params.imageThumbQuality }}
       {{ $srcset := (partial "srcset.html" $img) }}
 
@@ -34,6 +35,7 @@
       >
         <div>
           <img class="lazy gallery__item__img"
+               src="{{ $unloadedThumb.Permalink }}"
                data-src="{{ $thumb.Permalink }}"
           />
         </div>
@@ -41,6 +43,7 @@
     {{ else }}
       {{ $basename := ($file.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
       {{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
+      {{ $unloadedThumb := $thumb.Resize "x1" }}
       {{ $squareThumb := $thumb.Fill $.context.Site.Params.imageThumbQuality }}
 
       <a class="gallery__item"
@@ -50,6 +53,7 @@
          data-pswp-is-video="true"
          >
         <img class="lazy gallery__item__img"
+             src="{{ $unloadedThumb.Permalink }}"
              data-src="{{ $thumb.Permalink }}"/>
         <i class="fa fa-play gallery__item__play" aria-hidden="true"></i>
       </a>
