@@ -6,27 +6,6 @@
  })
 </script>
 
-<!-- lightGallery -->
-<script src="{{ (resources.Get "lib/lightgallery/lightgallery.min.js" | fingerprint).Permalink }}"></script>
-<script src="{{ (resources.Get "lib/lightgallery/lg-hash.min.js" | fingerprint).Permalink }}"></script>
-<script src="{{ (resources.Get "lib/lightgallery/lg-video.min.js" | fingerprint).Permalink }}"></script>
-<!-- <script>lightGallery(document.getElementById('gallery'), {
-     plugins: [lgHash, lgVideo],
-     customSlideName: true,
-     download: false,
-     videojs: false,
-     });
-
-     // Close lightbox on back button press
-     document.querySelectorAll(".gallery__item").forEach(i => {
-     i.addEventListener("click", (event) => {
-     var stateObj = { lg: "close" };
-     var url = window.location.href;
-     history.pushState(stateObj, "Products", url);
-     });
-     });
-     </script> -->
-
 <!-- PhotoSwipe -->
 <script type="module">
  // Include Lightbox
