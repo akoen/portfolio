@@ -30,12 +30,9 @@ Life is hectic, but as exciting as ever.
 {{<figure src="2021-08-23_10-49-43_DSCF1114_EDIT.jpg" caption="Lukas on our failed attempt on Welch.">}}
 {{<figure src="2021-08-23_10-51-21_DSCF1123_EDIT.jpg" caption="Cloudwalking">}}
 
-
-
 {{<figure src="2021-08-19_12-51-28_IMG_20210819_125128.jpg" caption="Solo mission on the Armchair traverse.">}}
 
 {{<figure src="2021-08-28_20-22-01_DSCF1606_EDIT.jpg" caption="Sunset on the West Coast Trail">}}
-
 
 
 Updated September 16th, 2021 from Kitsilano, British Columbia
