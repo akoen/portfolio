@@ -2,11 +2,12 @@
 
 import sys
 import subprocess
+from os.path import exists
 
 source = sys.argv[1]
 target = sys.argv[2]
 
-print(target)
+print('\n\nTranscoding ', target, 'to h264\n')
 
 common = ['ffmpeg',
           '-i', source,
@@ -21,7 +22,8 @@ common = ['ffmpeg',
 
 # Pass 1
 pass_1 = common + ['-pass', '1', '-an', '-f', 'mp4', '-y', '/dev/null']
-pass_2 = common + ['-pass', '2', '-c:a', 'aac', '-b:a', '128k', '-y', target]
+pass_2 = common + ['-pass', '2', '-c:a', 'aac', '-b:a', '128k', '-n', target]
 
-subprocess.run(pass_1)
-subprocess.run(pass_2)
+if not exists(target):
+    subprocess.run(pass_1)
+    subprocess.run(pass_2)
