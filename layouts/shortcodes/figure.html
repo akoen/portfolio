@@ -1,5 +1,9 @@
 {{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
 
+{{ if eq $img nil }}
+  {{ errorf "Failed to find image %s" (.Get "src") }}
+{{ end }}
+
 <figure>
   {{ partial "image" (dict "ctx" . "img" $img) }}
   <figcaption>{{ (.Get "caption") }}</figcaption>
