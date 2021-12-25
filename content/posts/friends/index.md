@@ -2,6 +2,7 @@
 title = "My Friends"
 date = "2021-06-26"
 summary = "The most important people in my life."
+draft = true
 +++
 
 # Neil & Sam
