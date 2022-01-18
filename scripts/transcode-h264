@@ -22,7 +22,7 @@ common = ['ffmpeg',
 
 # Pass 1
 pass_1 = common + ['-pass', '1', '-an', '-f', 'mp4', '-y', '/dev/null']
-pass_2 = common + ['-pass', '2', '-c:a', 'aac', '-b:a', '128k', '-n', target]
+pass_2 = common + ['-pass', '2', '-c:a', 'aac', '-b:a', '128k', '-y', target]
 
 if not exists(target):
     subprocess.run(pass_1)
