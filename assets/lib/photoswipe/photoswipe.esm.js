@@ -761,11 +761,6 @@ class Slide {
     this.isActive = true;
     this.appendHeavy();
 
-    // play videos
-    Array.from(this.container.children).forEach((i) => {
-      if (i.tagName === 'VIDEO') i.play();
-    });
-
     this.pswp.dispatch('slideActivate', { slide: this });
   }
 
@@ -780,11 +775,6 @@ class Slide {
     // reset zoom level
     this.zoomAndPanToInitial();
     this.applyCurrentZoomPan();
-
-    // pause videos
-    Array.from(this.container.children).forEach((i) => {
-      if (i.tagName === 'VIDEO') i.pause();
-    });
 
     this.pswp.dispatch('slideDeactivate', { slide: this });
   }

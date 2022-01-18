@@ -16,23 +16,11 @@
    gallerySelector: '#gallery',
 
    // Elements within gallerySelector (slides)
-   childSelector: 'a',
+   childSelector: '.photoswipe-element',
 
    // Include PhotoSwipe Core
    // and use absolute path (that starts with http(s)://)
    pswpModule: '{{ (resources.Get "lib/photoswipe/photoswipe.esm.js" | fingerprint).Permalink }}'
- });
-
- // Video support
- lightbox.on('itemData', (e) => {
-   const element = e.itemData.element;
-
-   if (element  && element.dataset.pswpIsVideo) {
-     const videoURL = element.href;
-     e.itemData = {
-       html: `<video preload="metadata"><source src="${videoURL}" type="video/mp4"></video><div class="pswp-swipe-surface"></div>`
-     };
-   }
  });
 
  lightbox.init();

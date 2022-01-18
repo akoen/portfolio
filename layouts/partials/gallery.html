@@ -25,7 +25,7 @@
       {{ $thumb := $img.Resize $.context.Site.Params.imageThumbQuality }}
       {{ $srcset := (partial "srcset.html" $img) }}
 
-      <a class="gallery__item"
+      <a class="gallery__item photoswipe-element"
          href="{{ $img.Permalink }}"
          data-pswp-width="{{ $img.Width }}"
          data-pswp-height="{{ $img.Height }}"
@@ -41,6 +41,7 @@
         </div>
       </a>
     {{ else }}
+      <!-- VIDEOS -->
       {{ $basename := ($file.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
       {{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
       {{ $unloadedThumb := $thumb.Resize "x1" }}
@@ -48,9 +49,6 @@
 
       <a class="gallery__item"
          href="{{ $file.Permalink }} "
-         data-pswp-width="{{ $thumb.Width }}"
-         data-pswp-height="{{ $thumb.Height }}"
-         data-pswp-is-video="true"
          >
         <img class="lazy gallery__item__img"
              src="{{ $unloadedThumb.Permalink }}"
@@ -60,3 +58,4 @@
     {{ end  }}
   {{ end  }}
 </div>
+
