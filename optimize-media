@@ -4,4 +4,4 @@
 # https://engineering.fb.com/2018/04/10/video-engineering/av1-beats-x264-and-libvpx-vp9-in-practical-use-case/
 # https://www.s-config.com/video-transcoding-ffmpeg/
 
-imagemin "$FAVOURITES_DIR_REMOTE/*.{jpg,jpeg}" --out-dir "$FAVOURITES_DIR_LOCAL"
+jpegoptim --dest="$FAVOURITES_DIR_LOCAL" -- $FAVOURITES_DIR_REMOTE/*.jpg
