@@ -5,9 +5,12 @@ date = "2020-05-22"
 tags = ["Climbing"]
 +++
 
-Every proper adventurer has a line that they do not cross---a boundary of risk that they have established to keep themselves alive. To cross this line is to play chicken with the will of nature, and very few choose to spend time on the other side. Unfortunately, not everything is always under our control…
+> A high school essay about a near-death experience. All true, and only mildly embellished. Big word make teacher happy.
 
 <!--more-->
+
+Every proper adventurer has a line that they do not cross---a boundary of risk that they have established to keep themselves alive. To cross this line is to play chicken with the will of nature, and very few choose to spend time on the other side. Unfortunately, not everything is always under our control…
+
 --- 
 
 It was a magnificent day. In the shade of Angel Food wall, the air was cool and crisp, and a small stream twisted its way through the scattered boulders. Only a few miles away lay Las Vegas, yet the walls and canyons of Red Rock State Park felt far removed from its neighbouring playground of greed and lust.
