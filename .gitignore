@@ -1,8 +1,15 @@
+videos/
+public/
+content/
+assets/favourites/
+assets/video-thumbs/
+
+
 node_modules/
 resources/
-/videos/
 package-lock.json
 .log/
-public/
 .envrc
 .dir-locals.el
+# Local Netlify folder
+.netlify
