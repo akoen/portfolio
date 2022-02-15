@@ -6,7 +6,6 @@ USAGE:
 
 REQUIRED SITE PARAMETERS:
 - imageResponsiveWidths
-- imageWidths
 */}}
 
 
@@ -21,4 +20,7 @@ REQUIRED SITE PARAMETERS:
   src='{{ $unloadedThumb.Permalink }}'
   data-src="{{ $srcset.src }}"
   data-srcset="{{ $srcset.srcset }}"
+  data-sizes="(max-width: 800px) 100vw, 800px"
 />
+<!-- REVIEW: For some reason, using em units results in incorrect sizing -->
+<!-- data-sizes="(max-width: 35em) 100vw, 35em" -->
