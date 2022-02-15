@@ -5,6 +5,6 @@
 {{ end }}
 
 <figure>
-  {{ partial "image" (dict "ctx" . "img" $img) }}
+  {{ partial "image" (dict "ctx" . "img" $img "caption" (.Get "caption")) }}
   <figcaption>{{ (.Get "caption") }}</figcaption>
 </figure>

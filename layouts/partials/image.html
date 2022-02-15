@@ -2,7 +2,7 @@
 IMAGE.HTML - Responsive images using srcset.
 
 USAGE:
-{{ partial "image" (dict "ctx" $ "img" "<resource>" "class" "<optional>") }}
+{{ partial "image" (dict "ctx" $ "img" "<resource>" "class" "<optional>" "caption" "<optional>") }}
 
 REQUIRED SITE PARAMETERS:
 - imageResponsiveWidths
@@ -11,6 +11,7 @@ REQUIRED SITE PARAMETERS:
 
 {{ $img := .img }}
 {{ $class := .class}}
+{{ $caption := .caption }}
 
 {{ $unloadedThumb := ($img.Resize "x1") }}
 {{ $srcset := (partial "srcset.html" $img) }}
@@ -21,6 +22,7 @@ REQUIRED SITE PARAMETERS:
   data-src="{{ $srcset.src }}"
   data-srcset="{{ $srcset.srcset }}"
   data-sizes="(max-width: 800px) 100vw, 800px"
+  alt="{{ $caption }}"
 />
 <!-- REVIEW: For some reason, using em units results in incorrect sizing -->
 <!-- data-sizes="(max-width: 35em) 100vw, 35em" -->
