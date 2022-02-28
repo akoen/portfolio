@@ -3,17 +3,18 @@
      /https://blog.zazu.berlin/internet-programmierung/mpeg-dash-and-hls-adaptive-bitrate-streaming-with-ffmpeg.html -->
 
 
-{{ $src := (.Get "src") }}
-{{ $h264 := .Page.Resources.GetMatch (printf "%s.h264.mp4" $src) }}
-{{ $basename := ($h264.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
-{{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
+{{ $src := .Page.Resources.GetMatch (.Get "src") }}
+{{ $h265 := $src.Transcode "mp4" "-c:v libx265 -crf 28 -r 24 -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf scale=720:-2 -c:a aac -b:a 96k -ac 1 -threads 0" }}
+{{ $webm := $src.Transcode "webm" "-c:v libvpx-vp9 -vf scale=720:-2 -pix_fmt yuv420p10le -quality good -threads 0 -profile:v 2 -lag-in-frames 25 -crf 25 -b:v 0 -g 240 -cpu-used 4 -auto-alt-ref 1 -arnr-maxframes 7 -arnr-strength 4 -aq-mode 0 -tile-rows 0 -tile-columns 1 -enable-tpl 1 -row-mt 1 -c:a libvorbis -b:a 96k" }}
+{{ $thumb := $src.Thumbnail }}
 
 <figure>
   <video controls
          playsinline
          poster="{{ $thumb.Permalink }}"
          preload="metadata">
-    <source src="{{ $h264.Permalink }}" type="video/mp4"/>
+    <source src="{{ $h265.Permalink }}" type="video/mp4; codecs=hevc"/>
+    <source src="{{ $webm.Permalink }}" type="video/webm; codecs=vp9"/>
   </video>
   <figcaption>{{ (.Get "caption") }}</figcaption>
 </figure>
