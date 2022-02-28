@@ -4,7 +4,7 @@
 
      {{/* partial "gallery.html" (dict
      "context" .
-     "photos" (first 16 (sort (resources.Match "images/**.{jpeg,h264.mp4}") "Name" "desc")))  */}}
+     "photos" (first 16 (sort (resources.Match "images/**.{jpeg,mp4,mov}") "Name" "desc")))  */}}
 
      where CONTEXT is the site context (always .) and PHOTOS is an array of media
      resources in .jpeg or mp4 format.
@@ -42,13 +42,13 @@
       </a>
     {{ else }}
       <!-- VIDEOS -->
-      {{ $basename := ($file.Name | replaceRE ".*/" "" | replaceRE "\\..*" "") }}
-      {{ $thumb := resources.GetMatch (printf "/video-thumbs/%s.jpg" $basename) }}
+      {{ $h264 := $file.Transcode "mp4" "-c:v libx264 -profile:v high -preset veryslow -r 30 -vf scale=720:-2 -b:v 1000k -minrate 500k -maxrate 1500k -bufsize 5000k -movflags +faststart -c:a aac -b:a 128k -threads 0" }}
+      {{ $thumb := $file.Thumbnail }}
       {{ $unloadedThumb := $thumb.Resize "x1" }}
       {{ $squareThumb := $thumb.Fill $.context.Site.Params.imageThumbQuality }}
 
       <a class="gallery__item"
-         href="{{ $file.Permalink }} "
+         href="{{ $h264.Permalink }} "
          >
         <img class="lazy gallery__item__img"
              src="{{ $unloadedThumb.Permalink }}"
