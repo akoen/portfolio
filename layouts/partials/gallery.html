@@ -22,7 +22,7 @@
       <!-- IMAGES -->
       {{ $img := $file}}
       {{ $unloadedThumb := $img.Resize "x1" }}
-      {{ $thumb := $img.Resize $.context.Site.Params.imageThumbQuality }}
+      {{ $thumb := $img.Fill $.context.Site.Params.imageThumbQuality }}
       {{ $srcset := (partial "srcset.html" $img) }}
 
       <a class="gallery__item photoswipe-element"
@@ -43,9 +43,8 @@
     {{ else }}
       <!-- VIDEOS -->
       {{ $h264 := $file.Transcode "mp4" "-c:v libx264 -profile:v high -preset veryslow -r 30 -vf scale=720:-2 -b:v 1000k -minrate 500k -maxrate 1500k -bufsize 5000k -movflags +faststart -c:a aac -b:a 128k -threads 0" }}
-      {{ $thumb := $file.Thumbnail }}
+      {{ $thumb := $file.Thumbnail.Fill $.context.Site.Params.imageThumbQuality }}
       {{ $unloadedThumb := $thumb.Resize "x1" }}
-      {{ $squareThumb := $thumb.Fill $.context.Site.Params.imageThumbQuality }}
 
       <a class="gallery__item"
          href="{{ $h264.Permalink }} "

@@ -10,7 +10,7 @@ timeout = 300000
   description = "Engineering student, writer, climber and photographer."
   pluralizeListTitles = false
 
-  imageThumbQuality = "x400 q75"
+  imageThumbQuality = "400x400 q75 Smart"
   imageResponsiveWidths = [2400, 1600, 1200, 800, 400]
 
 [imaging.exif]

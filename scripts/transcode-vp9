@@ -1,5 +1,6 @@
 #! /usr/bin/python
 # https://developers.google.com/media/vp9/settings/vod
+# https://teddit.net/r/AV1/comments/k7colv/encoder_tuning_part_1_tuning_libvpxvp9_be_more/
 
 import sys
 import subprocess

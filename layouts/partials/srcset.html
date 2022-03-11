@@ -5,6 +5,7 @@
 {{ $imgSrc := "" }}
 {{ $imgSrcPair := "" }}
 {{ range $widths }}
+  <!-- TODO: Support jpg for older browsers -->
   {{ $srcUrl := (printf "%dx q75 webp" . | $img.Resize).Permalink }}
   <!-- NOTE: Depending on the name of the srcset attribute (e.g data-pswp-srcset),
        Hugo might replace all spaces with %20 thinking that it is a URL.
