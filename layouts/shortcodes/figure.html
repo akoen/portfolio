@@ -6,5 +6,5 @@
 
 <figure>
   {{ partial "image" (dict "ctx" . "img" $img "caption" (.Get "caption")) }}
-  <figcaption>{{ (.Get "caption") }}</figcaption>
+  <figcaption>{{ (.Get "caption") | markdownify }}</figcaption>
 </figure>

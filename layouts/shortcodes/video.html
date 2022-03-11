@@ -16,5 +16,5 @@
     <source src="{{ $h265.Permalink }}" type="video/mp4; codecs=hevc"/>
     <source src="{{ $webm.Permalink }}" type="video/webm; codecs=vp9"/>
   </video>
-  <figcaption>{{ (.Get "caption") }}</figcaption>
+  <figcaption>{{ (.Get "caption") | markdownify }}</figcaption>
 </figure>
