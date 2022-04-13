@@ -38,6 +38,20 @@
         data-website-id="a48bbbe9-a3b2-4cbe-8018-4d3619d62ec0"
         data-host-url="https://stats.alexkoen.com"
 ></script>
+
+<!-- Katex -->
+{{if $.Param "math"}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body)"></script>
+<style>
+ .katex {
+   font-size: 1em !important;
+ }
+</style>
+{{end}}
+
 <!-- FONTS -->
 <link rel="preload" href="/fonts/work-sans-v8-latin-500.woff2" as="font" type="font/woff2"/>
 <link rel="preload" href="/fonts/work-sans-v8-latin-regular.woff2" as="font" type="font/woff2"/>
