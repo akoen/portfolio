@@ -4,7 +4,7 @@
   {{ errorf "Failed to find image %s" (.Get "src") }}
 {{ end }}
 
-<figure>
+<figure id={{.Get "id"}}>
   {{ partial "image" (dict "ctx" . "img" $img "caption" (.Get "caption")) }}
   <figcaption>{{ (.Get "caption") | markdownify }}</figcaption>
 </figure>
